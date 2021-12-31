@@ -13,3 +13,5 @@ parseInt('5.2') = converte para number int = 5
 parseFloat('5.2') = converte para number float = 5.2
 Number('5.2') = converte number
 alert('Deseja continuar?') = cria um alerta
+if(variável == false){código} = if em javascript
+else{código} = else em javascript
