@@ -1,8 +1,4 @@
-console.log("Qual o seu nome?");
-let nome = 'Luan'
-const nome2 = 'Simões';
-console.log(`Meu nome é ${nome} ${nome2} Prazer`);
-let idade = 10;
-idade += 5;
-console.log(idade);
-console.log(typeof(idade))
+let string = 'O rato roeu a roupa do rei de romã'
+
+string = string.replace(/ /g, "");
+console.log(string);
