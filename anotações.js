@@ -9,9 +9,12 @@
 //prompt = input
 // "\texto\" = pode ser usado mesmo dentro de asbas duplas
 //Contas com javascript pode não ser exata
+//Toda vez que chamar uma função é necessário os ()
+------------------------------------------------------------------------------------------------------------------
+String = Primitivo (imutáveis)
 
-typeof(variável) = saber qual tipo é
-parseInt('5.2') = converte para number int = 5
+typeof(variável)  = saber qual tipo é
+parseInt('5.2')   = converte para number int = 5
 parseFloat('5.2') = converte para number float = 5.2
 Number('5.2') = converte number
 alert('Deseja continuar?') = cria um alerta
@@ -30,6 +33,9 @@ palavra.toLowerCase() = Tudo minusculo
 palavra.charAt(1) = Pega a segunda letra
 palavra.toString() = Converte pra string 
 toString(2 = binário)
+------------------------------------------------------------------------------------------------------------------
+Number = Primitivo (imutáveis)
+
 numero.toFixed(2) = mostrá até 2 casas decimais aredondando para cima
 Number.isInteger(numero) = Boolean número inteiro ou não
 Number. isNaN(numero) = Boolean A conta realizada é NaN? True = NaN. False = Conta válida
@@ -41,3 +47,15 @@ Math.max() = pega o maior número
 Math.min() = pega o menor número
 const numero = Math.round(Math.random() * (10 /* numero maximo*/ - 0 /*número minimo */) + 0 /*número minimo */);
 Math.sqrt() = raiz quadrada
+------------------------------------------------------------------------------------------------------------------
+Lista = referência (mutável)
+
+lista[0] = 'Eduardo' = troca o oque tiver no índice 0 por 'Eduardo'
+lista.push('Otávio'); = Adiciona a lista
+lista.unshift('Lucas') = Adiciona no começo da lista
+lista.pop(); = remove o ultimo da lista / podemos salvar em uma variavel
+lista.shift(); = remove o primeiro da lista / podemos salvar em uma variavel
+delete lista[2]; = remove o indice 2 da lista
+instanceof Array = Boolean true = array / false = não array
+let lista2 = [...lista] = copiar a lista de fato.
+------------------------------------------------------------------------------------------------------------------
