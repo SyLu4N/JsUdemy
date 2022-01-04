@@ -3,21 +3,25 @@ let numeroDigitado = Number(numero);
 let valiandoNumero = Number.isNaN(numeroDigitado);
 
 if(valiandoNumero == false){
-  document.body.innerHTML += `<h1>Seu número é ${numeroDigitado}</h1> <br />`;
-  document.body.innerHTML += `A raiz quadrada do seu número é : ${Math.sqrt(numeroDigitado)} <br />`;
+  const title = document.getElementById('titleNumber');
+  const paragrafo = document.getElementById('bodyRespostas');
+  
+  title.innerHTML = numeroDigitado;
+  paragrafo.innerHTML += `A raiz quadrada do seu número é : ${Math.sqrt(numeroDigitado)}`;
 
   let numeroInteiro = Number.isInteger(numeroDigitado);
 
   if( numeroInteiro == true){
-    document.body.innerHTML += `${numeroDigitado} é um número inteiro!<br />`;
+    paragrafo.innerHTML += `<p> ${numeroDigitado} é um número inteiro!</p>`;
   }else{
-    document.body.innerHTML += `${numeroDigitado} é um número quebrado!<br />`;
+    paragrafo.innerHTML += `<p> ${numeroDigitado} é um número quebrado!</p>`;
   }
-  document.body.innerHTML += `Arredondando para baixo : ${Math.floor(numeroDigitado)}<br/>`
-  document.body.innerHTML += `Arredondando para cima: ${Math.ceil(numeroDigitado)}<br/>`
-  document.body.innerHTML += `Com duas casas decimais: ${numeroDigitado.toFixed(2)}<br/>`
+
+  paragrafo.innerHTML += `<p> Arredondando para baixo : ${Math.floor(numeroDigitado)}</p>`;
+  paragrafo.innerHTML += `<p> Arredondando para cima: ${Math.ceil(numeroDigitado)}</p>`;
+  paragrafo.innerHTML += `<p> Com duas casas decimais: ${numeroDigitado.toFixed(2)}</p>`;
 
   numeroInteiro = Number.isNaN(numeroDigitado);
 }else{
-  document.body.innerHTML += `<strong>${numero}</strong> não é um número válido.`
+  document.body.innerHTML = `<strong>${numero}</strong> não é um número válido animal.`
 }
