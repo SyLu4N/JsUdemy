@@ -59,3 +59,13 @@ delete lista[2]; = remove o indice 2 da lista
 instanceof Array = Boolean true = array / false = não array
 let lista2 = [...lista] = copiar a lista de fato.
 ------------------------------------------------------------------------------------------------------------------
+Formulario
+
+form.onsubmit = function (evento){} = caso click no submit
+preventDefault(); = agir diferente do padrão
+------------------------------------------------------------------------------------------------------------------
+Operadores Lógicos
+
+&& > And = e
+|| > or = ou
+! > not = não

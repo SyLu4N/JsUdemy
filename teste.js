@@ -1,4 +1,7 @@
-let string = 'O rato roeu a roupa do rei de romã'
+const numero = -1;
 
-string = string.replace(/ /g, "");
-console.log(string);
+if(numero >= 0 &&  numero <= 5){
+  console.log('Poxa, boa, arrebentamos...');
+}else{
+  console.log('Não!...');
+}

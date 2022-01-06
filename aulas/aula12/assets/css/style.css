@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+:root{
+  --corpadrao: #AA3333;
+}
+
+*{
+  box-sizing: border-box;
+  outline: 0;
+}
+
+body{
+  background-image: url(../img/confetti-doodles.svg);
+  margin: 0;
+  padding: 0;
+}
