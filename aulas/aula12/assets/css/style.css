@@ -1,16 +1,102 @@
 @charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap');
 
 :root{
   --corpadrao: #AA3333;
 }
 
 *{
-  box-sizing: border-box;
   outline: 0;
+  font-family: 'Open Sans', sans-serif;
+  box-sizing: border-box;
 }
 
 body{
   background-image: url(../img/confetti-doodles.svg);
   margin: 0;
   padding: 0;
+}
+
+.container{
+  max-width: 550px;
+  margin: 0 auto;
+  margin-top: 30px;
+  background-color: white;
+  padding: 30px;
+  padding-top: 2px;
+  padding-bottom: 10px;
+  box-shadow: 1px 1px 5px 0px black;
+  font-size: 1.3em;
+  line-height: 1.5em;
+  margin-bottom: 30px;
+  border-radius: 5px;
+}
+
+.flex{
+  display: flex;
+  justify-content: space-between;
+}
+
+form input, form label{
+  width: 100%;
+  display: block;
+  
+}
+
+form input{
+  margin-bottom: 10px;
+  height: 50px;
+  font-size: 20px;
+  padding-left: 10px;
+}
+
+form input:focus{
+  border: 1px solid var(--corpadrao);
+}
+
+.btn{
+  margin-top: 20px;
+  border: 2px solid var(--corpadrao);
+  height: 60px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.btn:hover{
+  background-color: var(--corpadrao);
+  color: white;
+}
+
+.star{
+  color: var(--corpadrao);
+  text-decoration: none;
+  cursor: help;
+}
+
+.aa{
+  color: red;
+}
+
+.ideal{
+  color: green;
+}
+
+.o1{
+  background-color: red; 
+  color: white;
+}
+.o2{
+  background-color: darkred; 
+  color: white;
+}
+.o3{
+  background-color: black; 
+  color: white;
+}
+
+.imc{
+  float: left;
+  font-size: 50px;
+  margin: 0 20px;
+  font-style: italic;
 }

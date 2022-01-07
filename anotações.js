@@ -33,12 +33,15 @@ palavra.toLowerCase() = Tudo minusculo
 palavra.charAt(1) = Pega a segunda letra
 palavra.toString() = Converte pra string 
 toString(2 = binário)
+variavel palavra = document.createElement('palavra') = criar um elemento
+palavra.appendChild(palavra); = inserir o elemento
+palavra.classList.add('corVermelha') = cria uma class
 ------------------------------------------------------------------------------------------------------------------
 Number = Primitivo (imutáveis)
 
 numero.toFixed(2) = mostrá até 2 casas decimais aredondando para cima
-Number.isInteger(numero) = Boolean número inteiro ou não
-Number. isNaN(numero) = Boolean A conta realizada é NaN? True = NaN. False = Conta válida
+Number.isInteger(numero) = 'Boolean' número inteiro ou não
+Number.isNaN(numero) = 'Boolean' A conta realizada é NaN? True = NaN. False = Conta válida
 numero += Number(num1 + num2.toFixed(2)); = Corrige a impressisão
 numero = Math.floor(num1) = arredondar num1 para baixo
 numero = Math.ceil(num1) = arredondar num1 para cima

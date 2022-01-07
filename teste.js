@@ -1,7 +1,5 @@
-const numero = -1;
+const numero = '';
+const trata = Number(numero + 0);
 
-if(numero >= 0 &&  numero <= 5){
-  console.log('Poxa, boa, arrebentamos...');
-}else{
-  console.log('Não!...');
-}
+
+console.log(numero);
