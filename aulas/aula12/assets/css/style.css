@@ -84,14 +84,20 @@ form input:focus{
 .o1{
   background-color: red; 
   color: white;
+  padding: 3px;
+  font-size: 18px;
 }
 .o2{
   background-color: darkred; 
   color: white;
+  padding: 3px;
+  font-size: 18px;
 }
 .o3{
   background-color: black; 
   color: white;
+  padding: 3px;
+  font-size: 18px;
 }
 
 .imc{
@@ -99,4 +105,9 @@ form input:focus{
   font-size: 50px;
   margin: 0 20px;
   font-style: italic;
+}
+
+.resultado{
+  display: flex;
+  align-items: center;
 }

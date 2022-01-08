@@ -69,6 +69,12 @@ preventDefault(); = agir diferente do padrão
 ------------------------------------------------------------------------------------------------------------------
 Operadores Lógicos
 
-&& > And = e
-|| > or = ou
-! > not = não
+>=  Maior ou igual
+<=  Menor ou igual
+>   maior que
+<   menor que
+&&  And = e
+||  or = ou
+!   not = não
+?   Se for true executa tal ação
+:   Se for false executa tal ação
