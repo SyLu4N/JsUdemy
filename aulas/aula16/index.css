@@ -1,5 +1,60 @@
 @charset "UTF-8";
 
+:root{
+  --corpadrao: #001a49;
+}
+
 body{
-  
+  display: flex;
+  overflow-x: hidden;
+  background-image: url(./img/SL-043021-42650-28.jpg);
+  background-position: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 95vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.data{
+  font-size: 4em;
+  color: white;
+  text-shadow: 1.5px 1.5px 2px black;
+  text-align: center;
+  width: 100%;
+  cursor: default;
+}
+
+.point{
+  font-size: 4em;
+  padding-top: 6px;
+  color: white;
+  cursor: default;
+}
+
+.container .back{
+  background-color: var(--corpadrao);
+  font-size: 5em;
+  height: 100%;
+  padding: 6px;
+  border-radius: 15px ;
+  margin-left: 20px;
+  margin-right: 20px;
+  color: white;
+  cursor: default;
+  transition-duration:200ms;
+  margin-top: 10px;
+}
+
+.back:hover{
+  color: var(--corpadrao);
+  background-color: white;
 }
