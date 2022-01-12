@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+body{
+  display: flex;
+  align-items: center;
+  width: 98%;
+  justify-content: center;
+  background-color: #005663;
+  font-size: 2em;
+}
+
+.add{
+  background-color: white;
+  padding: 10px 20px;
+  margin-top: 20px;
+  border-radius: 15px;
+}

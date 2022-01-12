@@ -61,6 +61,7 @@ lista.shift(); = remove o primeiro da lista / podemos salvar em uma variavel
 delete lista[2]; = remove o indice 2 da lista
 instanceof Array = Boolean true = array / false = não array
 let lista2 = [...lista] = copiar a lista de fato.
+[primeiro, segundo ...resto] = '...resto' = variavel resto recebe o resto do array
 ------------------------------------------------------------------------------------------------------------------
 Formulario
 
