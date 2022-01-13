@@ -8,7 +8,7 @@ const elemento = [
 
 for( i = 0; i < elemento.length; i++){
   const {tag, texto} = elemento[i];
-  const p = document.createElement(tag);
-  add.appendChild(p);
-  p.innerHTML += `${texto}`
+  const criado = document.createElement(tag);
+  add.appendChild(criado);
+  criado.innerHTML += `${texto}`
 }
