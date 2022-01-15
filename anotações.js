@@ -79,3 +79,8 @@ Operadores Lógicos
 !   not = não
 ?   Se for true executa tal ação
 :   Se for false executa tal ação
+------------------------------------------------------------------------------------------------------------------
+try = tenta executar a ação
+catch = caso n consiga executar, faça  tal coisa
+throw = lança um erro
+throw new error('DEU ERRO AI EM') = função construtora
