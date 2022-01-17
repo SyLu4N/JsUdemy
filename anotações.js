@@ -15,6 +15,7 @@ Alguns comandos..
 
 instanceof = relativo ao objet > Exemplo if(!(instanceof Date))
 typeof(variável) = chega minha varialve > Exemplo typeof(nu1) === 'number'. > true / false
+target = aonde foi clickado
 ------------------------------------------------------------------------------------------------------------------
 String = Primitivo (imutáveis)
 
