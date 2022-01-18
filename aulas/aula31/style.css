@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+*{
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  background-color: teal;
+}
+
+.container{
+  background-color: white;
+  padding: 15px;
+  border-radius: 15px;
+  margin-top: 5%;
+  width: 300px;
+}
+
+.btnAddTarefa{
+  height: 22px;
+}
+
+ul{
+  padding: 0;
+  margin: 20px;
+}
+
+li{
+  margin-top: 10px;
+}

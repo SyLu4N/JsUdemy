@@ -91,3 +91,7 @@ catch = caso n consiga, de erro, faça  tal coisa
 throw = lança um erro
 throw new error('DEU ERRO AI EM') = função construtora
 finally = sempre executa, dando erro ou não
+------------------------------------------------------------------------------------------------------------------
+keypress = quando apertada
+keyup = quando a tecla for soltada
+keydowm = enquanto estiver apertada
