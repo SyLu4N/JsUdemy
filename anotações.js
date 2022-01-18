@@ -11,6 +11,12 @@
 //Contas com javascript pode não ser exata
 //Toda vez que chamar uma função é necessário os ()
 ------------------------------------------------------------------------------------------------------------------
+Alguns comandos..
+
+instanceof = relativo ao objet > Exemplo if(!(instanceof Date))
+typeof(variável) = chega minha varialve > Exemplo typeof(nu1) === 'number'. > true / false
+target = aonde foi clickado
+------------------------------------------------------------------------------------------------------------------
 String = Primitivo (imutáveis)
 
 typeof(variável)  = saber qual tipo é
@@ -79,3 +85,9 @@ Operadores Lógicos
 !   not = não
 ?   Se for true executa tal ação
 :   Se for false executa tal ação
+------------------------------------------------------------------------------------------------------------------
+try = tenta executar a ação
+catch = caso n consiga, de erro, faça  tal coisa
+throw = lança um erro
+throw new error('DEU ERRO AI EM') = função construtora
+finally = sempre executa, dando erro ou não

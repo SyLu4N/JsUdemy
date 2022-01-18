@@ -1,5 +1,6 @@
-const numero = '';
-const trata = Number(numero + 0);
+function data() {
+  const data = new Date();
+  return data;
+}
 
-
-console.log(numero);
+console.log(data().getFullYear());
