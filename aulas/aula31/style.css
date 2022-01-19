@@ -31,3 +31,30 @@ ul{
 li{
   margin-top: 10px;
 }
+
+.inputTarefa:focus{
+  border: 3px solid teal;
+  outline: none;
+  border-radius: 5px;
+}
+
+.btnApagar{
+  outline: none;
+  border: 1px dashed teal;
+  background-color: white;
+  cursor: pointer;
+}
+
+.btnApagar:hover{
+  background-color: teal;
+  color: white;
+}
+
+/* .flex{
+  display: flex;
+  justify-content: space-between;
+} */
+
+.displayNone{
+  display: none;
+}
