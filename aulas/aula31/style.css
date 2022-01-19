@@ -1,59 +1,139 @@
 @charset "UTF-8";
 
+:root{
+  --corpadrao: #35E7E6;
+  --corfundo: rgba(238, 238, 238, 0.445);
+
+}
+
 *{
   font-family: sans-serif;
   box-sizing: border-box;
 }
 
 body{
-  display: flex;
-  justify-content: center;
-  background-color: teal;
+  margin: 0px 10vw;
 }
 
 .container{
+  display: flex;
   background-color: white;
-  padding: 15px;
-  border-radius: 15px;
   margin-top: 5%;
-  width: 300px;
+}
+
+.img{
+  max-width: 450px;
+}
+
+h1{
+  color: var(--corpadrao);
+  text-shadow: 0.5px 0.5px 2px black;
+  font-size: 2em;
+}
+
+.intro{
+  padding: 0;
+  margin: 0px;
+}
+
+.sectionTitleLista{
+  border: 1px solid darkgray;
+  background-color: var(--corfundo);
+  border-radius: 10px 10px 0 0;
+}
+.sectionLista{
+  border: 1px solid darkgray;
+  padding: 15px;
+  border-top: none;
+}
+
+.titleLista{
+  padding-left: 15px;
+}
+
+.grid{
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+  gap: 20px;
+}
+
+.height{
+  height: 40px;
+  font-size: 1.5em;
 }
 
 .btnAddTarefa{
-  height: 22px;
+  font-size: 1em;
+  background-color: var(--corfundo);
+  outline: none;
+  border: 1px solid var(--corpadrao);
+  border-radius: 5px;
+  color: var(--corpadrao);
+  transition-duration: 300ms;
+  font-family: sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btnAddTarefa:hover{
+  background-color: var(--corpadrao);
+  color: white;
 }
 
 ul{
   padding: 0;
-  margin: 20px;
+  list-style: none;
 }
 
 li{
   margin-top: 10px;
 }
 
+.sectionTitleLista2{
+  border: 1px solid darkgray;
+  background-color: var(--corfundo);
+  border-radius: 10px 10px 0 0;
+  margin-top: 20px;
+}
+
+h2{
+  padding-left: 15px;
+  color: var(--corpadrao);
+}
+
+.border{
+  border: 1px solid var(--corpadrao);
+  border-radius: 10px;
+}
+
+.flexLista{
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 15px;
+  border-bottom: 1px solid var(--corpadrao);
+}
+
 .inputTarefa:focus{
-  border: 3px solid teal;
+  border: 1px solid var(--corpadrao);
   outline: none;
   border-radius: 5px;
 }
 
 .btnApagar{
   outline: none;
-  border: 1px dashed teal;
-  background-color: white;
+  border: none;
+  background-color: red;
   cursor: pointer;
+  color: white;
+  margin-bottom: 10px;
+  height: 20px;
+  transition-duration: 200ms;
 }
 
 .btnApagar:hover{
   background-color: teal;
   color: white;
 }
-
-/* .flex{
-  display: flex;
-  justify-content: space-between;
-} */
 
 .displayNone{
   display: none;

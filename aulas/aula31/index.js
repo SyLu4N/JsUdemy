@@ -12,7 +12,7 @@ tarefaInput.addEventListener('keypress', function (e) {
 function apagarTarefa(li) {
   li.innerText += ' ';
   const apagar = document.createElement('button');
-  apagar.innerText = 'Apagar';
+  apagar.innerText = '✖';
   apagar.setAttribute('class', 'btnApagar');
   apagar.setAttribute('title', 'Apagar essa tarefa');
   li.appendChild(apagar);
@@ -35,7 +35,7 @@ function criaTarefa(tarefa) {
   tarefas.appendChild(li);
   li.innerHTML += tarefa;
   apagarTarefa(li);
-  li.classList.add('flex');
+  li.classList.add('flexLista');
   limpaInput();
   salvaTarefas();
 }
