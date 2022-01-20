@@ -15,6 +15,16 @@ body{
   margin: 0px 10vw;
 }
 
+.main{
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.623);
+  border-radius: 10px;
+}
+
+em{
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
 .container{
   display: flex;
   background-color: white;
@@ -36,11 +46,17 @@ h1{
   margin: 0px;
 }
 
+aside p{
+  max-width: 400px;
+  font-size: 1.4em;
+}
+
 .sectionTitleLista{
   border: 1px solid darkgray;
   background-color: var(--corfundo);
   border-radius: 10px 10px 0 0;
 }
+
 .sectionLista{
   border: 1px solid darkgray;
   padding: 15px;
@@ -98,11 +114,10 @@ li{
 
 h2{
   padding-left: 15px;
-  color: var(--corpadrao);
+  color:#2F2E41;
 }
 
 .border{
-  border: 1px solid var(--corpadrao);
   border-radius: 10px;
 }
 
@@ -128,6 +143,8 @@ h2{
   margin-bottom: 10px;
   height: 20px;
   transition-duration: 200ms;
+  padding-bottom: 20px;
+  border-radius: 3px;
 }
 
 .btnApagar:hover{

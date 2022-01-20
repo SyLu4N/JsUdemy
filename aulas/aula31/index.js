@@ -1,6 +1,7 @@
 const tarefas = document.querySelector('.tarefas');
 const tarefaInput = document.querySelector('.inputTarefa');
 const button = document.querySelector('.btnAddTarefa');
+let contador = 0;
 
 tarefaInput.addEventListener('keypress', function (e) {
   if (e.keyCode === 13){
@@ -33,7 +34,8 @@ button.addEventListener('click', function () {
 function criaTarefa(tarefa) {
   const li = document.createElement('li');
   tarefas.appendChild(li);
-  li.innerHTML += tarefa;
+  contador ++;
+  li.innerHTML += `${contador}${tarefa}`;
   apagarTarefa(li);
   li.classList.add('flexLista');
   limpaInput();
@@ -44,7 +46,8 @@ document.addEventListener('click', function (e) {
   const click = e.target;
   if (click.classList.contains('btnApagar')){
     click.parentElement.remove();
-      salvaTarefas()  
+    contador--;
+    salvaTarefas();  
   }
 });
 
@@ -54,7 +57,8 @@ function salvaTarefas() {
 
   for (let tarefa of liTarefas){
     let tarefaText = tarefa.innerText;
-    tarefaText = tarefaText.replace('Apagar', '').trim();
+    tarefaText = tarefaText.replace('', '').trim();
+    tarefaText = tarefaText.replace('✖', '').trim();
     listaTarefas.push(tarefaText);
   }
 
