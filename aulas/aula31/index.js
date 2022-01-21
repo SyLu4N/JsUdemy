@@ -2,13 +2,39 @@ const tarefas = document.querySelector('.tarefas');
 const tarefaInput = document.querySelector('.inputTarefa');
 const button = document.querySelector('.btnAddTarefa');
 let contador = 0;
+let contadorLista = [];
+
+button.addEventListener('click', function () {
+  if (!tarefaInput.value.trim()){
+    tarefaInput.setAttribute('placeholder', 'Insira um valor válido!');
+    tarefaInput.setAttribute('id', 'red');
+    return;
+  }
+  tarefaInput.removeAttribute('id', 'red');
+  tarefaInput.removeAttribute('placeholder');
+  const tarefa = tarefaInput.value;
+  criaTarefa(tarefa);
+});
 
 tarefaInput.addEventListener('keypress', function (e) {
   if (e.keyCode === 13){
-    if (!tarefaInput.value) return;
-    criaTarefa(tarefaInput.value);
+    if (!tarefaInput.value.trim()){
+      tarefaInput.setAttribute('placeholder', 'Insira um valor válido!');
+      tarefaInput.setAttribute('id', 'red');
+      return;
+    }
+    tarefaInput.removeAttribute('id', 'red');
+    tarefaInput.removeAttribute('placeholder');
+    const tarefa = tarefaInput.value;
+    criaTarefa(tarefa);
   }
 });
+
+function addContador() {
+  contador ++;
+  contadorLista.push(contador);
+  console.log(contadorLista);
+}
 
 function apagarTarefa(li) {
   li.innerText += ' ';
@@ -24,20 +50,13 @@ function limpaInput() {
   tarefaInput.focus();
 }
 
-button.addEventListener('click', function () {
-  if (!tarefaInput.value) return;
-  const tarefa = tarefaInput.value;
-  criaTarefa(tarefa);
-});
-
-
 function criaTarefa(tarefa) {
   const li = document.createElement('li');
   tarefas.appendChild(li);
-  contador ++;
+  addContador();
   li.innerHTML += `${contador}${tarefa}`;
-  apagarTarefa(li);
   li.classList.add('flexLista');
+  apagarTarefa(li);
   limpaInput();
   salvaTarefas();
 }
@@ -56,8 +75,11 @@ function salvaTarefas() {
   const listaTarefas = [];
 
   for (let tarefa of liTarefas){
-    let tarefaText = tarefa.innerText;
-    tarefaText = tarefaText.replace('', '').trim();
+    let tarefaText = tarefa.innerHTML;
+    for(let i in contadorLista.length){
+      console.log(i)
+      tarefaText = tarefaText.replace(i, '');
+    }
     tarefaText = tarefaText.replace('✖', '').trim();
     listaTarefas.push(tarefaText);
   }

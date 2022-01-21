@@ -155,3 +155,8 @@ h2{
 .displayNone{
   display: none;
 }
+
+#red::placeholder{
+  color: rgba(255, 0, 0, 0.884);
+  font-size: 1em;
+}
