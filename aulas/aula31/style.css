@@ -1,8 +1,9 @@
 @charset "UTF-8";
 
 :root{
-  --corpadrao: #35E7E6;
+  --cordestaque: #35E7E6;
   --corfundo: rgba(238, 238, 238, 0.445);
+  --corpadrao: #2F2E41;
 
 }
 
@@ -13,6 +14,7 @@
 
 body{
   margin: 0px 10vw;
+  padding-bottom: 100px;
 }
 
 .main{
@@ -35,15 +37,17 @@ em{
   max-width: 450px;
 }
 
-h1{
+.titleLista{
   color: var(--corpadrao);
-  text-shadow: 0.5px 0.5px 2px black;
   font-size: 2em;
 }
 
 .intro{
   padding: 0;
   margin: 0px;
+  color: var(--cordestaque);
+  font-size: 2.2em;
+  text-shadow: 1px 1px 3px black;
 }
 
 aside p{
@@ -82,9 +86,9 @@ aside p{
   font-size: 1em;
   background-color: var(--corfundo);
   outline: none;
-  border: 1px solid var(--corpadrao);
+  border: 1px solid var(--cordestaque);
   border-radius: 5px;
-  color: var(--corpadrao);
+  color: var(--cordestaque);
   transition-duration: 300ms;
   font-family: sans-serif;
   font-weight: bold;
@@ -92,13 +96,13 @@ aside p{
 }
 
 .btnAddTarefa:hover{
-  background-color: var(--corpadrao);
+  background-color: var(--cordestaque);
   color: white;
 }
 
-ul{
-  padding: 0;
-  list-style: none;
+.tarefas{
+  list-style: decimal;
+  list-style-position: inside;
 }
 
 li{
@@ -125,11 +129,13 @@ h2{
   display: flex;
   justify-content: space-between;
   padding: 0px 15px;
-  border-bottom: 1px solid var(--corpadrao);
+  border-bottom: 1px solid var(--cordestaque);
+  list-style: decimal;
 }
 
+
 .inputTarefa:focus{
-  border: 1px solid var(--corpadrao);
+  border: 1px solid var(--cordestaque);
   outline: none;
   border-radius: 5px;
 }

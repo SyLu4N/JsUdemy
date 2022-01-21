@@ -1,8 +1,6 @@
 const tarefas = document.querySelector('.tarefas');
 const tarefaInput = document.querySelector('.inputTarefa');
 const button = document.querySelector('.btnAddTarefa');
-let contador = 0;
-let contadorLista = [];
 
 button.addEventListener('click', function () {
   if (!tarefaInput.value.trim()){
@@ -30,12 +28,6 @@ tarefaInput.addEventListener('keypress', function (e) {
   }
 });
 
-function addContador() {
-  contador ++;
-  contadorLista.push(contador);
-  console.log(contadorLista);
-}
-
 function apagarTarefa(li) {
   li.innerText += ' ';
   const apagar = document.createElement('button');
@@ -53,8 +45,7 @@ function limpaInput() {
 function criaTarefa(tarefa) {
   const li = document.createElement('li');
   tarefas.appendChild(li);
-  addContador();
-  li.innerHTML += `${contador}${tarefa}`;
+  li.innerHTML += tarefa;
   li.classList.add('flexLista');
   apagarTarefa(li);
   limpaInput();
@@ -65,7 +56,6 @@ document.addEventListener('click', function (e) {
   const click = e.target;
   if (click.classList.contains('btnApagar')){
     click.parentElement.remove();
-    contador--;
     salvaTarefas();  
   }
 });
@@ -76,10 +66,6 @@ function salvaTarefas() {
 
   for (let tarefa of liTarefas){
     let tarefaText = tarefa.innerHTML;
-    for(let i in contadorLista.length){
-      console.log(i)
-      tarefaText = tarefaText.replace(i, '');
-    }
     tarefaText = tarefaText.replace('✖', '').trim();
     listaTarefas.push(tarefaText);
   }
