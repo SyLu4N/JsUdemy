@@ -68,6 +68,7 @@ delete lista[2]; = remove o indice 2 da lista
 instanceof Array = Boolean true = array / false = não array
 let lista2 = [...lista] = copiar a lista de fato.
 [primeiro, segundo ...resto] = '...resto' = variavel resto recebe o resto do array
+resto = lista.join(' '); = pega o resto da lista e juta-os separando por ' '.
 ------------------------------------------------------------------------------------------------------------------
 Formulario
 
