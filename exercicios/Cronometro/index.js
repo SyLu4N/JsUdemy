@@ -1,4 +1,7 @@
 const timer = document.querySelector('.timer');
+const iniciar = document.querySelector('.iniciar');
+const pausar = document.querySelector('.pause');
+const zerar = document.querySelector('.restart')
 
 let contador = 0;
 let timerGo;

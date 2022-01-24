@@ -69,3 +69,7 @@ hr{
   color: black;
   border:1px solid black;
 }
+
+.pause{
+  color: red;
+}
