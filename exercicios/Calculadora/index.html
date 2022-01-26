@@ -8,32 +8,50 @@
   <title>Calculadora</title>
 </head>
 <body>
-  <section class="container">
-    <h1 class="title">Calculadora</h1>
-    <input type="text" class="visor">
-    <div class="grid">
-      <button>C</button>
-      <button>(</button>
-      <button>)</button>
-      <button>/</button>
-      <button>7</button>
-      <button>8</button>
-      <button>9</button>
-      <button>*</button>
-      <button>4</button>
-      <button>5</button>
-      <button>6</button>
-      <button>+</button>
-      <button>1</button>
-      <button>2</button>
-      <button>3</button>
-      <button>-</button>
-      <button>.</button>
-      <button>0</button>
-      <button>⇐</button>
-      <button>=</button>
+  <main>
+    <div>
+      <section class="container">
+        <h1 class="title">Calculadora</h1>
+        <img src="assets/img/Design sem nome.png" alt="Ilustração de uma Calculadora">
+      
+      </section>
+        <table class="calculadora">
+          <tr>
+            <td colspan="4"><input type="text" class="display"></td>
+          </tr>
+          <tr>
+            <td><button class="btn btnClear">C</button></td>
+            <td><button class="btn btnNum btnOperador">(</button></td>
+            <td><button class="btn btnNum btnOperador">)</button></td>
+            <td><button class="btn btnNum btnOperador">/</button></td>
+          </tr>
+          <tr>
+            <td><button class="btn btnNum number">7</button></td>
+            <td><button class="btn btnNum number">8</button></td>
+            <td><button class="btn btnNum number">9</button></td>
+            <td><button class="btn btnNum btnOperador">*</button></td>
+          </tr>
+          <tr>
+            <td><button class="btn btnNum number">4</button></td>
+            <td><button class="btn btnNum number">5</button></td>
+            <td><button class="btn btnNum number">6</button></td>
+            <td><button class="btn btnNum btnOperador">+</button></td>
+          </tr>
+          <tr>
+            <td><button class="btn btnNum number">1</button></td>
+            <td><button class="btn btnNum number">2</button></td>
+            <td><button class="btn btnNum number">3</button></td>
+            <td><button class="btn btnNum btnOperador">-</button></td>
+          </tr>
+          <tr>
+            <td><button class="btn btnNum btnOperador aument">.</button></td>
+            <td><button class="btn btnNum number">0</button></td>
+            <td><button class="btn btnDel">&laquo;</button></td>
+            <td><button class="btn btnEq">=</button></td>
+          </tr>
+        </table>
     </div>
-  </section>
+  </main>
 
   <script src="assets/index.js"></script>
 </body>
