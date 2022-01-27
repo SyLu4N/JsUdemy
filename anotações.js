@@ -60,15 +60,16 @@ Math.sqrt() = raiz quadrada
 Lista = referência (mutável)
 
 lista[0] = 'Eduardo' = troca o oque tiver no índice 0 por 'Eduardo'
-lista.push('Otávio'); = Adiciona a lista
+lista.push('Otávio'); = Adiciona a lista no final
 lista.unshift('Lucas') = Adiciona no começo da lista
 lista.pop(); = remove o ultimo da lista / podemos salvar em uma variavel
 lista.shift(); = remove o primeiro da lista / podemos salvar em uma variavel
-delete lista[2]; = remove o indice 2 da lista
+delete lista[2]; = remove o indice 2 da lista mas permanece o indice
 instanceof Array = Boolean true = array / false = não array
 let lista2 = [...lista] = copiar a lista de fato.
 [primeiro, segundo ...resto] = '...resto' = variavel resto recebe o resto do array
 resto = lista.join(' '); = pega o resto da lista e juta-os separando por ' '.
+lista = "string".split(' ') = transforma string em lista separando por ' '.
 ------------------------------------------------------------------------------------------------------------------
 Formulario
 
