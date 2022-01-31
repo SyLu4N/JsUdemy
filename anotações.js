@@ -71,6 +71,12 @@ let lista2 = [...lista] = copiar a lista de fato.
 resto = lista.join(' '); = pega o resto da lista e juta-os separando por ' '.
 lista = "string".split(' ') = transforma string em lista separando por ' '.
 ------------------------------------------------------------------------------------------------------------------
+Objetos
+
+defineProperty = Definir valor e outros
+getOwnPropertyDescriptor(objeto, 'nome') = configs do defineProperty
+
+------------------------------------------------------------------------------------------------------------------
 Formulario
 
 form.onsubmit = function (evento){} = caso click no submit

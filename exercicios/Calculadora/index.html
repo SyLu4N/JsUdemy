@@ -4,55 +4,36 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="style.css">
   <title>Calculadora</title>
 </head>
 <body>
-  <main>
-    <div>
-      <section class="container">
-        <h1 class="title">Calculadora</h1>
-        <img src="assets/img/Design sem nome.png" alt="Ilustração de uma Calculadora">
-      
-      </section>
-        <table class="calculadora">
-          <tr>
-            <td colspan="4"><input type="text" class="display"></td>
-          </tr>
-          <tr>
-            <td><button class="btn btnClear">C</button></td>
-            <td><button class="btn btnNum btnOperador">(</button></td>
-            <td><button class="btn btnNum btnOperador">)</button></td>
-            <td><button class="btn btnNum btnOperador">/</button></td>
-          </tr>
-          <tr>
-            <td><button class="btn btnNum number">7</button></td>
-            <td><button class="btn btnNum number">8</button></td>
-            <td><button class="btn btnNum number">9</button></td>
-            <td><button class="btn btnNum btnOperador">*</button></td>
-          </tr>
-          <tr>
-            <td><button class="btn btnNum number">4</button></td>
-            <td><button class="btn btnNum number">5</button></td>
-            <td><button class="btn btnNum number">6</button></td>
-            <td><button class="btn btnNum btnOperador">+</button></td>
-          </tr>
-          <tr>
-            <td><button class="btn btnNum number">1</button></td>
-            <td><button class="btn btnNum number">2</button></td>
-            <td><button class="btn btnNum number">3</button></td>
-            <td><button class="btn btnNum btnOperador">-</button></td>
-          </tr>
-          <tr>
-            <td><button class="btn btnNum btnOperador aument">.</button></td>
-            <td><button class="btn btnNum number">0</button></td>
-            <td><button class="btn btnDel">&laquo;</button></td>
-            <td><button class="btn btnEq">=</button></td>
-          </tr>
-        </table>
-    </div>
-  </main>
-
-  <script src="assets/index.js"></script>
+  <h1 class="title">Calculadora</h1>
+  <div class="container">
+    <input type="text" class="display">
+    <section class="calculadoraGrid">
+      <button class="btnClear btn">C</button>
+      <button class="btnNumber btn">(</button>
+      <button class="btnNumber btn">)</button>
+      <button class="btnNumber btn">/</button>
+      <button class="btnNumber btn btnGray">7</button>
+      <button class="btnNumber btn btnGray">8</button>
+      <button class="btnNumber btn btnGray">9</button>
+      <button class="btnNumber btn">*</button>
+      <button class="btnNumber btn btnGray">4</button>
+      <button class="btnNumber btn btnGray">5</button>
+      <button class="btnNumber btn btnGray">6</button>
+      <button class="btnNumber btn">+</button>
+      <button class="btnNumber btn btnGray">1</button>
+      <button class="btnNumber btn btnGray">2</button>
+      <button class="btnNumber btn btnGray">3</button>
+      <button class="btnNumber btn">-</button>
+      <button class="btnNumber btn">.</button>
+      <button class="btnNumber btn btnGray">0</button>
+      <button class="btnDel btn">&laquo;</button>
+      <button class="btnEq btn">=</button>
+    </section>
+  </div>
+  <script src="index.js"></script>
 </body>
 </html>
