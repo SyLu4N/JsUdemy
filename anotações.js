@@ -75,6 +75,12 @@ lista = "string".split(' ') = transforma string em lista separando por ' '.
 lista.splice(indice, deleta, add);
 lista.concat(lista2); = adiciona o array de lista2 a lista
 ------------------------------------------------------------------------------------------------------------------
+Objetos
+
+defineProperty = Definir valor e outros
+getOwnPropertyDescriptor(objeto, 'nome') = configs do defineProperty
+
+------------------------------------------------------------------------------------------------------------------
 Formulario
 
 form.onsubmit = function (evento){} = caso click no submit
