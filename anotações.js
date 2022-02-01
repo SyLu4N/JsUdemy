@@ -36,6 +36,7 @@ palavra.slice(2, 6) = lavr
 palavra.split(' ') = divide a frase por espaços
 palavra.toUpperCase() = TUDO MAISCULO
 palavra.toLowerCase() = Tudo minusculo
+palavra.endsWith('a') = termina com a ? true ou false;
 palavra.charAt(1) = Pega a segunda letra
 palavra.toString() = Converte pra string 
 toString(2 = binário)
@@ -52,6 +53,7 @@ numero += Number(num1 + num2.toFixed(2)); = Corrige a impressisão
 numero = Math.floor(num1) = arredondar num1 para baixo
 numero = Math.ceil(num1) = arredondar num1 para cima
 numero = Math.round(num1) = arredondar num1 para o mais próximo
+Number.MAX_VALUE = deleta até o infinito
 Math.max() = pega o maior número
 Math.min() = pega o menor número
 const numero = Math.round(Math.random() * (10 /* numero maximo*/ - 0 /*número minimo */) + 0 /*número minimo */);
@@ -70,6 +72,8 @@ let lista2 = [...lista] = copiar a lista de fato.
 [primeiro, segundo ...resto] = '...resto' = variavel resto recebe o resto do array
 resto = lista.join(' '); = pega o resto da lista e juta-os separando por ' '.
 lista = "string".split(' ') = transforma string em lista separando por ' '.
+lista.splice(indice, deleta, add);
+lista.concat(lista2); = adiciona o array de lista2 a lista
 ------------------------------------------------------------------------------------------------------------------
 Formulario
 

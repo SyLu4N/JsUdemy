@@ -17,3 +17,11 @@ function max(x, y) {
 
 const max2 = (x, y) => x > y ? x : y;
 console.log(max2(1000, 200))
+
+
+
+
+
+
+const paisagem = (altura, largura) => largura > altura;
+console.log(paisagem(5000, 1000));
