@@ -74,11 +74,12 @@ resto = lista.join(' '); = pega o resto da lista e juta-os separando por ' '.
 lista = "string".split(' ') = transforma string em lista separando por ' '.
 lista.splice(indice, deleta, add);
 lista.concat(lista2); = adiciona o array de lista2 a lista
+lista.length = tamanho do array
 ------------------------------------------------------------------------------------------------------------------
 Objetos
 
 defineProperty = Definir valor e outros
-getOwnPropertyDescriptor(objeto, 'nome') = configs do defineProperty
+getOwnPropertyDescriptor(objeto, 'nome', {}) = configs do defineProperty
 
 ------------------------------------------------------------------------------------------------------------------
 Formulario
@@ -107,3 +108,5 @@ finally = sempre executa, dando erro ou não
 keypress = quando apertada
 keyup = quando a tecla for soltada
 keydowm = enquanto estiver apertada
+------------------------------------------------------------------------------------------------------------------
+replace(/\D+/g, '') = substitui tudo que não for números por ''

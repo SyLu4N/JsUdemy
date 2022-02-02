@@ -1,16 +1,13 @@
-function criaPessoas(nome, sobrenome, peso, altura) {
-  return {
-    nome,
-    sobrenome,
-    peso,
-    altura,
-    get imc() { //getter
-      const indice = this.peso / (this.altura ** 2);
-      return indice.toFixed(2);
-    }
-  }
+const pessoas = [
+  {id: 3, nome: 'Luiz'},
+  {id: 2, nome: 'Maria'},
+  {id: 1, nome: 'Luan'}
+];
 
+const novasPessoas = {};
+
+for(const {id, nome} of pessoas){
+  novasPessoas[id] = {id, nome};
 }
 
-const pessoa1 = criaPessoas('Luan', 'Simões', 63 ,1.70);
-console.log(pessoa1.imc);
+console.log(novasPessoas);
