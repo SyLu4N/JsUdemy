@@ -75,6 +75,7 @@ lista = "string".split(' ') = transforma string em lista separando por ' '.
 lista.splice(indice, deleta, add);
 lista.concat(lista2); = adiciona o array de lista2 a lista
 lista.length = tamanho do array
+lista.split(''); = transforma em lista
 ------------------------------------------------------------------------------------------------------------------
 Objetos
 
