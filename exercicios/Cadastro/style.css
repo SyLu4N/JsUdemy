@@ -35,8 +35,22 @@ abbr{
 .btn{
   display: block;
   width: 100%;
-  margin-top:5px;
+  margin-top:10px;
   height: 30px;
+  outline: none;
+  border: 1px solid rgb(0, 102, 102);
+  color: white;
+  background-color: teal;
+  letter-spacing: 0.1em;
+  transition-duration: 300ms;
+}
+
+.btn:hover{
+  border: 1px solid rgb(0, 102, 102);
+  background-color: white;
+  color: teal;
+  cursor: pointer;
+  letter-spacing: 0.3em;
 }
 
 .title{
@@ -53,4 +67,6 @@ abbr{
 
 ul{
   margin-bottom: 20px;
+  padding: 0;
+  margin-left: 20px;
 }
