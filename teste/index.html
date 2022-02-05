@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>cadastro</title>
+</head>
+<body>
+  <section class="container">
+    <form action="#" class="form">
+      <h1 class="title">Cadastro</h1>
+      <ul>
+        <li>Nenhum campo pode estar vazio</li>
+        <li>Usuário só poderá conter letras e/ou números</li>
+        <li>Usuário deverá ter entre 3 e 12 caracteres</li>
+        <li>Senha precisa ter entre 6 e 12 caracteres</li>
+      </ul>
+      <legend>Nome: <abbr title="Obrigatório"><span>*</span></abbr></legend>
+      <input type="text" class="input nome">
+      <legend>Sobrenome: <abbr title="Obrigatório"><span>*</span></abbr></legend>
+      <input type="text" class="input Sobrenome">
+      <legend>CPF: <abbr title="Obrigatório"><span>*</span></abbr></legend>
+      <input type="text" class="input cpf">
+      <legend>Usuario: <abbr title="Obrigatório"><span>*</span></abbr></legend>
+      <input type="text" class="input usuario">
+      <legend>Senha: <abbr title="Obrigatório"><span>*</span></abbr></legend>
+      <input type="text" class="input senha">
+      <legend>Repita a senha: <abbr title="Obrigatório"><span>*</span></abbr></legend>
+      <input type="text" class="input senha2">
+      <input type="submit" class="btn">
+    </form>
+  </section>
+
+  <script src="ValidaCPF.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
