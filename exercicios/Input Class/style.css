@@ -41,9 +41,10 @@ form{
 .input{
   width: 100%;
   height: 40px;
-  margin: 12px 0;
+  margin: 0;
   font-size: 1.4em;
   font-weight: bold;
+  padding-left: 10px;
 }
 
 ul{
@@ -58,6 +59,7 @@ ul{
 .btn{
   margin-top: 15px;
   height: 40px;
+  width: 100%;
 }
 
 abbr{
@@ -68,4 +70,15 @@ abbr{
   display: inline;
   color: red;
   cursor: help;
+}
+
+.errorText{
+  color: red;
+  font-size: 12px;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+label{
+  margin-top: 10px;
 }
