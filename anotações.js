@@ -114,3 +114,9 @@ replace(/\D+/g, '') = substitui tudo que não for números por ''
 frase.match(/^[A-Za-z0-9]+$/g) = permite apenas letras e numeros
 frase.insertAdjacentElement('afterend', p) = adiciona um paragrafo no fim do elemento frase
 frase.previousElementSibling.innerText = pega o innerTexr do irmão mais velho (anterior)
+frase.setAttribute('title', 'click aqui') = adiciona um title a frase
+
+
+
+
+
