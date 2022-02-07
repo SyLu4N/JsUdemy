@@ -9,7 +9,7 @@
 
 body{
   display: flex;
-  background-image: url(image.jpg);
+  background-image: url(../img/image.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
