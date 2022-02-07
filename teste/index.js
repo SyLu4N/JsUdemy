@@ -1,14 +1,19 @@
 function Login() {
   this.login();
   this.enter();
+  this.closeCadastro();
+  this.input = document.querySelector('.input');
 }
 
 Login.prototype.enter = function () {
   document.addEventListener('keypress', e => {
     const el = e.keyCode;
-    if(document.querySelector('.input').focus){
-      console.log('aqu')
-      if(el === 13) this.login();
+    const login = document.querySelector('.login');
+    const senha = document.querySelector('.senha');
+
+    if(el === 13){ 
+      this.input.focus();
+      this.validaLogin();
     }
   });
 }
@@ -37,7 +42,16 @@ Login.prototype.newError = function (msg) {
 }
 
 Login.prototype.cadastro = function () {
-  console.log('cadastro')
+  this.form = document.querySelector('.cadastroForm');
+  this.form.setAttribute('class', 'displayBlock');
+  const c1 = new Cadastro();
+}
+
+Login.prototype.closeCadastro = function () {
+  document.addEventListener('click', e => {
+    const el = e.target;
+    if(el.classList.contains('close')) this.form.setAttribute('class', 'cadastroForm');
+  });
 }
 
 const l1 = new Login();

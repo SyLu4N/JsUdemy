@@ -1,0 +1,118 @@
+.displayBlock{
+  display: flex;
+  top: 0%;
+  bottom: 0%;
+  left: 0%;
+  width: 100vw;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: left;
+  background-color: rgba(0, 0, 0, 0.562);
+  font-size: 20px;
+}
+
+.cadastroForm{
+  display: none;
+  width: 300px;
+  border: 1px solid white;
+  transition-duration: 200ms;
+}
+
+abbr{
+  text-decoration: none;
+  color: red;
+  cursor: help;
+}
+
+.inputForm{
+  margin-bottom: 5px;
+  width: 100%;
+  height: 25px;
+  padding-left: 10px;
+  border-radius: 7px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  font-style: italic;
+}
+
+.inputForm:focus{
+  border: 1.2px solid #021538;
+}
+
+.btnForm{
+  width: 100%;
+  height: 25px;
+  outline: none;
+  border: 1px solid rgb(0, 102, 102);
+  color: white;
+  background-color: teal;
+  letter-spacing: 0.1em;
+  transition-duration: 300ms;
+  font-family: 15px;
+  border-radius: 5px;
+  margin-left:54%;
+  margin-right:50%;
+}
+
+.btnForm:hover{
+  border: 1px solid rgb(0, 102, 102);
+  background-color: white;
+  color: teal;
+  cursor: pointer;
+  letter-spacing: 0.1em;
+}
+
+.errorForm{
+  color: red;
+  font-size: 12px;
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
+.cadastroSection{
+  position: relative;
+  width: 470px;
+  background-color: #163B78;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px#163B78;
+}
+
+.close{
+  top: 0%;
+  right: 2%;
+  position: absolute;
+  display: inline-block;
+  padding: 2px;
+  color: #cfcfcf;
+  cursor: pointer;
+  font-size: 1.2em;
+  transition-duration: 500ms;
+}
+
+.close:hover{
+  color: white;
+  transform: rotate(90deg);
+}
+
+.close::after{
+  content: '×';
+}
+
+.displayNone{
+  display: none;
+}
+
+.form{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.cpf{
+  grid-column-start: 1;
+  grid-column-end: 3  ;
+}

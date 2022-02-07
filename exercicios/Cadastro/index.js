@@ -11,6 +11,7 @@ Cadastro.prototype.recebeForm = function () {
     if(camposValidos && senhasValidas){
       alert('Cadastro Realizado com Sucesso!');
       this.form.submit();
+      this.form.refreshPage();
     }
   });
 }
