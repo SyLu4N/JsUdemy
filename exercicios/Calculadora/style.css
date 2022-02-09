@@ -1,4 +1,11 @@
 @charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+@font-face {
+  font-family: calcu ;
+  src: url(Calculator.ttf);
+}
+
+
 *{
   padding: 0;
   margin: 0;
@@ -7,31 +14,28 @@
 
 body{
   display: flex;
-  border: 1px solid black;
   height: 100vh;
   align-items: center;
   justify-content: center;
-  background-color: steelblue;
   flex-direction: column;
-  background-image: url(backgroundMod.png);
-  background-size: auto;
-  background-repeat: no-repeat;
-}
+  background-color: #efefef;
+  }
 
 .title{
+  color: white;
   font-size: 3em;
   margin-bottom: 10px;
-  font-variant: small-caps;
-  color: white;
-  text-shadow: 1px 1px 3px black;
+  text-align: center;
+  font-weight: 100;
+  text-shadow: 1px 1px black;
 }
 
 .container{
-  background-color: white;
-  padding: 10px;
-  border-radius: 10px;
+  background-color: rgb(13, 106, 134);
+  padding: 30px;
+  border-radius: 5px;
   width: 400px;
-  box-shadow: 1px 1px 10px 0px black;
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.685);
 }
 
 .display{
@@ -39,8 +43,12 @@ body{
   text-align: right;
   padding-right:3px;
   margin-bottom: 10px;
-  font-size: 25px;
+  font-size: 45px;
   width: 100%;
+  border-radius: 3px;
+  border: 1px solid  black;
+  color: green;
+  font-family: calcu;
 }
 
 .calculadoraGrid{
@@ -54,28 +62,25 @@ body{
   width: 100%;
   outline: none;
   border: none;
-  background-color: #71a3ff;
+  background-color: #3131318a;
   font-size: 1.3em;
+  border-radius: 700px;
+  font-family: sans-serif;
+  color: white;
+  cursor: pointer;
 }
 
 .btn:hover{
-  background-color: #658dd8;
+  background-color: #63aff7;
 }
-
-.btnGray{
-  background-image: linear-gradient(to top, #8fb6fd, rgb(219, 245, 253));
-}
-
-.btnGray:hover{
-  background-image: linear-gradient(to top, #678dd4, rgb(219, 245, 253));}
 
 .btnEq{
-  background-color: #0062ff;
-  color: white;
+  background-color: rgb(219, 219, 124);
+  color: black;
 }
 
 .btnEq:hover{
-  background-color: #0050d1;
+  background-color: rgb(209, 209, 83);
 }
 
 .btnClear{
