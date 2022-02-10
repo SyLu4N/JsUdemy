@@ -1,59 +1,67 @@
-const timer = document.querySelector('.timer');
-const iniciar = document.querySelector('.iniciar');
-const pausar = document.querySelector('.pause');
-const zerar = document.querySelector('.restart')
 
-let contador = 0;
-let timerGo;
-let clickInicia = 0;
 
-function criaSegundos(segundos) {
-  const data = new Date(segundos * 1000);
-  return data.toLocaleTimeString('pt-br', {
-    hour12: false,
-    timeZone: 'UTC' //zera o hórario
+function Cronometro() {
+  this.start();
+  this.contador = 0;
+  this.clickStart = 0;
+  this.timerGo;
+  this.timer = document.querySelector('.timer');
+  this.iniciar = document.querySelector('.start');
+}  
+
+Cronometro.prototype.start = function () {
+  document.addEventListener('click', e =>{
+    const el = e.target
+    if(el.classList.contains('start')) this.startCronometro();
+    if(el.classList.contains('pause')) this.pauseCronometro();
+    if(el.classList.contains('restart')) this.restartCronometro();
   });
 }
 
-function iniciaCorreto() {
-  if(clickInicia === 0){
-    timer.innerText = '00:00:01';
-    contador++;
-    iniciaTimer();
-  }
-
-  if(clickInicia !== 0) iniciaTimer();
+Cronometro.prototype.startCronometro = function () {
+  clearInterval(this.timerGo);
+  this.iniciaCorreto();
+  this.clickStart++;
+  this.iniciar.innerHTML = 'Iniciar';
+  this.timer.classList.remove('red');
 }
 
-function iniciaTimer() {
-   timerGo = setInterval(function () {
-    contador++;
-    timer.innerHTML = criaSegundos(contador);
+Cronometro.prototype.iniciaCorreto = function () {
+  if(this.clickStart === 0){
+    this.timer.innerText = '00:00:01';
+    this.contador++;
+    this.iniciaTimer();
+  }else this.iniciaTimer();
+}
+
+Cronometro.prototype.iniciaTimer = function () {
+  this.timerGo = setInterval(() => {
+    this.contador++;
+    this.timer.innerText = this.criaSegundos(this.contador * 1000);
   }, 1000);
 }
 
-document.addEventListener('click', function (e) {
-  const click = e.target;
-  if(click.classList.contains('iniciar')){
-    clearInterval(timerGo);
-    iniciaCorreto();
-    clickInicia++;
-    iniciar.innerHTML = 'Iniciar'
-    timer.classList.remove('red')
-  }
+Cronometro.prototype.criaSegundos = function (segundos) {
+  const data = new Date(segundos);
+  return data.toLocaleTimeString('pt-br', {
+    hour12: false,
+    timeZone: 'UTC' 
+  });
+}
 
-  if(click.classList.contains('pause')){
-    clearInterval(timerGo);
-    timer.classList.add('red');
-    iniciar.innerHTML = 'Retornar'
-  }
+Cronometro.prototype.pauseCronometro = function () {
+  clearInterval(this.timerGo);
+  this.timer.classList.add('red');
+  this.iniciar.innerHTML = 'Retornar'
+}
 
-  if(click.classList.contains('restart')){
-    clearInterval(timerGo);
-    timer.innerHTML = '00:00:00'
-    contador = 0;
-    timer.classList.remove('red')
-    iniciar.innerHTML = 'Iniciar'
-    clickInicia = 0;
-  }
-})
+Cronometro.prototype.restartCronometro = function () {
+  clearInterval(this.timerGo);
+  this.timer.innerHTML = '00:00:00'
+  this.contador = 0;
+  this.timer.classList.remove('red')
+  this.iniciar.innerHTML = 'Iniciar'
+  this.clickStart = 0;
+}
+
+const tempo = new Cronometro();

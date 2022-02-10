@@ -1,8 +1,9 @@
 @charset "UTF-8";
-@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Comforter&display=swap');
-
+@font-face {
+  font-family: 'timer';
+  src: url(img/DS-DIGI.TTF);
+}
 
 *{
   margin: 0px;
@@ -41,7 +42,7 @@ body{
   align-items: center;
   justify-content: center;
   padding: 10px;
-  padding-right: 47px;
+  padding-right: 30px;
   padding-left: 30px;
   background-color: #f8f8f8;
   border-radius: 5px;
@@ -56,18 +57,17 @@ body{
 
 .timer{
   font-size: 5em;
-  font-family: 'Comforter', cursive;  
-  font-style: italic;
+  font-family: 'timer', cursive;  
   min-width: 680px;
   text-shadow:1px 1px white;
-
+  text-align: center;
 }
 
 @media(max-width: 700px){
   .timer{
     font-size: 4em;
     min-width: 0;
-    width: 530px;
+    width: 100%;
   }
   .content{
     min-width: none;
@@ -93,16 +93,16 @@ body{
   color: white;
 }
 
-.iniciar{
+.start{
   border: 1px solid green;
   color: green;
 }
 
-.iniciar:hover{
+.start:hover{
   background-color: green;
 }
 
-.iniciar::after{
+.start::after{
   content: '⏵︎';
 }
 
