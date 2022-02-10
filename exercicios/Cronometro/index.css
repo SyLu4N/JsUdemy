@@ -1,12 +1,8 @@
-@font-face {
-  font-family: 'digital';
-  src: url(img/DS-DIGI.TTF);
-}
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comforter&display=swap');
 
-@font-face {
-  font-family: 'titulo';
-  src: url(img/IndieFlower-Regular.ttf);
-}
 
 *{
   margin: 0px;
@@ -16,18 +12,23 @@
 }
 
 body{
-  background-image: url(img/pngtree-atmospheric-european-timepiece-background-material-image_125237.jpg);
   font-size: 2em;
-  background-size: cover;
+  background-color: rgb(252, 252, 252);  
 }
 
-.text{
-  color: black;
+.title{
   display: inline-block ;
-  margin-left:20px;
-  margin-top:20px;
-  font-size: 3em;
+  font-size: 1em;
   text-shadow:1px 1px white;
+  font-family: 'Kaushan Script', cursive;
+  padding-left: 17px;
+}
+
+.hr{
+  position: absolute;
+  border-bottom: 1px solid black;
+  width: 200px;
+  
 }
 
 .container{
@@ -40,6 +41,13 @@ body{
   align-items: center;
   justify-content: center;
   padding: 10px;
+  padding-right: 47px;
+  padding-left: 30px;
+  background-color: #f8f8f8;
+  border-radius: 5px;
+  max-width: 700px;
+  margin: auto;
+  box-shadow: 0px 0px 2px black;
 }
 
 .content > div{
@@ -47,29 +55,69 @@ body{
 }
 
 .timer{
-  background-image: linear-gradient(to top, rgb(255, 255, 255) , rgba(255, 255, 255, 0) 70%);
-  background-position-y: -20px;
-  min-width: 100%;
   font-size: 5em;
-  font-family: 'digital';
+  font-family: 'Comforter', cursive;  
   font-style: italic;
-  padding-right:30px;
-  position: relative;
-  width: 565px;
+  min-width: 680px;
+  text-shadow:1px 1px white;
+
 }
 
-.buttons{
-  text-align: left;
-  position: absolute;
-  bottom: -5%;
+@media(max-width: 700px){
+  .timer{
+    font-size: 4em;
+    min-width: 0;
+    width: 530px;
+  }
+  .content{
+    min-width: none;
+  }
 }
 
-hr{
-  width: 650px;
-  color: black;
-  border:1px solid black;
+.red{
+  color: rgb(192, 0, 0);
+}
+
+.btn{
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px;
+  font-family: 'Architects Daughter', cursive;
+  background-color: white;
+  margin-left:10px;
+}
+
+.btn:hover{
+  border: none;
+  background-color: black;
+  color: white;
+}
+
+.iniciar{
+  border: 1px solid green;
+  color: green;
+}
+
+.iniciar:hover{
+  background-color: green;
+}
+
+.iniciar::after{
+  content: '⏵︎';
 }
 
 .pause{
-  color: red;
+  border: 1px solid rgb(192, 0, 0);
+}
+
+.pause::after{
+  content: '⏸︎';
+}
+
+.pause:hover{
+  background-color: rgb(192, 0, 0);
+}
+
+.restart::after{
+  content: ' ⏺︎';
 }
