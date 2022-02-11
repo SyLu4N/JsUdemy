@@ -1,4 +1,56 @@
-const form = document.querySelector('.form');
+function IMC() {
+  this.form = document.querySelector('.form');
+  this.peso = this.form.querySelector('.peso');
+  this.altura = this.form.querySelector('.altura');
+  this.bottom = this.form.querySelectorAll('.bottom');
+  this.recebeForm();
+  this.formataForm();
+}
+
+IMC.prototype.recebeForm = function () {
+  this.form.addEventListener('submit', e => {
+    e.preventDefault();
+    this.setResultado();
+  });
+}
+
+IMC.prototype.formataForm = function () {
+  const peso = this.peso;
+  const altura = this.altura;
+
+  peso.addEventListener('input', e =>{
+    const el = e.target.value;
+    if(el.length === 2) peso.value += '.';
+  })
+
+  altura.addEventListener('input', e =>{
+    const el = e.target.value;
+    if(el.length === 1) {
+      altura.value += '.';
+      altura.addEventListener('keypress', e =>{
+        const el = e.keyCode;
+        if(el === 8) altura.value.slice(0, -1);
+      })
+    }
+  })
+}
+
+IMC.prototype.setResultado = function () {
+  if(!this.peso.value || this.peso.value === 'undefined') this.newError(this.peso, '* Peso inválido');
+  if(!this.altura.value || this.altura.value === 'undefined')this.newError(this.altura, '* Altura inválido');
+
+}
+
+IMC.prototype.newError = function (campo, msg) {
+  const p = document.createElement('p');
+  p.innerText = msg;
+  p.classList.add('errorForm');
+  campo.insertAdjacentElement('afterend', p);
+  for(campo of this.bottom) campo.classList.remove('bottom');
+}
+
+const pImc = new IMC();
+/* const form = document.querySelector('.form');
   
 form.addEventListener('submit', function (e) {
   e.preventDefault();
@@ -70,3 +122,5 @@ function setResultado(msg) {
     p.innerHTML += `Algo deu errado! confira os dados colocados.`;
   }
 }
+ */
+

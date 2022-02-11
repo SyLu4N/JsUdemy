@@ -40,11 +40,9 @@ body{
 form input, form label{
   width: 100%;
   display: block;
-  
 }
 
 form input{
-  margin-bottom: 10px;
   height: 50px;
   font-size: 20px;
   padding-left: 10px;
@@ -52,6 +50,10 @@ form input{
 
 form input:focus{
   border: 1px solid var(--corpadrao);
+}
+
+.bottom{
+  margin-bottom: 10px;
 }
 
 .btn{
@@ -110,4 +112,10 @@ form input:focus{
 .resultado{
   display: flex;
   align-items: center;
+}
+
+.errorForm{
+  margin-top: 0;
+  color: red;
+  font-size: 15px;
 }
