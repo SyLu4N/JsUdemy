@@ -35,6 +35,7 @@ body{
 .container{
   padding: 10px 20px;
   margin-top: 70px;
+  cursor: default;
 }
 
 .content{
@@ -48,7 +49,8 @@ body{
   border-radius: 5px;
   max-width: 700px;
   margin: auto;
-  box-shadow: 0px 0px 2px black;
+  border: 1px solid black;
+  box-shadow: 0px 0px 3px black;
 }
 
 .content > div{
@@ -85,6 +87,12 @@ body{
   font-family: 'Architects Daughter', cursive;
   background-color: white;
   margin-left:10px;
+  height: 35px;
+  margin-bottom: 0;
+  width: 80px;
+  cursor: pointer;
+  display: inline-block;
+  transition-duration: 300ms;
 }
 
 .btn:hover{
@@ -121,3 +129,38 @@ body{
 .restart::after{
   content: ' ⏺︎';
 }
+
+.btnNone{
+  display: none;
+}
+
+.pause{
+  animation-duration: 1.5s;
+  animation-name: rolarPause;
+}
+
+.restart{
+  animation-duration: 1.5s;
+  animation-name: rolarRestart;
+}
+
+@keyframes rolarPause{
+  from {
+    margin-left: 30%;
+  }
+
+  to {
+    margin-left: 10px;
+  }
+}
+
+@keyframes rolarRestart{
+  from {
+    margin-left: 20%;
+  }
+
+  to {
+    margin-left: 10px;
+  }
+}
+

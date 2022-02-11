@@ -1,12 +1,17 @@
-
-
 function Cronometro() {
   this.start();
   this.contador = 0;
   this.clickStart = 0;
   this.timerGo;
+  this.pause = document.querySelector('.pause');
+  this.restart = document.querySelector('.restart');
   this.timer = document.querySelector('.timer');
   this.iniciar = document.querySelector('.start');
+  this.btnNone = document.querySelectorAll('.btnNone')
+  this.iniciar.setAttribute('title', '"Enter" p/ começar')
+  this.pause.setAttribute('title', '"P" p/ pausar');
+  this.restart.setAttribute('title', '"R" p/ resetar');
+  this.keypress();
 }  
 
 Cronometro.prototype.start = function () {
@@ -24,6 +29,7 @@ Cronometro.prototype.startCronometro = function () {
   this.clickStart++;
   this.iniciar.innerHTML = 'Iniciar';
   this.timer.classList.remove('red');
+  for(buttons of this.btnNone) buttons.classList.remove('btnNone');
 }
 
 Cronometro.prototype.iniciaCorreto = function () {
@@ -62,6 +68,16 @@ Cronometro.prototype.restartCronometro = function () {
   this.timer.classList.remove('red')
   this.iniciar.innerHTML = 'Iniciar'
   this.clickStart = 0;
+}
+
+Cronometro.prototype.keypress = function () {
+  document.addEventListener('keypress', e =>{
+    const el = e.keyCode;
+    console.log(el);
+    if(el === 112) this.pauseCronometro();
+    if(el === 13) this.startCronometro();
+    if(el === 114) this.restartCronometro();
+  });
 }
 
 const tempo = new Cronometro();
