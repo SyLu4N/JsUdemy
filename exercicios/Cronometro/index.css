@@ -55,6 +55,7 @@ body{
 
 .content > div{
   position: relative;
+  height: 250px;
 }
 
 .timer{
