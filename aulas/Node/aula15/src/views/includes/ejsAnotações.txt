@@ -1,0 +1,8 @@
+<% Controle de fluxo (código js (if, for ...))
+<%= Imprime Strings geral
+<%- Imprime e excuta o código
+<%# Comentário
+
+para incluir arquivos =
+
+<%- include('CAMINHO/ARQUIVO')%>

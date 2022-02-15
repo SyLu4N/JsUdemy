@@ -1,10 +1,13 @@
 {
   "dependencies": {
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^4.6.0",
     "core-js": "^3.3.2",
     "css-loader": "^3.2.0",
     "dotenv": "^16.0.0",
     "ejs": "^3.1.6",
     "express": "^4.17.2",
+    "express-session": "^1.17.2",
     "mongoose": "^6.2.1",
     "node": "^17.4.0",
     "path": "^0.12.7",
@@ -15,7 +18,7 @@
     "start": "nodemon server.js --ignore public --ignore frontend",
     "dev": "webpack -w"
   },
-  "name": "aula14",
+  "name": "aula15",
   "version": "1.0.0",
   "main": "server.js",
   "devDependencies": {

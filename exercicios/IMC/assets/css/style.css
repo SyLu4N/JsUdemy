@@ -62,6 +62,8 @@ form input:focus{
   height: 60px;
   background-color: white;
   cursor: pointer;
+  margin-bottom: 20px;
+  border-radius: 5px;
 }
 
 .btn:hover{
