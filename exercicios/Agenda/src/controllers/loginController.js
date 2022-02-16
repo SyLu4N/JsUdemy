@@ -13,14 +13,14 @@ exports.register = async (req, res) =>{
     if(login.errors.length > 0){
       req.flash('errors', login.errors);
       req.session.save(function () {
-        return res.redirect('back');
+        return res.redirect('/login/index');
       });
       return;
     }
   
     req.flash('success', 'Registro criado com sucesso!');
     req.session.save(function () {
-      return res.redirect('back');
+      return res.redirect('/');
     });
   }catch(e) {
     console.log(e);
@@ -36,7 +36,7 @@ exports.login = async (req, res) =>{
     if(login.errors.length > 0){
       req.flash('errors', login.errors);
       req.session.save(function () {
-        return res.redirect('back');
+        return res.redirect('/');
       });
       return;
     }
@@ -54,5 +54,5 @@ exports.login = async (req, res) =>{
 
 exports.logout = function (req, res) {
   req.session.destroy();
-  res.redirect('/login');
+  res.redirect('/login/index');
 }

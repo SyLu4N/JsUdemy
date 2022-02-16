@@ -10,14 +10,14 @@ const { loginRequired } = require('./src/middlewares/middleware');
 route.get('/', homeController.index);
 
 //Rotas de login
-route.get('/login', loginController.index);
+route.get('/login/index', loginController.index);
 route.post('/login/register', loginController.register);
 route.post('/login/login', loginController.login);
 route.get('/login/logout', loginController.logout);
 
 //Rotas de contato
-route.get('/novoContato', loginRequired, contatoController.index);
-route.post('/novoContato/register', loginRequired, contatoController.register);
+route.get('/contato/index', loginRequired, contatoController.index);
+route.post('/contato/register', loginRequired, contatoController.register);
 
 
 module.exports = route;
