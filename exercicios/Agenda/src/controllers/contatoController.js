@@ -6,9 +6,16 @@ exports.index = (req, res) => {
   });
 };
 
-exports.register = async(req, res) => {
+exports.registerContato = async(req, res) => {
   try {
+    console.log(req.body);
     const contato = new Contato(req.body);
+    for(const input in req.body){
+      console.log(input);
+      if(req.body[input] === 'undefined'){
+        req.body = '';
+      }
+    }
     await contato.register();
 
     if(contato.errors.length > 0) {

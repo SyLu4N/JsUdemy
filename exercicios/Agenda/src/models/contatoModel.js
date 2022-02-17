@@ -15,7 +15,7 @@ function Contato(body) {
   this.body = body;
   this.errors = [];
   this.contato = null;
-}
+};
 
 Contato.prototype.register = async function() {
   this.valida();
