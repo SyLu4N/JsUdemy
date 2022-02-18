@@ -7,14 +7,13 @@ exports.index = (req, res) =>{
 
 exports.register = async (req, res) =>{
   try{
-    console.log('esse é o body', req.body);
     const login = new Login(req.body);
     await login.register();
   
     if(login.errors.length > 0){
       req.flash('errors', login.errors);
       req.session.save(function () {
-        return res.redirect('/login/index');
+        return res.redirect('/login');
       });
       return;
     }
@@ -31,7 +30,7 @@ exports.register = async (req, res) =>{
 
 exports.login = async (req, res) =>{
   try{
-    console.log('esse é o body', req.body);
+    console.log('loginController', req.body);
     const login = new Login(req.body);
     await login.login();
   
@@ -56,5 +55,5 @@ exports.login = async (req, res) =>{
 
 exports.logout = function (req, res) {
   req.session.destroy();
-  res.redirect('/login/index');
+  res.redirect('/login');
 }

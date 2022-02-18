@@ -18,12 +18,12 @@ function Contato(body) {
 };
 
 Contato.prototype.register = async function() {
-  this.valida();
+  this.validar();
   if(this.errors.length > 0) return;
   this.contato = await ContatoModel.create(this.body);
 };
 
-Contato.prototype.valida = function() {
+Contato.prototype.validar = function() {
   this.cleanUp();
 
   // Validação
