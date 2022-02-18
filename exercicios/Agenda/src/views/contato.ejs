@@ -11,25 +11,34 @@
       
       <%- include('includes/messages') %>
 
+
+        <% if(contato.id) {%>
+          <form action="/contato/edit/<%= contato._id%>" method="post">
+        <%} else {%>
+        <%}%>
         <form action="/contato/register" method="post">
           <input type="hidden" name="_csrf" value="<%= csrfToken %>">
           <div class="form-group">
             <label for="nome">Nome</label>
-            <input type="text" class="form-control" name="nome" placeholder="Nome">
+            <input value="<%= contato.nome%>" type="text" class="form-control" name="nome" placeholder="Nome">
           </div>
           <div class="form-group">
             <label for="sobrenome">Sobrenome</label>
-            <input type="text" class="form-control" name="sobrenome" placeholder="Sobrenome">
+            <input value="<%= contato.sobrenome%>" type="text" class="form-control" name="sobrenome" placeholder="Sobrenome">
           </div>
           <div class="form-group">
             <label for="">Seu e-mail</label>
-            <input type="email" class="form-control" name="email" placeholder="E-mail">
+            <input value="<%= contato.email%>" type="email" class="form-control" name="email" placeholder="E-mail">
           </div>
           <div class="form-group">
             <label for="">Telefone</label>
-            <input type="tel" class="form-control" name="telefone" placeholder="Telefone">
+            <input value="<%= contato.telefone%>" type="tel" class="form-control" name="telefone" placeholder="Telefone">
           </div>
-          <button type="submit" class="btn btn-primary my-2">Adicionar</button>
+          <% if(contato.id) {%>
+            <button type="submit" class="btn btn-primary my-2">Editar</button>
+          <%} else {%>
+            <button type="submit" class="btn btn-primary my-2">Adicionar</button>
+          <%}%>
         </form>
     <div class="col-lg-2"></div>
   </div>
