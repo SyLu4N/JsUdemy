@@ -3,12 +3,6 @@
   margin: auto;
 }
 
-@media (max-width: 767px){
-  .containerDiv{
-    
-  }
-}
-
 .pContainer{
   margin-top: 30px;
   text-align: right;
@@ -16,12 +10,14 @@
 
 .novoContato{
   text-align: right;
-  padding: 10px;
+  padding: 6px 12px;
   background-color: #0d6efd;
   color: white;
   text-decoration: none;
   border-radius: 5px;
   transition-duration: 200ms;
+  width: 67px;
+  height: 40px;
 }
 
 .novoContato:hover{
