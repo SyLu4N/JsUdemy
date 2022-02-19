@@ -1,7 +1,7 @@
 <%- include('includes/head'); %>
 <%- include('includes/nav'); %>
 
-<div class="container">
+<div class="containerDiv">
   <div class="row">
     <div class="col-lg-2"></div>
 
@@ -14,17 +14,18 @@
       <div class="responsive-table">
         <table class="table my-3">
 
-          <% contatos.forEach(contato => {%>
+          <% contatos.forEach(contato => { %>
             <tr>
               <td><%= contato.nome %></td>
               <td><%= contato.sobrenome %></td>
               <td><%= contato.email %></td>
               <td><%= contato.telefone %></td>
-              <td><a href="/contato/<%= contato._id%>"></a></td>
-              <td><a class="text-danger" href="/contato/delete/<%= contato._id%"></a>></td>
+              <td><a href="/contato/<%= contato._id %>">Editar</a></td>
+              <td><a class="text-danger" href="/contato/delete/<%= contato._id %>">Excluir</a></td>
             </tr>
-          <%}%>
+            <%});%>
         </table>
+        <p class="pContainer"><a class="novoContato" href="/contato">Adicionar</a></p>
       </div>
 
     <div class="col-lg-2"></div>

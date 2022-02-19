@@ -32,7 +32,6 @@ Contato.prototype.register = async function() {
 
 Contato.prototype.validar = function() {
   this.cleanUp();
-
   // Validação
   // O e-mail precisa ser válido
   if(this.body.email && !validator.isEmail(this.body.email)) this.errors.push('E-mail inválido!');
@@ -62,7 +61,6 @@ Contato.prototype.cleanUp = function() {
   };
 };
 
-
 //Métodos estáticos
 Contato.buscaPorId = async function (id) {
   if(typeof id !== 'string') return;
@@ -72,8 +70,14 @@ Contato.buscaPorId = async function (id) {
 
 Contato.buscaContatos = async function () {
   const contatos = await ContatoModel.find() //caso queria filtar find({email: luaan.carlos@hotmail.com})
-  .sort({criadoEm: -1}); //.sorte = campo a ser ordenado > 1 crescente > -1 decrescente
+    .sort({criadoEm: -1}); //.sorte = campo a ser ordenado > 1 crescente > -1 decrescente
   return contatos;
+}
+
+Contato.delete = async function (id) {
+  if(typeof id !== 'string') return;
+  const contato = await ContatoModel.findByIdAndDelete(id); //Deletar da base de dados
+  return contato;
 }
 
 module.exports = Contato;
