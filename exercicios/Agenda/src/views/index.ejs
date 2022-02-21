@@ -1,41 +1,6 @@
 <%- include('includes/head'); %>
-  <%- include('includes/nav'); %>
+<%- include('includes/nav'); %>
 
-<<<<<<< HEAD
-    <div class="container">
-      <div class="content">
-
-        <h1 class="title">Agenda</h1>
-        <p class="lead">Seus contatos estão abaixo</p>
-
-        <%- include('includes/messages') %>
-
-          <% if(contatos.length> 0){ %>
-            <table class="table my-3">
-
-              <% contatos.forEach(contato=> { %>
-                <tr>
-                  <td><%= contato.nome %></td>
-                  <td><%= contato.sobrenome %></td>
-                  <td><%= contato.email %></td>
-                  <td><%= contato.telefone %></td>
-                  <%if(user){%>
-                  <td><a href="/contato/<%= contato._id %>">Editar</a></td>
-                  <td><a class="text-danger" href="/contato/delete/<%= contato._id %>">Excluir</a></td>
-                <%}%>
-                </tr>
-                <%});%>
-            </table>
-            <%if(user){%>
-              <p class="pContainer"><a class="novoContato" href="/contato">Adicionar</a></p>
-              <%}%>
-                <%} else{ %>
-                  <p class="text-center lead"></p>
-                  <%} %>
-      </div>
-    </div>
-    <%- include('includes/footer'); %>
-=======
 <div class="container">
   <div class="content">
     <h1 class="title">Agenda</h1>
@@ -56,10 +21,10 @@
                 <td class="lapis"><a href="/contato/<%= contato._id %>"><abbr class="lp" title="Editar">✐</abbr></a></td>
                 <td class="del"><a class="text-danger" href="/contato/delete/<%= contato._id %>"><abbr class="del dt" title="Deletar">×</abbr></a></td>
               </tr>
+              <%});%>
             </table>
 
             <p class="pContainer"><a class="novoContato" href="/contato">Adicionar</a></p>
-            <%});%>
       <%}else {%>
         <p class="mt2">Ainda não temos contatos salvos.</p>
         <img src="http://localhost:3000/assets/img/ilustracaoLista.svg" alt="Ilustração de uma lista">
@@ -75,4 +40,3 @@
 
 
 <%- include('includes/footer'); %>
->>>>>>> 19fe8f502774548cdde4b643d243e0510dd5382c

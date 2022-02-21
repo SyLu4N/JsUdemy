@@ -13,12 +13,12 @@
 
         <li class="navLogin">
           <div class="mr aNav name" href=""><%= user.email%></div>
-          <div class="nav navL">
+            <div class="nav navL">
+              <div class="arrow">▲</div>
+              <a class="user" href="/login/<%=user.id%>">Perfil</a>
+              <a class="user" href="/login/logout">Sair</a>
+            </div>
         </li>
-            <a href="">Perfil</a>
-            <a href="/login/logout">Sair</a>
-          </div>
-
       <%}else{%>
 
         <li>
