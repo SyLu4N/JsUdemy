@@ -1,42 +1,36 @@
 <%- include('includes/head'); %>
-<%- include('includes/nav'); %>
+  <%- include('includes/nav'); %>
 
-<div class="containerDiv">
-  <div class="row">
-    <div class="col-lg-2"></div>
+    <div class="container">
+      <div class="content">
 
-    <div class="col-lg-8 my-3">
-      <h1 class="text-center">Agenda</h1>
-      <p class="text-center lead">Seus contatos estão abaixo</p>
-      
-      <%- include('includes/messages') %>
+        <h1 class="title">Agenda</h1>
+        <p class="lead">Seus contatos estão abaixo</p>
 
-      <% if(contatos.length > 0){ %>
-        <div class="responsive-table">
-          <table class="table my-3">
+        <%- include('includes/messages') %>
 
-            <% contatos.forEach(contato => { %>
-              <tr>
-                <td><%= contato.nome %></td>
-                <td><%= contato.sobrenome %></td>
-                <td><%= contato.email %></td>
-                <td><%= contato.telefone %></td>
-                <!-- <%if(user){%>
+          <% if(contatos.length> 0){ %>
+            <table class="table my-3">
+
+              <% contatos.forEach(contato=> { %>
+                <tr>
+                  <td><%= contato.nome %></td>
+                  <td><%= contato.sobrenome %></td>
+                  <td><%= contato.email %></td>
+                  <td><%= contato.telefone %></td>
+                  <%if(user){%>
                   <td><a href="/contato/<%= contato._id %>">Editar</a></td>
                   <td><a class="text-danger" href="/contato/delete/<%= contato._id %>">Excluir</a></td>
-                <%}%> -->
-              </tr>
-              <%});%>
-          </table>
-          <%if(user){%>
-            <p class="pContainer"><a class="novoContato" href="/contato">Adicionar</a></p>
-          <%}%>
-        </div>
-      <%} else{ %>
-        <p class="text-center lead"></p>
-      <%} %>
-
-    <div class="col-lg-2"></div>
-  </div>
-</div>
-<%- include('includes/footer'); %>
+                <%}%>
+                </tr>
+                <%});%>
+            </table>
+            <%if(user){%>
+              <p class="pContainer"><a class="novoContato" href="/contato">Adicionar</a></p>
+              <%}%>
+                <%} else{ %>
+                  <p class="text-center lead"></p>
+                  <%} %>
+      </div>
+    </div>
+    <%- include('includes/footer'); %>
