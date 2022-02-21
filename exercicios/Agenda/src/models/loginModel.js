@@ -54,7 +54,6 @@ Login.prototype.valida = function() {
   this.cleanUp();
   if(!validator.isEmail(this.body.email)) this.errors.push('E-mail inválido!');
   if(this.body.password.length < 3 || this.body.password.length > 50) this.errors.push('Senha precisa ter entre 3 a 50 caracteres');
-  console.log(this.body.password, this.body.passwordCopy);
   if(this.body.password !== this.body.passwordCopy) this.errors.push('As senhas devem ser iguais');
 }
 

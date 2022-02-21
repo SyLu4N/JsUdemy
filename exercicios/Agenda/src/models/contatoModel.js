@@ -41,7 +41,6 @@ Contato.prototype.validar = function() {
 };
 
 Contato.prototype.validatorTelefone = function () {
-  console.log(this.body.telefone.length === 9);
   const telefone = this.body.telefone.length === 9 || this.body.telefone.length === 11;
   return telefone;
 }

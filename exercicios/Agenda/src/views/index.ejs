@@ -1,38 +1,42 @@
 <%- include('includes/head'); %>
 <%- include('includes/nav'); %>
 
-<div class="containerDiv">
-  <div class="row">
-    <div class="col-lg-2"></div>
+<div class="container">
+  <div class="content">
+    <h1 class="title">Agenda</h1>
+    
+    <%- include('includes/messages') %>
+    
+    <%if(user){%>
+      <p class="lead">Seus contatos estão abaixo:</p>
+      <%if(contatos.length > 0){%>
 
-    <div class="col-lg-8 my-3">
-      <h1 class="text-center">Agenda</h1>
-      <p class="text-center lead">Seus contatos estão abaixo</p>
-      
-      <%- include('includes/messages') %>
+          <table class="">
+            <% contatos.forEach(contato => { %>
+              <tr>
+                <td><%= contato.nome %></td>
+                <td><%= contato.sobrenome %></td>
+                <td><%= contato.email %></td>
+                <td><%= contato.telefone %></td>
+                <td class="lapis"><a href="/contato/<%= contato._id %>"><abbr class="lp" title="Editar">✐</abbr></a></td>
+                <td class="del"><a class="text-danger" href="/contato/delete/<%= contato._id %>"><abbr class="del dt" title="Deletar">×</abbr></a></td>
+              </tr>
+            </table>
 
-      <div class="responsive-table">
-        <table class="table my-3">
-
-          <% contatos.forEach(contato => { %>
-            <tr>
-              <td><%= contato.nome %></td>
-              <td><%= contato.sobrenome %></td>
-              <td><%= contato.email %></td>
-              <td><%= contato.telefone %></td>
-              <%if(user){%>
-                <td><a href="/contato/<%= contato._id %>">Editar</a></td>
-                <td><a class="text-danger" href="/contato/delete/<%= contato._id %>">Excluir</a></td>
-              <%}%>
-            </tr>
+            <p class="pContainer"><a class="novoContato" href="/contato">Adicionar</a></p>
             <%});%>
-        </table>
-        <%if(user){%>
-          <p class="pContainer"><a class="novoContato" href="/contato">Adicionar</a></p>
-        <%}%>
-      </div>
-
-    <div class="col-lg-2"></div>
+      <%}else {%>
+        <p class="mt2">Ainda não temos contatos salvos.</p>
+        <img src="http://localhost:3000/assets/img/ilustracaoLista.svg" alt="Ilustração de uma lista">
+        <p class="pContainer"><a class="novoContato maxW" href="/contato">Criar primeiro contato</a></p>
+      <%}%>
+    <%}else {%>
+      <p class="text-center lead">Você precisa estar logado para ver e/ou criar contatos</p>
+      <img src="http://localhost:3000/assets/img/ilustracaoLista.svg" alt="Ilustração de uma lista">
+      <p class="pContainer"><a class="novoContato maxW" href="/contato">Logar agora</a></p>
+    <%}%>
   </div>
 </div>
+
+
 <%- include('includes/footer'); %>

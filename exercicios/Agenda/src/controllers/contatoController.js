@@ -9,10 +9,8 @@ exports.index = (req, res) => {
 
 exports.registerContato = async(req, res) => {
   try {
-    console.log('contatoController',req.body);
     const contato = new Contato(req.body);
     for(const input in req.body){
-      console.log(input);
       if(req.body[input] === 'undefined'){
         req.body = '';
       }
@@ -37,11 +35,8 @@ exports.registerContato = async(req, res) => {
 
 exports.editIndex = async function (req, res) {
   if(!req.params.id) return res.render('404');
-
   const contato = await Contato.buscaPorId(req.params.id);
-  
   if(!contato) return res.render('404');
-
   res.render('contato', { contato });
 };
 
@@ -58,7 +53,7 @@ exports.edit = async function(req, res){
     }
   
     req.flash('success', 'Contado editado.');
-    req.session.save(() => res.redirect(`/contato/${contato.contato._id}`));
+    req.session.save(() => res.redirect(`/`));
  
   } catch (e){
     console.log(e)
