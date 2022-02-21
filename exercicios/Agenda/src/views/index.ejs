@@ -11,26 +11,30 @@
       
       <%- include('includes/messages') %>
 
-      <div class="responsive-table">
-        <table class="table my-3">
+      <% if(contatos.length > 0){ %>
+        <div class="responsive-table">
+          <table class="table my-3">
 
-          <% contatos.forEach(contato => { %>
-            <tr>
-              <td><%= contato.nome %></td>
-              <td><%= contato.sobrenome %></td>
-              <td><%= contato.email %></td>
-              <td><%= contato.telefone %></td>
-              <%if(user){%>
-                <td><a href="/contato/<%= contato._id %>">Editar</a></td>
-                <td><a class="text-danger" href="/contato/delete/<%= contato._id %>">Excluir</a></td>
-              <%}%>
-            </tr>
-            <%});%>
-        </table>
-        <%if(user){%>
-          <p class="pContainer"><a class="novoContato" href="/contato">Adicionar</a></p>
-        <%}%>
-      </div>
+            <% contatos.forEach(contato => { %>
+              <tr>
+                <td><%= contato.nome %></td>
+                <td><%= contato.sobrenome %></td>
+                <td><%= contato.email %></td>
+                <td><%= contato.telefone %></td>
+                <!-- <%if(user){%>
+                  <td><a href="/contato/<%= contato._id %>">Editar</a></td>
+                  <td><a class="text-danger" href="/contato/delete/<%= contato._id %>">Excluir</a></td>
+                <%}%> -->
+              </tr>
+              <%});%>
+          </table>
+          <%if(user){%>
+            <p class="pContainer"><a class="novoContato" href="/contato">Adicionar</a></p>
+          <%}%>
+        </div>
+      <%} else{ %>
+        <p class="text-center lead"></p>
+      <%} %>
 
     <div class="col-lg-2"></div>
   </div>
