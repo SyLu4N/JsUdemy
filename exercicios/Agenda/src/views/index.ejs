@@ -8,8 +8,8 @@
     <%- include('includes/messages') %>
     
     <%if(user){%>
-      <p class="lead">Seus contatos estão abaixo:</p>
       <%if(contatos.length > 0){%>
+        <p class="lead">Seus contatos estão abaixo:</p>
 
           <table class="">
             <% contatos.forEach(contato => { %>

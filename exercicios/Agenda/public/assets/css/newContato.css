@@ -1,0 +1,89 @@
+:root{
+  --corpadrao:#2F2E41;
+  --corletter:#cfcfcf;
+  --corlead:#4b4a5f;
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.flex{
+  display: flex;
+  flex-direction: column;
+}
+
+.block{
+  display: block;
+  text-align: left;
+}
+
+.wM{
+  width: 100%;
+}
+
+.grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.label{
+margin: 0;
+}
+
+.input{
+  width: 300px;
+  padding-left: 5px;
+  font-size: 2em;
+  border: none;
+  border-bottom: 1px solid var(--corletter);
+  outline: none;
+}
+
+.labelFloat{
+  position: relative;
+  padding-top: 13px;
+}
+
+.labelFloat input{
+  border: 0;
+  border-bottom: 1px solid lightgrey;
+  outline: none;
+  font-size: 20px;
+  transition: all .3s ease-out;
+  -webkit-transition: all .3s ease-out;
+  -moz-transition: all .3s ease-out;
+  -webkit-appearance:none;
+  border-radius:0;
+}
+
+.labelFloat input:focus{
+  border-bottom: 1.5px solid var(--corpadrao);
+}
+
+.labelFloat input::placeholder{
+  color:transparent;
+}
+
+.labelFloat label{
+  pointer-events: none;
+  position: absolute;
+  font-size: 25px;
+  top: -10px;
+  left: 0;
+  margin-top: 13px;
+  transition: all 2s ease-out;
+  -webkit-transition: all 300ms ease-out;
+  -moz-transition: all 300ms ease-out;
+  color: var(--corpadrao);
+}
+
+.labelFloat input:focus + label,
+.labelFloat input:not(:placeholder-shown) + label{
+  font-size: 20px;
+  margin-top: 0;
+  color: var(--corlead);
+}

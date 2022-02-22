@@ -2,12 +2,10 @@
 <%- include('includes/nav'); %>
 
 <div class="container">
-  <div class="row">
-    <div class="col-lg-2"></div>
-
-    <div class="col-lg-8 my-3">
-      <h1 class="text-center">Contato</h1>
-      <p class="text-center lead">Crie ou/e Edite o seus contatos</p>
+  <div class="content">
+  
+      <h1 class="title">Contato</h1>
+      <p class="lead">Crie ou/e Edite o seus contatos</p>
       
       <%- include('includes/messages') %>
 
@@ -15,32 +13,44 @@
         <% if(contato.id) {%>
           <form action="/contato/edit/<%= contato._id%>" method="post">
         <%} else {%>
+        
+          <section>
+            <form action="/contato/register" method="post" class="grid">
+
+              <input type="hidden" name="_csrf" value="<%= csrfToken %>"> <!-- token -->
+
+              <div class="labelFloat">
+                <input value="<%= contato.nome%>" type="text" class="wM input" name="nome" placeholder=" ">
+                <label for="nome" class="label">Nome</label>
+              </div>
+
+              <div class="labelFloat">
+                <input value="<%= contato.sobrenome%>" type="text" class="wM" name="sobrenome" placeholder=" ">
+                <label for="sobrenome" class="label">Sobrenome</label>
+              </div>
+
+              <div class="labelFloat">
+                <input value="<%= contato.email%>" type="email" class="wM" name="email" placeholder=" ">
+                <label for="" class="label">Seu e-mail</label>
+              </div>
+
+              <div class="labelFloat">
+                <input value="<%= contato.telefone%>" type="tel" class="wM" name="telefone" placeholder=" ">
+                <label for="" class="label">Telefone</label>
+              </div>
+
+              <% if(contato.id) {%>
+                <button type="submit" class="">Editar</button>
+              <%} else {%>
+                <button type="submit" class="">Adicionar</button>
+              <%}%>
+
+            </form>
+          </section>
+
         <%}%>
-        <form action="/contato/register" method="post">
-          <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-          <div class="form-group">
-            <label for="nome">Nome</label>
-            <input value="<%= contato.nome%>" type="text" class="form-control" name="nome" placeholder="Nome">
-          </div>
-          <div class="form-group">
-            <label for="sobrenome">Sobrenome</label>
-            <input value="<%= contato.sobrenome%>" type="text" class="form-control" name="sobrenome" placeholder="Sobrenome">
-          </div>
-          <div class="form-group">
-            <label for="">Seu e-mail</label>
-            <input value="<%= contato.email%>" type="email" class="form-control" name="email" placeholder="E-mail">
-          </div>
-          <div class="form-group">
-            <label for="">Telefone</label>
-            <input value="<%= contato.telefone%>" type="tel" class="form-control" name="telefone" placeholder="Telefone">
-          </div>
-          <% if(contato.id) {%>
-            <button type="submit" class="btn btn-primary my-2">Editar</button>
-          <%} else {%>
-            <button type="submit" class="btn btn-primary my-2">Adicionar</button>
-          <%}%>
-        </form>
-    <div class="col-lg-2"></div>
+
   </div>
 </div>
+
 <%- include('includes/footer'); %>
