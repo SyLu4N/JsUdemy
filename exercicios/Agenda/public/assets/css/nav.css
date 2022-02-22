@@ -1,6 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+
 :root{
   --corpadrao:#2F2E41;
   --corletter:#cfcfcf;
+  --corBackground: #F8F9FB;
+  --fontLogo: 'Caveat', cursive;
 }
 
 *{
@@ -32,50 +36,39 @@
   justify-content: space-between;
   gap: 15px;
   background-color: var(--corpadrao);
-}
-
-.mr{
-  margin-right: 15px;
-}
-
-.ml{
-  margin-left: 15px;
+  align-items: center;
 }
 
 .h1{
-  font-size: 1.5em;
+  position: absolute;
+  top: 0.5%;
+  font-size: 4em;
   font-style: italic;
   color: white;
+  text-shadow: 1px 1px 5px black;
+  font-family: var(--fontLogo);
 }
 
 .navLogin{
   position: relative;
 }
 
-.navLogin > .navL{
-  display: none;
-}
-
-.navLogin:hover > .navL{
-  gap: 0;
-  display: flex;
-  flex-direction: column;
-}
-
-.navL:hover{
-  gap: 0;
-  display: flex;
-  flex-direction: column;
-}
-
 .navL{
   padding-top: 15px;
-  background-color: #cfcfcf;
-  display: flex;
+  background-color: var(--corBackground);
   position: absolute;
-  bottom: -400%;
+  bottom: -550%;
   right: 60%;
   border-radius: 15px;
+  border: 1px solid var(--corletter);
+}
+
+.navB{
+  display: block;
+}
+
+.navN{
+  display: none;
 }
 
 .user{
@@ -85,8 +78,58 @@
 }
 
 .arrow{
-  color: var(--corletter);
+  color: var(--corBackground);
   position: absolute;
-  top: -18%;
+  top: -15%;
   left: 20%;
+}
+
+.imgUser{
+  margin: 0;
+  width: 20px;
+  background-color: var(--corBackground);
+  padding: 3px;
+  border-radius: 30px;
+}
+
+.imgLogado{
+  margin: 0;
+  width: 30px;
+  background-color: var(--corBackground);
+  padding: 3px;
+  border-radius: 30px;
+  display: inline-block;
+}
+
+.imgUser:hover{
+  background-color: #efefef;
+}
+
+.navColuns{
+  display: flex;
+  align-items: center;
+}
+
+.userEmail{
+  padding-right: 10px;
+}
+  
+.mr1{
+  margin-right: 10px;
+}
+
+.mr2{
+  margin-right: 20px;
+}
+
+.ml1{
+  margin-left: 10px;
+}
+
+.mb1{
+  margin-bottom: 10px;
+}
+
+.mt1{
+  margin-top: 10px;
 }

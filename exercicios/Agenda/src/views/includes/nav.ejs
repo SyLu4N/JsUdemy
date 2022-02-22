@@ -1,7 +1,7 @@
 <nav>
   <ul class="nav fixed">
     <li>
-      <a class="ml h1" href="/">MyAgend</a>
+      <a class="ml1 h1" href="/">MyAgend</a>
     </li>
     
     <div class="nav">
@@ -12,17 +12,24 @@
       <% if(user) {%>
 
         <li class="navLogin">
-          <div class="mr aNav name" href=""><%= user.email%></div>
-            <div class="nav navL">
-              <div class="arrow">▲</div>
-              <a class="user" href="/login/<%=user.id%>">Perfil</a>
-              <a class="user" href="/login/logout">Sair</a>
+          <div class="mr2 aNav name">
+            <img class="imgUser" src="http://localhost:3000/assets/img/user.png" alt="simbolo de user">
+          </div>
+            <div class="nav navL navN">
+              <div class="navColuns">
+                <div><img class="imgLogado" src="http://localhost:3000/assets/img/user.png" alt="simbolo de user"></div>
+                <div class="userEmail"><%= user.email%></div>
+              </div>
+              <hr>
+              <p class="mb1 mt1"><a class="user" href="/login/<%= user.id%>">Meu perfil</a></p>
+              <p class="mb1"><a class="user" href="/">Minha Agenda</a></p>
+              <p class="mb1"><a class="user" href="/login/logout">Sair</a></p>
             </div>
         </li>
       <%}else{%>
 
         <li>
-          <a class="mr aNav" href="/login">Logar</a>
+          <a class="mr1 aNav" href="/login">Logar</a>
         </li>
 
       <%}%>

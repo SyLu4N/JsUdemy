@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 mongoose.connect(process.env.CONNECTIONSTRING,
   {
     useNewUrlParser: true,
-    useUnifiedTopology: true,
+    useUnifiedTopology: true
   })
   .then(() => {
     app.emit('pronto');
