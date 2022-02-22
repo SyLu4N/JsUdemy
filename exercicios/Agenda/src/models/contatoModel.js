@@ -41,8 +41,11 @@ Contato.prototype.validar = function() {
 };
 
 Contato.prototype.validatorTelefone = function () {
-  const telefone = this.body.telefone.length === 9 || this.body.telefone.length === 11;
-  return telefone;
+  const telefone = this.body.telefone;
+  let telefoneLimpo = telefone.replace(/\D+/g, '').split('').map(Number);
+  telefoneLimpo = telefoneLimpo.length === 9 || telefoneLimpo.length === 11
+  console.log(telefoneLimpo)
+  return telefoneLimpo;
 }
 
 Contato.prototype.cleanUp = function() {
@@ -56,7 +59,7 @@ Contato.prototype.cleanUp = function() {
     nome: this.body.nome,
     sobrenome: this.body.sobrenome,
     email: this.body.email,
-    telefone: this.body.telefone,
+    telefone: this.body.telefone
   };
 };
 

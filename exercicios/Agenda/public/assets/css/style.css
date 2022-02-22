@@ -2,6 +2,7 @@
   --corpadrao:#2F2E41;
   --corletter:#cfcfcf;
   --corlead:#4b4a5f;
+  --corbutton:#0d6efd;
 }
 
 .container{
@@ -34,7 +35,7 @@
 .novoContato{
   text-align: right;
   padding: 6px 12px;
-  background-color: #0d6efd;
+  background-color: var(--corbutton);
   color: white;
   text-decoration: none;
   border-radius: 5px;

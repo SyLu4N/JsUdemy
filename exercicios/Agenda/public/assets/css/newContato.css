@@ -2,6 +2,7 @@
   --corpadrao:#2F2E41;
   --corletter:#cfcfcf;
   --corlead:#4b4a5f;
+  --corbutton:#0d6efd;
 }
 
 *{
@@ -27,7 +28,7 @@
 .grid{
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 15px;
+  gap: 20px;
 }
 
 .label{
@@ -35,11 +36,9 @@ margin: 0;
 }
 
 .input{
-  width: 300px;
-  padding-left: 5px;
+  width: 500px;
   font-size: 2em;
   border: none;
-  border-bottom: 1px solid var(--corletter);
   outline: none;
 }
 
@@ -49,7 +48,6 @@ margin: 0;
 }
 
 .labelFloat input{
-  border: 0;
   border-bottom: 1px solid lightgrey;
   outline: none;
   font-size: 20px;
@@ -57,7 +55,6 @@ margin: 0;
   -webkit-transition: all .3s ease-out;
   -moz-transition: all .3s ease-out;
   -webkit-appearance:none;
-  border-radius:0;
 }
 
 .labelFloat input:focus{
@@ -87,3 +84,28 @@ margin: 0;
   margin-top: 0;
   color: var(--corlead);
 }
+
+.pl{
+  margin-left: 10px;
+}
+
+.submit{
+  cursor: pointer;
+  grid-column-start: 2;
+  text-align: center;
+  font-size: 16px;
+  height: 30px;
+  width: 90px;
+  margin-left: 73%;
+  background-color: var(--corbutton);
+  color: white;
+  border-radius: 5px;
+  transition-duration: 200ms;
+  outline: none;
+  border: none;
+}
+
+.submit:hover{
+  background-color: #0B5ED7;
+}
+
