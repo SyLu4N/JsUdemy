@@ -23,7 +23,7 @@ exports.registerContato = async(req, res) => {
       return;
     }
 
-    req.flash('success', 'Contato registrado com sucesso.');
+    req.flash('success', 'Contato registrado com sucesso!');
     req.session.save(() => res.redirect(`/`));
     return;
   } catch(e) {
@@ -52,7 +52,7 @@ exports.edit = async function(req, res){
       return;
     }
   
-    req.flash('success', 'Contado editado.');
+    req.flash('success', 'Contado editado com sucesso!');
     req.session.save(() => res.redirect(`/`));
  
   } catch (e){
@@ -67,7 +67,7 @@ exports.delete = async function (req, res) {
   const contato = await Contato.delete(req.params.id);
   if(!contato) return res.render('404');
 
-  req.flash('success', 'Contato deletado com sucesso.');
+  req.flash('success', 'Contato deletado com sucesso!');
   req.session.save(() => res.redirect(`back`));
   return;
 };

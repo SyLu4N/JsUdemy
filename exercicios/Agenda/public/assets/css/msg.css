@@ -1,0 +1,35 @@
+.alertError{
+  color: rgb(119, 0, 0);
+  background-color: rgba(252, 56, 56, 0.274);
+  font-family: sans-serif;
+  font-size: 16px;
+  padding: 15px 20px;
+  text-align: left;
+  font-style: italic;
+  border-radius: 7px;
+  display: inline-block;
+  margin: 10px 0;
+  width: 600px;
+}
+
+.alertSucess{
+  color: rgb(0, 163, 0);
+  background-color: rgba(87, 255, 87, 0.411);  
+  font-family: sans-serif;
+  padding: 16px;
+  text-align: center;
+  font-style: italic;
+  border-radius: 7px;
+  display: inline-block;
+  margin: 10px 0;
+  animation: sumir 5s;  
+}
+
+@keyframes sumir {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
