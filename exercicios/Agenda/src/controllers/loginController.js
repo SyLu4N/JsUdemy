@@ -1,6 +1,11 @@
 const Login = require('../models/loginModel');
 
-exports.index = (req, res) =>{
+exports.indexRegister = (req, res) =>{
+  if(req.session.user) return res.render('login-logado');
+  return res.render('register');
+};
+
+exports.indexLogin = (req, res) =>{
   if(req.session.user) return res.render('login-logado');
   return res.render('login');
 };
@@ -19,6 +24,7 @@ exports.register = async (req, res) =>{
     }
   
     req.flash('success', 'Registro criado com sucesso!');
+    req.session.user = login.user;
     req.session.save(function () {
       return res.redirect('/');
     });

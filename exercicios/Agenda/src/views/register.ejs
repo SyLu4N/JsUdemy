@@ -1,0 +1,50 @@
+<%- include('includes/head'); %>
+<%- include('includes/nav'); %>
+
+<div class="container">
+  <div class="content">
+
+    <h1 class="title">Criar sua conta agora</h1>
+    <p class="lead mb3">Para criar sua conta basta preencher os dados abaixo</p>
+
+    <%- include('includes/messages');%>
+
+    <form action="/login/register" method="post">
+      <div class="grid">
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+
+        <div class="labelFloat">
+          <input  type="text" class="wM input " name="nome" placeholder=" ">
+          <label for="nome" class="label">Seu nome</label>
+        </div>
+
+        <div class="labelFloat">
+          <input  type="text" class="wM input " name="log" placeholder=" ">
+          <label for="nome" class="label">Usuario</label>
+        </div>
+
+        <div class="labelFloat">
+          <input  type="password" class="wM input" name="password" placeholder=" ">
+          <label for="" class="label">Senha</label>
+        </div>
+        
+        <div class="labelFloat">
+          <input  type="email" class="wM input " name="email" placeholder=" ">
+          <label for="nome" class="label">Seu E-mail</label>
+        </div>
+
+        <div class="labelFloat">
+          <input  type="password" class="wM input " name="passwordCopy" placeholder=" ">
+          <label for="nome" class="label">Repita a senha</label>
+        </div>
+
+      </div>
+      <button type="submit" class="submit2">Criar Conta</button>
+    </form>
+
+    <a class="login" href="/login">Já tenho login</a>
+
+  </div>
+</div>
+
+<%- include('includes/footer'); %>

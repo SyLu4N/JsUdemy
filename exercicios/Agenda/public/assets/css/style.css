@@ -32,8 +32,8 @@
   margin-bottom: 20px;
 }
 
-.novoContato{
-  text-align: right;
+.pContato{
+  text-align: center;
   padding: 6px 12px;
   background-color: var(--corbutton);
   color: white;
@@ -42,9 +42,11 @@
   transition-duration: 200ms;
   width: 67px;
   height: 40px;
+  animation: borde 5s infinite alternate-reverse;
+  animation-delay: 5s;
 }
 
-.novoContato:hover{
+.pContato:hover{
   background-color: #0B5ED7;
   color: white;
 }
@@ -106,4 +108,5 @@ img{
   width: 450px;
   font-size: 2em;
   font-style: italic;
+  margin: auto;
 }

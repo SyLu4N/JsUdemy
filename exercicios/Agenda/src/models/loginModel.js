@@ -3,6 +3,8 @@ const validator = require('validator');
 const bcryptjs = require('bcryptjs');
 
 const LoginSchema = new mongoose.Schema({
+  nome: {type: String, required: true},
+  log: {type: String, required: true},
   email: {type: String, required: true},
   password: {type: String, required: true}
 });
@@ -16,11 +18,14 @@ function Login(body) {
 }
 
 Login.prototype.login = async function (){
-  this.valida();
-  if(this.errors.length > 0) return;
-  this.user = await LoginModel.findOne({email: this.body.email});
-  if(!this.user) {
-    this.errors.push('E-mail não existe!');
+  this.userEmail = await LoginModel.findOne({email: this.body.log});
+
+  this.userLog = await LoginModel.findOne({log: this.body.log});
+
+  this.user = this.userLog || this.userEmail;
+
+  if(!this.userEmail && !this.userLog) {
+    this.errors.push('E-mail ou Usuário não existe!');
     return;
   }
 
@@ -46,8 +51,10 @@ Login.prototype.register = async function() {
 }
 
 Login.prototype.userExists =  async function(){
-  this.user = await LoginModel.findOne({email: this.body.email});
-  if(this.user) this.errors.push('Email já cadastrado!');
+  this.userEmail = await LoginModel.findOne({email: this.body.email});
+  this.userLog = await LoginModel.findOne({log: this.body.log});
+  if(this.userEmail) this.errors.push('Email já cadastrado!');
+  if(this.userLog) this.errors.push('Usuário já cadastrado!');
 }
 
 Login.prototype.valida = function() {
@@ -65,6 +72,8 @@ Login.prototype.cleanUp = function (){
   }
 
   this.body = {
+    nome: this.body.nome,
+    log: this.body.log,
     email: this.body.email,
     password: this.body.password,
     passwordCopy: this.body.password

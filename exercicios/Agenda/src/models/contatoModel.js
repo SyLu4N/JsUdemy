@@ -38,14 +38,33 @@ Contato.prototype.validar = function() {
   if(!this.body.nome) this.errors.push('"Nome" é um campo obrigatório!');
   if(!this.body.email && !this.body.telefone) this.errors.push('Pelo menos um contato precisa ser enviado: "E-mail" ou "Telefone"!');
   if(this.body.telefone && !this.validatorTelefone()) this.errors.push('Telefone inválido !');
+  if(this.body.telefone && this.validatorTelefone()) this.formataTelefone();
 };
 
 Contato.prototype.validatorTelefone = function () {
-  const telefone = this.body.telefone;
-  let telefoneLimpo = telefone.replace(/\D+/g, '').split('').map(Number);
+  let telefoneLimpo = this.body.telefone;
+  if(telefoneLimpo.indexOf("(") !== -1 || telefoneLimpo.indexOf(")") !== -1 || telefoneLimpo.indexOf("-") !== -1){
+   telefoneLimpo = telefoneLimpo.replace(/\D+/g, '').split('').map(Number);
+  }
+
   telefoneLimpo = telefoneLimpo.length === 9 || telefoneLimpo.length === 11
-  console.log(telefoneLimpo)
   return telefoneLimpo;
+}
+
+Contato.prototype.formataTelefone = function () {
+  let telefone = this.body.telefone;
+  telefone = telefone.replace(/\D+/g, '');
+
+  if(telefone.length === 11){ 
+    telefone = telefone.replace(/^([\d]{0})([\d]{2})([\d]{5})([\d]{4})$/, "$1($2) $3-$4");  
+    this.body.telefone = telefone;
+
+  }
+
+  if(telefone.length === 9){ 
+    telefone = telefone.replace(/^([\d]{5})([\d]{4})$/, "$1-$2");  
+    this.body.telefone = telefone;
+  }
 }
 
 Contato.prototype.cleanUp = function() {
