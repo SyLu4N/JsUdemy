@@ -4,9 +4,23 @@
 <div class="container">
   <div class="content">
 
-    <div class="mt2">
-      <h1 class="text-center">Olá <%= user.email %></h1>
-      <p class="text-center lead">Você já está logado</p>
+    <div class="flexUser mt1">
+      <div>
+        <img class="imgPerfil" src="http://localhost:3000/assets/img/userPerfil.png" alt="">
+        <h1 class="title alingLeft"><%= user.nome %></h1>
+        <h1 class="lead alingLeft"><%= user.log %></h1>
+        <h1 class="lead alingLeft"><%= user.email %></h1>
+      </div>
+      <div class="test grid">
+        <p class="border"></p>
+        <p class="border"></p>
+        <p class="border"></p>
+        <p class="border"></p>
+        <p class="border"></p>
+        <p class="border"></p>
+        <p class="border"></p>
+        <p class="border"></p>
+      </div>
       <%- include('includes/messages');%> 
     </div>
   </div>

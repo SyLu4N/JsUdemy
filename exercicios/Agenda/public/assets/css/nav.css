@@ -112,6 +112,7 @@
 }
 
 .userEmail{
+  width: 150px;
   padding-right: 10px;
 }
   
@@ -145,4 +146,8 @@
 
 .mt2{
   margin-top: 20px;
+}
+
+.mt5{
+  margin-top: 50px;
 }

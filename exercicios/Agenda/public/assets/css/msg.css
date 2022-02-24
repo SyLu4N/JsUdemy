@@ -22,7 +22,7 @@
   border-radius: 7px;
   display: inline-block;
   margin: 10px 0;
-  animation: sumir 5s;  
+  animation: sumir 4s;  
 }
 
 @keyframes sumir {

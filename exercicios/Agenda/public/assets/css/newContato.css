@@ -36,7 +36,7 @@ margin: 0;
 }
 
 .input{
-  width: 500px;
+  width: 400px;
   font-size: 2em;
   border: none;
   outline: none;
@@ -109,3 +109,6 @@ margin: 0;
   background-color: #0B5ED7;
 }
 
+.img{
+  size: 900px;
+}

@@ -5,6 +5,12 @@
   --corbutton:#0d6efd;
 }
 
+/* body{
+  background-image: url('http://localhost:3000/assets/img/background.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+} */
+
 .container{
   display: flex;
   width: 100%;
@@ -109,4 +115,9 @@ img{
   font-size: 2em;
   font-style: italic;
   margin: auto;
+}
+
+.flexLogin{
+  display: flex;
+  flex-direction: row;
 }

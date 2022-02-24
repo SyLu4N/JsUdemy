@@ -4,30 +4,30 @@
 <div class="container">
   <div class="content">
 
-    <h1 class="title">Criar sua conta agora</h1>
-    <p class="lead mb3">Para criar sua conta basta preencher os dados abaixo</p>
 
     <%- include('includes/messages');%>
 
-    <form action="/login/login" method="post">
-      <div class="grid">
-        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-
-        <div class="labelFloat">
-          <input  type="text" class="wM input " name="log" placeholder=" ">
-          <label for="nome" class="label">E-mail ou Usuário</label>
-        </div>
-
-        <div class="labelFloat">
-          <input  type="password" class="wM input" name="password" placeholder=" ">
-          <label for="" class="label">Senha</label>
-        </div>
+    <h1 class="title">Login</h1>
+    <p class="lead mb3">Para logar na sua conta basta preencher os dados abaixo</p>
+    
+        <form action="/login/login" method="post">
+          <div class="grid">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+            <div class="labelFloat">
+              <input  type="text" class="wM input " name="log" placeholder=" ">
+              <label for="nome" class="label">E-mail ou Usuário</label>
+            </div>
+            <div class="labelFloat">
+              <input  type="password" class="wM input" name="password" placeholder=" ">
+              <label for="" class="label">Senha</label>
+            </div>
+            
+          </div>
+          <button type="submit" class="submit2">Logar</button>
+        </form>
         
-      </div>
-      <button type="submit" class="submit2">Logar Agora</button>
-    </form>
-
-    <a class="login" href="/register">Cria sua conta agora</a>
+        <img src="http://localhost:3000/assets/img/login.svg" alt="">
+    <p><a class="login" href="/register">Criar conta agora</a></p>
 
   </div>
 </div>
