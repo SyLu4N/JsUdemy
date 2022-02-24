@@ -9,31 +9,31 @@
 
     <%- include('includes/messages');%>
 
-    <form action="/login/register" method="post">
+    <form action="/login/register" method="post" class="formRegister">
       <div class="grid">
         <input type="hidden" name="_csrf" value="<%= csrfToken %>">
 
-        <div class="labelFloat">
+        <div class="labelFloat nome">
           <input  type="text" class="wM input " name="nome" placeholder=" ">
           <label for="nome" class="label">Seu nome</label>
         </div>
 
-        <div class="labelFloat">
+        <div class="labelFloat log">
           <input  type="text" class="wM input " name="log" placeholder=" ">
           <label for="nome" class="label">Usuario</label>
         </div>
 
-        <div class="labelFloat">
+        <div class="labelFloat passwordCopy">
           <input  type="password" class="wM input" name="password" placeholder=" ">
           <label for="" class="label">Senha</label>
         </div>
         
-        <div class="labelFloat">
+        <div class="labelFloat email">
           <input  type="email" class="wM input " name="email" placeholder=" ">
           <label for="nome" class="label">Seu E-mail</label>
         </div>
 
-        <div class="labelFloat">
+        <div class="labelFloat passwordCopy">
           <input  type="password" class="wM input " name="passwordCopy" placeholder=" ">
           <label for="nome" class="label">Repita a senha</label>
         </div>
@@ -43,6 +43,7 @@
     </form>
 
     <a class="login" href="/login">Já tenho login</a>
+    <script src="http://localhost:3000/assets/js/register.js"></script>
 
   </div>
 </div>

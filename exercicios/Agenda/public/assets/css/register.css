@@ -38,3 +38,10 @@
 .login:hover{
   text-decoration: underline;
 }
+
+.errorForm{
+  color: red;
+  text-align: left;
+  font-style: italic;
+  font-size: 12px;
+}

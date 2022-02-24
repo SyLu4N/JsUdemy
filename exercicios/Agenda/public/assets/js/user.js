@@ -9,6 +9,7 @@ User.prototype.userClick = function () {
     const el = e.target;
     
     if(el.classList.contains('imgUser') && this.contador < 1){
+      console.log('clickou')
       this.navL.removeAttribute('class', 'navN');
       this.navL.setAttribute('class', 'navB');
       this.navL.setAttribute('class', 'navL');
@@ -22,7 +23,7 @@ User.prototype.userClick = function () {
         this.contador = 0;
       }
 
-      if(!el.classList.contains('imgUser')){
+      if(!el.classList.contains('imgUser') && this.contador >= 1){
         this.contador = 0;
         this.navL.removeAttribute('class', 'navB');
         this.navL.setAttribute('class', 'navN');
