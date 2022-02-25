@@ -18,23 +18,23 @@
       
         <input type="hidden" name="_csrf" value="<%= csrfToken %>"> <!-- token -->
 
-        <div class="labelFloat">
-          <input value="<%= contato.nome%>" type="text" class="wM input " name="nome" placeholder=" ">
-          <label for="nome" class="label pl">Nome</label>
+        <div class="labelFloat nameLabel">
+          <input value="<%= contato.nome%>" type="text" class="wM input name" name="nome" placeholder=" ">
+          <label for="nome" class="label">Nome</label>
         </div>
 
-        <div class="labelFloat ml2">
+        <div class="labelFloat">
           <input value="<%= contato.sobrenome%>" type="text" class="wM input" name="sobrenome" placeholder=" ">
           <label for="sobrenome" class="label">Sobrenome</label>
         </div>
 
-        <div class="labelFloat">
-          <input value="<%= contato.email%>" type="email" class="wM input" name="email" placeholder=" ">
-          <label for="" class="label pl">Seu e-mail</label>
+        <div class="labelFloat emailLabel">
+          <input value="<%= contato.email%>" type="email" class="wM input email" name="email" placeholder=" ">
+          <label for="" class="label">Seu e-mail</label>
         </div>
 
-        <div class="labelFloat ml2">
-          <input value="<%= contato.telefone%>" type="tel" class="wM input" name="telefone" placeholder=" ">
+        <div class="labelFloat telefoneLabel">
+          <input value="<%= contato.telefone%>" type="tel" class="wM input telefone" name="telefone" placeholder=" ">
           <label for="" class="label">Telefone</label>
         </div>
 
@@ -48,4 +48,5 @@
   </div>
 </div>
 
+<script src="http://localhost:3000/assets/js/contato.js"></script>
 <%- include('includes/footer'); %>
