@@ -20,6 +20,7 @@
   height: 88vh;
   border-radius: 5px;
   box-shadow: 0px 0px 5px rgba(184, 184, 184, 0.623);
+  overflow: hidden;
 }
 
 .border{

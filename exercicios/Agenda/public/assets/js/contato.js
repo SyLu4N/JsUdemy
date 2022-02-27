@@ -1,6 +1,5 @@
 function Register (){
   this.form = document.querySelector('.grid');
-  this.okay = true;
 }
 
 Register.prototype.events = function () {
@@ -8,18 +7,66 @@ Register.prototype.events = function () {
   this.form.addEventListener('submit', e =>{
     e.preventDefault();
     this.validaInput(e);
-    });
+  });
 };
 
 Register.prototype.validaInput = function (e) {
-  const name = this.form.querySelector('name=[nome]');
-  if(!name){
-    this.newError(name ,'"Campo obrigatório!"');
+  this.okay = true;
+  
+  const nome = this.form.querySelector('.name');
+  const email = this.form.querySelector('.email');
+  const telefone = this.form.querySelector('.telefone');
+  
+  for(let error of this.form.querySelectorAll('.errorForm')) error.remove();
+
+  if(!nome.value){
+      this.newError(nome, '* Campo obrigatório!');
+    }
+  if(nome.value.length < 3 || nome.value.length > 50){
+    this.newError(nome,'"Nome" deve conter de 4 a 50 caracteres');
+    this.okay = false;
   }
+
+  if(!email.value && !telefone.value){
+    this.newError(email, 'Um dos campos devem ser enviados, "E-mail" ou "Telefone"');
+    this.newError(telefone, 'Um dos campos devem ser enviados, "E-mail" ou "Telefone"');
+    this.okay = false;
+  } 
+
+  if(email.value !== ''){
+    if(email.value.length < 4){
+    this.newError(email, '"E-mail" inválido!');
+    this.okay = false;
+    return;
+    }
+    if(email.value.indexOf('@') === -1){
+      this.newError(email, '"E-mail" inválido!');
+      this.okay = false;
+      return;
+    }
+    if(email.value.indexOf('.') === -1){
+      this.newError(email, '"E-mail" inválido!');
+      this.okay = false;
+      return;
+    }
+  }
+
+  if(telefone.value !== ''){
+    let telefoneLimpo = telefone.value;
+    if(telefoneLimpo.indexOf("(") !== -1 || telefoneLimpo.indexOf(")") !== -1 || telefoneLimpo.indexOf("-") !== -1){
+    telefoneLimpo = telefoneLimpo.replace(/\D+/g, '').split('').map(Number);
+    }
+    if(telefoneLimpo.length !== 9 && telefoneLimpo.length !== 11) {
+      console.log(telefoneLimpo.length);
+      this.newError(telefone, 'Telefone inválido!');
+      this.okay = false;
+    }
+  }
+
+  this.enviaInput();
 };
 
 Register.prototype.newError = function (campo, msg) {
-  this.okay = false;
   if(campo.classList.contains('name')){
     campo = this.form.querySelector('.nameLabel');
     const p = document.createElement('p');
@@ -43,12 +90,12 @@ Register.prototype.newError = function (campo, msg) {
     p.setAttribute('class', 'errorForm');
     campo.insertAdjacentElement('beforeend', p);
   }
-
 };
 
 Register.prototype.enviaInput = function () {
+  console.log(this.okay);
   if(this.okay) this.form.submit();
-}
+};
 
 const registro = new Register();
 registro.events();
