@@ -1,8 +1,8 @@
-function Register (){
+function Contato (){
   this.form = document.querySelector('.grid');
 }
 
-Register.prototype.events = function () {
+Contato.prototype.events = function () {
   if(!this.form) return;
   this.form.addEventListener('submit', e =>{
     e.preventDefault();
@@ -10,7 +10,7 @@ Register.prototype.events = function () {
   });
 };
 
-Register.prototype.validaInput = function (e) {
+Contato.prototype.validaInput = function (e) {
   this.okay = true;
   
   const nome = this.form.querySelector('.name');
@@ -66,7 +66,7 @@ Register.prototype.validaInput = function (e) {
   this.enviaInput();
 };
 
-Register.prototype.newError = function (campo, msg) {
+Contato.prototype.newError = function (campo, msg) {
   if(campo.classList.contains('name')){
     campo = this.form.querySelector('.nameLabel');
     const p = document.createElement('p');
@@ -92,10 +92,10 @@ Register.prototype.newError = function (campo, msg) {
   }
 };
 
-Register.prototype.enviaInput = function () {
+Contato.prototype.enviaInput = function () {
   console.log(this.okay);
   if(this.okay) this.form.submit();
 };
 
-const registro = new Register();
+const registro = new Contato();
 registro.events();

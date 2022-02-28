@@ -10,15 +10,15 @@
     <h1 class="title">Login</h1>
     <p class="lead mb3">Para logar na sua conta basta preencher os dados abaixo</p>
     
-        <form action="/login/login" method="post">
+        <form action="/login/login" method="post" class="form">
           <div class="grid">
             <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-            <div class="labelFloat">
-              <input  type="text" class="wM input " name="log" placeholder=" ">
+            <div class="labelFloat logLabel">
+              <input  type="text" class="wM input log" name="log" placeholder=" ">
               <label for="nome" class="label">E-mail ou Usuário</label>
             </div>
-            <div class="labelFloat">
-              <input  type="password" class="wM input" name="password" placeholder=" ">
+            <div class="labelFloat passwordLabel">
+              <input  type="password" class="wM input password" name="password" placeholder=" ">
               <label for="" class="label">Senha</label>
             </div>
             
@@ -31,5 +31,7 @@
 
   </div>
 </div>
+
+<script src="http://localhost:3000/assets/js/login.js"></script>
 
 <%- include('includes/footer'); %>

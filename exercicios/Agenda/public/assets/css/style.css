@@ -5,11 +5,9 @@
   --corbutton:#0d6efd;
 }
 
-/* body{
-  background-image: url('http://localhost:3000/assets/img/background.svg');
-  background-repeat: no-repeat;
-  background-size: cover;
-} */
+body{
+  overflow: hidden;
+}
 
 .container{
   display: flex;
