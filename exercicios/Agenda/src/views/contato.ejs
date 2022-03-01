@@ -4,16 +4,16 @@
 <div class="container">
   <div class="content">
 
-    <h1 class="title">Contato</h1>
-    <p class="lead">Crie ou/e Edite o seus contatos</p>
+    <h1 class="title mt3">Contato</h1>
+    <p class="lead mt1">Crie ou/e Edite o seus contatos</p>
     
     <%- include('includes/messages')%>
 
 
       <% if(contato._id) {%> 
-        <form action="/contato/edit/<%= contato._id%>" method="post" class="grid">
+        <form action="/contato/edit/<%= contato._id%>" method="post" class="grid mt5">
       <%} else {%>
-        <form action="/contato/register" method="post" class="grid">
+        <form action="/contato/register" method="post" class="grid mt5">
       <%}%>
       
         <input type="hidden" name="_csrf" value="<%= csrfToken %>"> <!-- token -->

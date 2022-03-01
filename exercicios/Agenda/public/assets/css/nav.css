@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hubballi&display=swap');
 
 :root{
   --corpadrao:#2F2E41;
@@ -13,16 +14,6 @@
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-}
-
-.logo{
-  animation: brilha 5s infinite ;
-}
-
-@keyframes brilha{
-  100%{
-    text-shadow: 2px 3px 5px black;
-  }
 }
 
 .fixed{
@@ -177,6 +168,10 @@
 
 .mt2{
   margin-top: 20px;
+}
+
+.mt3{
+  margin-top: 30px;
 }
 
 .mt5{

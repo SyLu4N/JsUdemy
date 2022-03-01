@@ -3,15 +3,15 @@
 
 <div class="container">
   <div class="content">
-    <h1 class="title">Agenda</h1>
+    <h1 class="title mt3">Agenda</h1>
     
     <%- include('includes/messages') %>
     
     <%if(user){%>
       <%if(contatos.length > 0){%>
-        <p class="lead">Seus contatos estão abaixo:</p>
+        <p class="lead mt1">Seus contatos estão abaixo:</p>
 
-          <table class="">
+          <table class="mt2">
             <% contatos.forEach(contato => { %>
               <tr>
                 <td><%= contato.nome %></td>
@@ -26,13 +26,13 @@
 
             <p class="pContainer"><a class="pContato" href="/contato">Adicionar</a></p>
       <%}else {%>
-        <p class="mt2">Ainda não temos contatos salvos.</p>
-        <img src="http://localhost:3000/assets/img/ilustracaoLista.svg" alt="Ilustração de uma lista">
+        <p class="mt1 lead">Ainda não temos contatos salvos.</p>
+        <img class="mt2" src="http://localhost:3000/assets/img/ilustracaoLista.svg" alt="Ilustração de uma lista">
         <p class="pContainer"><a class="pContato maxW" href="/contato">Criar primeiro contato</a></p>
       <%}%>
     <%}else {%>
-      <p class="text-center lead">Você precisa estar logado para ver e/ou criar contatos</p>
-      <img src="http://localhost:3000/assets/img/ilustracaoLista.svg" alt="Ilustração de uma lista">
+      <p class="mt1 lead">Você precisa estar logado para ver e/ou criar contatos</p>
+      <img class="mt2" src="http://localhost:3000/assets/img/ilustracaoLista.svg" alt="Ilustração de uma lista">
       <p class="pContainer"><a class="pContato maxW" href="/login">Entrar agora</a></p>
     <%}%>
   </div>

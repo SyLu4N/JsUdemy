@@ -4,13 +4,13 @@
 <div class="container">
   <div class="content">
 
-    <h1 class="title">Criar sua conta agora</h1>
-    <p class="lead mb3">Para criar sua conta basta preencher os dados abaixo</p>
+    <h1 class="title mt3">Criar sua conta agora</h1>
+    <p class="lead mt1">Para criar sua conta basta preencher os dados abaixo</p>
 
     <%- include('includes/messages');%>
 
     <form action="/login/register" method="post" class="formRegister">
-      <div class="grid">
+      <div class="grid mt3">
         <input type="hidden" name="_csrf" value="<%= csrfToken %>">
 
         <div class="labelFloat nameLabel">

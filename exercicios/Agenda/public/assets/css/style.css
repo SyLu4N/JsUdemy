@@ -5,6 +5,10 @@
   --corbutton:#0d6efd;
 }
 
+.container p, h1{
+  font-family: 'Hubballi', cursive;
+}
+
 .container{
   display: flex;
   width: 100%;
@@ -16,14 +20,14 @@
 }
 
 .title{
-  margin-top:15px;
   color: var(--corpadrao);
+  font-size: 3em;
 }
 
 .lead{
   color: var(--corlead);
   font-style: italic;
-  margin-bottom: 15px;
+  font-size: 1.5em;
 }
 
 .pContainer{
@@ -44,6 +48,7 @@
   height: 40px;
   animation: borde 5s infinite alternate-reverse;
   animation-delay: 5s;
+  font-family: 'Hubballi', cursive;
 }
 
 .pContato:hover{
@@ -95,8 +100,6 @@ td{
 }
 
 img{
-  margin: auto;
-  margin-top: 40px;
   max-width: 400px;
   border-radius: 5px;
 }
@@ -107,7 +110,6 @@ img{
   text-align: center;
   width: 450px;
   font-size: 2em;
-  font-style: italic;
   margin: auto;
 }
 

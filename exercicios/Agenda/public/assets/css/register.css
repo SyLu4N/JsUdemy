@@ -2,7 +2,7 @@
   cursor: pointer;
   grid-column-start: 2;
   text-align: center;
-  font-size: 16px;
+  font-size: 18px;
   height: 30px;
   width: 100px;
   margin-left: 88%;
@@ -15,6 +15,7 @@
   margin-top: 25px;
   animation: borde 5s infinite alternate-reverse;
   animation-delay: 5s;
+  font-family: 'Hubballi', cursive;
 }
 
 .submit2:hover{
@@ -31,8 +32,8 @@
   color: #0B5ED7;
   display: inline-block;
   margin-top: 10px;
-  font-size: 1.4em;
-  font-style: italic;
+  font-size: 2em;
+  font-family: 'Hubballi', cursive;
 }
 
 .login:hover{
