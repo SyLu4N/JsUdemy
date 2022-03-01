@@ -20,9 +20,9 @@ Contato.prototype.validaInput = function (e) {
   for(let error of this.form.querySelectorAll('.errorForm')) error.remove();
 
   if(!nome.value){
-      this.newError(nome, '* Campo obrigatório!');
-    }
-  if(nome.value.length < 3 || nome.value.length > 50){
+    this.newError(nome, '* Campo obrigatório!');
+    this.okay = false;
+  }else if(nome.value.length < 4 || nome.value.length > 50){
     this.newError(nome,'"Nome" deve conter de 4 a 50 caracteres');
     this.okay = false;
   }
@@ -37,17 +37,14 @@ Contato.prototype.validaInput = function (e) {
     if(email.value.length < 4){
     this.newError(email, '"E-mail" inválido!');
     this.okay = false;
-    return;
     }
     if(email.value.indexOf('@') === -1){
       this.newError(email, '"E-mail" inválido!');
       this.okay = false;
-      return;
     }
     if(email.value.indexOf('.') === -1){
       this.newError(email, '"E-mail" inválido!');
       this.okay = false;
-      return;
     }
   }
 
@@ -57,7 +54,6 @@ Contato.prototype.validaInput = function (e) {
     telefoneLimpo = telefoneLimpo.replace(/\D+/g, '').split('').map(Number);
     }
     if(telefoneLimpo.length !== 9 && telefoneLimpo.length !== 11) {
-      console.log(telefoneLimpo.length);
       this.newError(telefone, 'Telefone inválido!');
       this.okay = false;
     }
@@ -93,7 +89,6 @@ Contato.prototype.newError = function (campo, msg) {
 };
 
 Contato.prototype.enviaInput = function () {
-  console.log(this.okay);
   if(this.okay) this.form.submit();
 };
 

@@ -18,29 +18,22 @@ Login.prototype.validaInput = function (e) {
   
   for(let error of this.form.querySelectorAll('.errorForm')) error.remove();
 
+
   if(!log.value){
-    this.newError(log, '* Campo obrigatório!');
+    this.newError(log,'* Campo obrigatório!');
+    this.okay = false;
+  }else if(log.value.length < 3 || log.value.length > 15){
+    this.newError(log,'Usuário ou E-mail inválido!');
+    this.okay = false;
   }
 
-  if(log.value !== ''){
-    if(log.value.length < 3 || log.value.length > 15){
-      this.newError(log,'Usuário ou E-mail inválido!');
-      this.okay = false;
-    }
-  }
-
-  if(password.value !== ''){
-    if(!password.value){
-      this.newError(password, '* Campo obrigatório!');
-      this.okay = false;
-    } 
-  
-    if(password.value.length < 4){
+  if(!password.value){
+    this.newError(password, '* Campo obrigatório!');
+    this.okay = false;
+  }else if(password.value.length < 4){
     this.newError(password, 'Senha inválido!');
     this.okay = false;
-    }
   }
-
 
   this.enviaInput();
 };
@@ -65,7 +58,6 @@ Login.prototype.newError = function (campo, msg) {
 };
 
 Login.prototype.enviaInput = function () {
-  console.log(this.okay);
   if(this.okay) this.form.submit();
 };
 
