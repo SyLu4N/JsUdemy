@@ -15,6 +15,16 @@
   font-family: sans-serif;
 }
 
+.logo{
+  animation: brilha 5s infinite ;
+}
+
+@keyframes brilha{
+  100%{
+    text-shadow: 2px 3px 5px black;
+  }
+}
+
 .fixed{
   align-items: center;
   height: 60px;
@@ -45,7 +55,7 @@
   font-size: 4em;
   font-style: italic;
   color: white;
-  text-shadow: 1px 1px 5px black;
+  text-shadow: 0px 0px 5px black;
   font-family: var(--fontLogo);
 }
 
@@ -62,6 +72,27 @@
   right: 5%;
   border-radius: 15px;
   border: 1px solid var(--corletter);
+}
+
+#navR{
+  z-index: 1;
+  padding-top: 15px;
+  background-color: var(--corBackground);
+  position: absolute;
+  bottom: -280%;
+  right: 5%;
+  border-radius: 10px;
+  border: 1px solid var(--corletter);
+  width: 150px;
+}
+
+#navR > p > a{
+  transition-duration: 200ms;
+}
+
+
+#navR > p > a:hover{
+  color: #747474;
 }
 
 .navB{
@@ -103,7 +134,7 @@
 }
 
 .imgUser:hover{
-  background-color: #efefef;
+  background-color: #dfdfdf;
 }
 
 .navColuns{
@@ -150,4 +181,11 @@
 
 .mt5{
   margin-top: 50px;
+}
+
+.flexRow{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
 }

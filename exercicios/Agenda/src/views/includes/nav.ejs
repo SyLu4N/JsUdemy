@@ -1,15 +1,15 @@
 <nav>
   <ul class="nav fixed">
     <li>
-      <a class="ml1 h1" href="/">MyAgend</a>
+      <a class="ml1 h1 logo" href="/">MyAgend</a>
     </li>
     
     <div class="nav">
-      <li>
-        <a class="aNav" href="/contato">Novo contato</a>
-      </li>
-
+      
       <% if(user) {%>
+        <li>
+          <a class="aNav" href="/contato">Novo contato</a>
+        </li>
 
         <li class="navLogin">
           <div class="mr2 aNav name">
@@ -28,8 +28,14 @@
         </li>
       <%}else{%>
 
-        <li>
-          <a class="mr1 aNav" href="/login">Logar</a>
+        <li class="navLogin">
+          <div class="mr2 aNav name">
+            <img class="imgUser" src="http://localhost:3000/assets/img/user.png" alt="simbolo de user">
+          </div>
+            <div class="nav navL navN navR" id="navR">
+              <p class="mb1"><a class="user" href="/register">Criar conta</a></p>
+              <p class="mb1"><a class="user" href="/login">Entrar agora</a></p>
+            </div>
         </li>
 
       <%}%>

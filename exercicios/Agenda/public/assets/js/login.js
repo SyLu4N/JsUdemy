@@ -22,7 +22,7 @@ Login.prototype.validaInput = function (e) {
   if(!log.value){
     this.newError(log,'* Campo obrigatório!');
     this.okay = false;
-  }else if(log.value.length < 3 || log.value.length > 15){
+  }else if(log.value.length < 3){
     this.newError(log,'Usuário ou E-mail inválido!');
     this.okay = false;
   }
