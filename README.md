@@ -21,6 +21,8 @@
  ✓ Working Constructor Functions And Factory! <br>
  ✓ Working With Filter, Map, Reduce! <br>
  ✓ Working With ForEach! <br>
+
+ <h1>✅Projects</h1>
  
 <h3>Meu primeiro projeto é um relógio que usa "setInterval" para se atualizar. <br> 📚 Projeto: <a href="https://sylu4n.github.io/JsUdemy/exercicios/Relogio/index.html">Relógio.</a></h3>
 
