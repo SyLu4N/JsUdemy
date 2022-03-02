@@ -1,26 +1,26 @@
 # Learning JavaScript
  Meu aprendizado com javascript na Udemy
 
- ✓ Working With Strings!
- ✓ Working With Numbers!
- ✓ Working With Object Math!
- ✓ Working With Arrays JS!
- ✓ Working With Function!
- ✓ Working With Objects!
- ✓ Working With Object Date!
- ✓ Working With Swich Case!
- ✓ Working With { Desestruturação } = Javascript!
- ✓ Working With For!
- ✓ Working With For Of!
- ✓ Working With For In!
- ✓ Working With NodeList!
- ✓ Working With While and Do While!
- ✓ Working With Break and Continue!
- ✓ Working With Try Cath!
- ✓ Working With SetInterval and setTimeout!
- ✓ Working Constructor Functions And Factory!
- ✓ Working With Filter, Map, Reduce!
- ✓ Working With ForEach!
+ ✓ Working With Strings! <br>
+ ✓ Working With Numbers! <br>
+ ✓ Working With Object Math! <br>
+ ✓ Working With Arrays JS! <br>
+ ✓ Working With Function! <br>
+ ✓ Working With Objects! <br>
+ ✓ Working With Object Date! <br>
+ ✓ Working With Swich Case! <br>
+ ✓ Working With { Desestruturação } = Javascript! <br>
+ ✓ Working With For! <br>
+ ✓ Working With For Of! <br>
+ ✓ Working With For In! <br>
+ ✓ Working With NodeList! <br>
+ ✓ Working With While and Do While! <br>
+ ✓ Working With Break and Continue! <br>
+ ✓ Working With Try Cath! <br>
+ ✓ Working With SetInterval and setTimeout! <br>
+ ✓ Working Constructor Functions And Factory! <br>
+ ✓ Working With Filter, Map, Reduce! <br>
+ ✓ Working With ForEach! <br>
  
 <h3>Meu primeiro projeto é um relógio que usa "setInterval" para se atualizar. <br> 📚 Projeto: <a href="https://sylu4n.github.io/JsUdemy/exercicios/Relogio/index.html">Relógio.</a></h3>
 
