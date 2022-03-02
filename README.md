@@ -23,8 +23,9 @@
  ✓ Working With ForEach! <br>
 
  <h1>✅Projects</h1>
- 
-<h3>Meu primeiro projeto é um relógio que usa "setInterval" para se atualizar. <br> 📚 Projeto: <a href="https://sylu4n.github.io/JsUdemy/exercicios/Relogio/index.html">Relógio.</a></h3>
+ 📚 Relógio Date();
+ Usando Date e functions.
+<h3><a href="https://sylu4n.github.io/JsUdemy/exercicios/Relogio/index.html">Relógio.</a></h3>
 
 <h3>📚 Projeto:<a href="https://sylu4n.github.io/JsUdemy/exercicios/Login%20e%20Cadastro/" target="_blank"> Login/Cadastro.</a></h3>
 
