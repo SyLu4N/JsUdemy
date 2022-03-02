@@ -23,12 +23,11 @@
  ✓ Working With ForEach! <br>
 
  <h1>✅Projects</h1>
- <h2>
-   📚 Relógio Date(); <br>
-   Usando Date e functions.
- </h2>
-<h3><a href="https://sylu4n.github.io/JsUdemy/exercicios/Relogio/index.html">Relógio.</a></h3>
-<hr>
+ <h3>📚 Relógio Date();</h3> 
+ <h4> Usando Date e functions.</h4> 
+ 
+<h5><a href="https://sylu4n.github.io/JsUdemy/exercicios/Relogio/index.html">Relógio.</a></h5>
+<h2></h2>
 
 <h3>📚 Projeto:<a href="https://sylu4n.github.io/JsUdemy/exercicios/Login%20e%20Cadastro/" target="_blank"> Login/Cadastro.</a></h3>
 
