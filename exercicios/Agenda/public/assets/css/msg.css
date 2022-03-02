@@ -25,6 +25,15 @@
   animation: sumir 6s;  
 }
 
+.errorForm{
+  color: red;
+  text-align: left;
+  font-style: italic;
+  font-size: 12px;
+  font-family: sans-serif!important;
+}
+
+
 @keyframes sumir {
   0% {
     height: auto;
