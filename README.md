@@ -26,7 +26,8 @@
  <h3>📚 Relógio Date();</h3> 
  Usando Date e functions.
  
-<h3><a href="https://sylu4n.github.io/JsUdemy/exercicios/Relogio/index.html">Relógio.</a></h3>
+<h3><a href="https://sylu4n.github.io/JsUdemy/exercicios/Relogio/index.html" target="_blank">Relógio.</a></h3>
+<img src="./exercicios/Lista/img/lista.png" alt="Funcionamento do relógio">
 <h2></h2>
 
 <h3>📚 Projeto:<a href="https://sylu4n.github.io/JsUdemy/exercicios/Login%20e%20Cadastro/" target="_blank"> Login/Cadastro.</a></h3>
