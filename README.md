@@ -24,9 +24,9 @@
 
  <h1>✅Projects</h1>
  <h3>📚 Relógio Date();</h3> 
- <h4> Usando Date e functions.</h4> 
+ Usando Date e functions.
  
-<h5><a href="https://sylu4n.github.io/JsUdemy/exercicios/Relogio/index.html">Relógio.</a></h5>
+<h3><a href="https://sylu4n.github.io/JsUdemy/exercicios/Relogio/index.html">Relógio.</a></h3>
 <h2></h2>
 
 <h3>📚 Projeto:<a href="https://sylu4n.github.io/JsUdemy/exercicios/Login%20e%20Cadastro/" target="_blank"> Login/Cadastro.</a></h3>
