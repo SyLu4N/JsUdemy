@@ -6,14 +6,16 @@
 
 body{
   display: flex;
-  overflow-x: hidden;
-  background-image: url(./img/SL-043021-42650-28.jpg);
-  background-position: fixed;
-  background-size: cover;
-  background-repeat: no-repeat;
   height: 95vh;
   align-items: center;
   justify-content: center;
+}
+
+
+main{
+  background-color: #fdfdfd;
+  padding: 20px;
+  border-radius: 6px;
 }
 
 .container{
@@ -26,8 +28,8 @@ body{
 
 .data{
   font-size: 4em;
-  color: white;
-  text-shadow: 1.5px 1.5px 2px black;
+  color: var(--corpadrao);
+  text-shadow: 1.5px 1.5px 2px white;
   text-align: center;
   width: 100%;
   cursor: default;
@@ -36,7 +38,7 @@ body{
 .point{
   font-size: 4em;
   padding-top: 6px;
-  color: white;
+  color: var(--corpadrao);
   cursor: default;
 }
 

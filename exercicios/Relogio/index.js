@@ -2,6 +2,7 @@ function data() {
   const data = new Date();
   return data;
 }
+
 const day = document.querySelector('.day')
 const hours = document.querySelector('.hours');
 const minutes = document.querySelector('.minutes');
