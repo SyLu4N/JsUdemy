@@ -29,7 +29,7 @@ Cronometro.prototype.startCronometro = function () {
   this.iniciaCorreto();
   this.clickStart++;
   this.iniciar.innerHTML = 'Iniciar';
-  this.timer.style = 'color: black';
+  this.timer.style = 'color: white';
   for(buttons of this.btnNone) buttons.classList.remove('btnNone');
 }
 
@@ -79,7 +79,7 @@ Cronometro.prototype.restartCronometro = function () {
   clearInterval(this.pauseAnima2);
   this.timer.innerHTML = '00:00:00';
   this.contador = 0;
-  this.timer.style = 'color: black';
+  this.timer.style = 'color: white';
   this.iniciar.innerHTML = 'Iniciar';
   this.clickStart = 0;
 }
