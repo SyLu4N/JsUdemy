@@ -36,7 +36,8 @@
  <h2></h2>
 
  <h3>📚 Cronômetro</h3> 
-
+ <a href="https://sylu4n.github.io/JsUdemy/exercicios/Cronometro/index.html"><img src="./imgReadme/Cronometro.png" alt="Funcionamento do cronômetro"></a>
+ Ferramentas usadas: Date / setInterval / functions / keyFrames
  <h2></h2>
 
 <h3>📚 Projeto: <a href="https://sylu4n.github.io/JsUdemy/exercicios/Lista/index.html">MyList.</a></h3>
