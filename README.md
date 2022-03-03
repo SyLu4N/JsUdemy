@@ -21,6 +21,12 @@
  ✓ Working Constructor Functions And Factory! <br>
  ✓ Working With Filter, Map, Reduce! <br>
  ✓ Working With ForEach! <br>
+ ✓ Working With Node.js! <br>
+ ✓ Working With Webpack! <br>
+ ✓ Working With Express! <br>
+ ✓ Working With Mongoose! <br>
+ ✓ Working With TypeScript! <br>
+ ✓ Working With React! <br>
 
  <h1>✅Projects</h1>
  <h3>📚 Relógio Date();</h3> 
