@@ -44,8 +44,5 @@
 
 <h3>📚 Projeto: <a href="https://sylu4n.github.io/JsUdemy/exercicios/Calculadora/index.html">Calculadora.</a></h3>
 
-<h3>📚 Projeto: <a href="https://sylu4n.github.io/JsUdemy/exercicios/Cronometro/index.html">Cronômetro.</a></h3>
-
-
 <h3>📚 Projeto: <a href="https://sylu4n.github.io/JsUdemy/exercicios/IMC/index.html">IMC.</a></h3>
 
