@@ -32,11 +32,7 @@
  <h3>📚 Relógio</h3> 
  
  <a href="https://sylu4n.github.io/JsUdemy/exercicios/Relogio/index.html"><img src="./exercicios/Lista/img/lista.png" alt="Funcionamento do relógio"></a>
- <a href="https://sylu4n.github.io/JsUdemy/exercicios/Relogio/index.html" target="_blank">Relógio.</a>
- Ferramenta usadas:
- ✓ Date
- ✓ setInterval
- ✓ functions
+ Ferramenta usadas: Date / setInterval / functions
  <h2></h2>
 
 <h3>📚 Projeto:<a href="https://sylu4n.github.io/JsUdemy/exercicios/Login%20e%20Cadastro/" target="_blank"> Login/Cadastro.</a></h3>
