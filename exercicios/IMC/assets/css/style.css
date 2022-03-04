@@ -1,8 +1,12 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
 
 :root{
-  --corpadrao: #AA3333;
+  --corbackground: #c3d2f0;
+  --corpadrao: #0D6A86;
+  --corletter: white;
+  --fontpadrao: 'Patrick Hand', cursive;
 }
 
 *{
@@ -12,20 +16,22 @@
 }
 
 body{
-  background-image: url(../img/confetti-doodles.svg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0;
   padding: 0;
+  color: white;
+  font-family: var(--fontpadrao);
+  height: 100vh;
 }
 
 .container{
-  max-width: 550px;
-  margin: 0 auto;
-  margin-top: 30px;
-  background-color: white;
+  width: 550px;
+  background-image: linear-gradient(to bottom, #064457, var(--corpadrao), #2187a7) ;
   padding: 30px;
   padding-top: 2px;
   padding-bottom: 10px;
-  box-shadow: 1px 1px 5px 0px black;
   font-size: 1.3em;
   line-height: 1.5em;
   margin-bottom: 30px;
@@ -72,7 +78,7 @@ form input:focus{
 }
 
 .star{
-  color: var(--corpadrao);
+  color: red;
   text-decoration: none;
   cursor: help;
 }
@@ -118,6 +124,15 @@ form input:focus{
 
 .errorForm{
   margin-top: 0;
-  color: red;
+  color: rgb(212, 0, 0);
   font-size: 15px;
+  font-style: italic;
+}
+
+.none{
+  display: none;
+}
+
+.alingCenter{
+  text-align: center;
 }

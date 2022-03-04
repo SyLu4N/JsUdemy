@@ -6,50 +6,45 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./assets/css/style.css">
-  <title>Modelo</title>
+  <title>IMC</title>
 </head>
 
 <body>
-  <section class="container">
-    <h1>Tabela IMC</h1>
-    
-    <article class="flex escondido">
-      <div class="IMC">
-          <p>Menor do que 18,5</p>
-          <p>Entre 18,5 e 24,9</p>
-          <p>Entre 25 e 29,9</p>
-          <p>Entre 30 e 34,9</p>
-          <p>Entre 35 e 39,9</p>
-          <p>Mais doque 40</p>
-      </div>
-      <div class="tabelaImc">
-        <p style="color: red;">Abaixo do peso</p>
-        <p style="color: green">Peso Ideal</p>
-        <p style="color: red">Sobrepeso</p>
-        <p style="background-color: red; color: white;">Obesidade grau 1</p>
-        <p style="background-color: darkred; color: white;">Obesidade grau 2</p>
-        <p style="background-color: black; color: white;">Obesidade grau 3</p>
-      </div>
-    </article>
-    
-    <h1>Calcule seu IMC</h1>
-    <form action="" class="form">
-
-      <label for="labelTeste1">Seu Peso: <abbr title="Obrigatorio" class="star">*</abbr></label>
-      <input type="text" class="peso bottom">
-
-      <label for="labelTeste2">Sua Altura: <abbr title="Obrigatorio" class="star">*</abbr></label>
-      <input type="text" class="altura bottom">
-
-      <input type="submit" class="btn">
+  <main class="container">
+    <section class="content">
+      <article class="flex none">
+        <div class="IMC">
+            <p>Menor do que 18,5</p>
+            <p>Entre 18,5 e 24,9</p>
+            <p>Entre 25 e 29,9</p>
+            <p>Entre 30 e 34,9</p>
+            <p>Entre 35 e 39,9</p>
+            <p>Mais doque 40</p>
+        </div>
+        <div class="tabelaImc">
+          <p style="color: red;">Abaixo do peso</p>
+          <p style="color: green">Peso Ideal</p>
+          <p style="color: red">Sobrepeso</p>
+          <p style="background-color: red; color: white;">Obesidade grau 1</p>
+          <p style="background-color: darkred; color: white;">Obesidade grau 2</p>
+          <p style="background-color: black; color: white;">Obesidade grau 3</p>
+        </div>
+      </article>
       
-      <div class="resultado">
-
-      </div>
-
-    </form>
-    
-  </section>
+      <h1 class="alingCenter">Calcule seu IMC</h1>
+      <form action="" class="form">
+        <label for="labelTeste1">Seu Peso: <abbr title="Obrigatorio" class="star">*</abbr></label>
+        <input type="text" class="peso bottom">
+        <label for="labelTeste2">Sua Altura: <abbr title="Obrigatorio" class="star">*</abbr></label>
+        <input type="text" class="altura bottom">
+        <input type="submit" class="btn">
+      
+        <div class="resultado">
+        </div>
+      </form>
+      
+    </section>
+  </main>
   
 
   <script src="assets/js/main.js"></script>
