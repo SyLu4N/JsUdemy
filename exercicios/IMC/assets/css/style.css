@@ -1,6 +1,7 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@300&display=swap');
 
 :root{
   --corbackground: #c3d2f0;
@@ -11,8 +12,13 @@
 
 *{
   outline: 0;
-  font-family: 'Open Sans', sans-serif;
   box-sizing: border-box;
+}
+
+.title{
+  font-family: 'Sansita Swashed', cursive;
+  font-size: 40px;
+  text-shadow: 2px 2px black;
 }
 
 body{
@@ -22,8 +28,9 @@ body{
   margin: 0;
   padding: 0;
   color: white;
-  font-family: var(--fontpadrao);
   height: 100vh;
+  font-family: var(--fontpadrao);
+  font-size: 20px;
 }
 
 .container{
@@ -36,11 +43,27 @@ body{
   line-height: 1.5em;
   margin-bottom: 30px;
   border-radius: 5px;
+  position: relative;
+}
+
+.content{
+  position: relative;
 }
 
 .flex{
+  margin-top: 56px;
   display: flex;
   justify-content: space-between;
+  border-radius: 5px;
+  padding: 5px;
+  background-image: linear-gradient(to bottom, #064457, var(--corpadrao), #2187a7) ;
+  position: absolute;
+  z-index: 1;
+  right: -40%;
+  bottom: 20px;
+  width: 300px;
+  font-size: 20px;
+  line-height: 25px;
 }
 
 form input, form label{
@@ -70,6 +93,10 @@ form input:focus{
   cursor: pointer;
   margin-bottom: 20px;
   border-radius: 5px;
+  color: var(--corpadrao);
+  transition-duration: 300ms;
+  font-family: var(--fontpadrao);
+  font-size: 30px;
 }
 
 .btn:hover{
@@ -88,7 +115,7 @@ form input:focus{
 }
 
 .ideal{
-  color: green;
+  color: rgb(0, 255, 0);
 }
 
 .o1{
@@ -113,19 +140,30 @@ form input:focus{
 .imc{
   float: left;
   font-size: 50px;
-  margin: 0 20px;
+  margin: 0 20px 0 0;
   font-style: italic;
+  transform: rotate(1deg);
+  cursor: default;
+}
+
+.imc p {
+  width: 500px;
+}
+
+.none{
+  display: none;
 }
 
 .resultado{
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .errorForm{
-  margin-top: 0;
-  color: rgb(212, 0, 0);
-  font-size: 15px;
+  margin-top: -1.5%;
+  color: rgb(245, 0, 0);
+  font-size: 20px;
   font-style: italic;
 }
 
@@ -135,4 +173,41 @@ form input:focus{
 
 .alingCenter{
   text-align: center;
+}
+
+.info{
+  color: #efefef;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 2px solid #efefef;
+  border-radius: 80px;
+  width: 38px;
+  text-align: center;
+  cursor: pointer;
+  height: 42px;
+}
+
+.info:hover{
+  color: white;
+  border: 2px solid white;
+}
+
+.open{
+  animation: open 800ms;
+}
+
+@keyframes open{
+  0%{
+    opacity: 0;
+  }
+
+  100%{
+
+    opacity: 1;
+  }
+}
+
+.shadow{
+  text-shadow: 1px 1px black;
 }
