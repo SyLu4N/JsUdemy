@@ -59,8 +59,8 @@ body{
   position: absolute;
   z-index: 1;
   right: -40%;
-  bottom: 20px;
-  width: 300px;
+  top: 20px;
+  width: 370px;
   font-size: 20px;
   line-height: 25px;
 }
