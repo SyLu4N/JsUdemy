@@ -1,7 +1,4 @@
 @charset "UTF-8";
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@300&display=swap');
 
 :root{
   --corbackground: #c3d2f0;
@@ -19,6 +16,8 @@
   font-family: 'Sansita Swashed', cursive;
   font-size: 40px;
   text-shadow: 2px 2px black;
+  font-style: normal;
+  font-variant: small-caps;
 }
 
 body{
