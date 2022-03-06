@@ -34,7 +34,7 @@ body{
 
 .container{
   width: 550px;
-  background-image: linear-gradient(to bottom, #064457, var(--corpadrao), #2187a7) ;
+  background-image: linear-gradient(to bottom, #064457, var(--corpadrao), #33a6c9) ;
   padding: 30px;
   padding-top: 2px;
   padding-bottom: 10px;
@@ -55,7 +55,7 @@ body{
   justify-content: space-between;
   border-radius: 5px;
   padding: 5px;
-  background-image: linear-gradient(to bottom, #064457, var(--corpadrao), #2187a7) ;
+  background-color: #2a91b1;
   position: absolute;
   z-index: 1;
   right: -40%;
@@ -63,6 +63,7 @@ body{
   width: 370px;
   font-size: 20px;
   line-height: 25px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.753);
 }
 
 form input, form label{
@@ -86,7 +87,7 @@ form input:focus{
 
 .btn{
   margin-top: 20px;
-  border: 2px solid var(--corpadrao);
+  border: 2px solid #2894B5;
   height: 60px;
   background-color: white;
   cursor: pointer;
@@ -99,8 +100,10 @@ form input:focus{
 }
 
 .btn:hover{
-  background-color: var(--corpadrao);
+  border: none;
+  background-color: #2894B5;
   color: white;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.712);
 }
 
 .star{
@@ -164,6 +167,7 @@ form input:focus{
   color: rgb(245, 0, 0);
   font-size: 20px;
   font-style: italic;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.63);
 }
 
 .none{
@@ -185,6 +189,8 @@ form input:focus{
   text-align: center;
   cursor: pointer;
   height: 42px;
+  animation: infom 2.5s alternate-reverse;
+  animation-delay: 5s;
 }
 
 .info:hover{
@@ -194,6 +200,10 @@ form input:focus{
 
 .open{
   animation: open 800ms;
+}
+
+.girar{
+  animation: girar 1s;
 }
 
 @keyframes open{
@@ -207,6 +217,51 @@ form input:focus{
   }
 }
 
+@keyframes girar{
+  0%{
+    transform: rotateY(360deg);
+  }
+}
+
+@keyframes infom{
+
+  25%{
+    transform: rotate(0deg);
+    animation-delay: 5s;
+  }
+
+  50%{
+    transform: rotate(20deg);
+    animation-delay: 5s;
+  }
+
+  75%{
+     transform: rotate(-30deg);
+  }
+
+  100%{
+    transform: rotate(0deg);
+    animation-delay: 5s;
+  }
+}
+
 .shadow{
   text-shadow: 1px 1px black;
+}
+
+.by{
+  text-align: right;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+}
+
+.by a{
+  color: white;
+  font-style: italic;
+  text-decoration: none;
+}
+
+.by a:hover{
+  text-decoration: underline;
 }

@@ -11,24 +11,28 @@ IMC.prototype.click = function () {
   let contador = 0;
   this.info = document.querySelector('.info');
   this.info.setAttribute('title', 'Tabela IMC');
+
   document.addEventListener('click', e =>{
     this.tImc = document.querySelector('.flex');
     const el = e.target;
     if(el.classList.contains('info')){
       if(contador < 1){
         this.tImc.classList.add('open');
+        this.info.classList.add('girar');
         this.tImc.classList.remove('none');
         contador ++;
-      }
-      if(contador > 1){
+      }else if(contador >= 1){
         this.tImc.classList.add('none');
+        this.info.classList.remove('girar');
         contador --;
       }
     }else if(el.classList.contains('close')){
       this.tImc.classList.add('none');
+      this.info.classList.remove('girar');
       contador --;
     }else{
       this.tImc.classList.add('none');
+      this.info.classList.remove('girar');
       contador --;
     }
   });
@@ -95,7 +99,7 @@ IMC.prototype.setResultado = function (resultadoIMC, imcPuro) {
   p.innerHTML += `Peso ideal, parabéns!`;
   }else if(resultadoIMC >= 25 && resultadoIMC <= 29.9){
     p.classList.add('aa');
-    p.innerHTML += `Você está acima do peso, cuidado!`;
+    p.innerHTML += `Você está acima do peso!`;
   }else if(resultadoIMC >= 30 && resultadoIMC <= 34.9 ){
     p.classList.add('o1');
     p.innerHTML += `Obesidade grau 1, cuidado!`;
@@ -109,6 +113,6 @@ IMC.prototype.setResultado = function (resultadoIMC, imcPuro) {
     p.classList.add('aa');
     p.innerHTML += `Algo deu errado! Confira os dados colocados.`;
   }
-}
+};
 
 const pImc = new IMC();
