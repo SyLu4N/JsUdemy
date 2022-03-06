@@ -48,5 +48,9 @@
 
 <h3>📚 Projeto: <a href="https://sylu4n.github.io/JsUdemy/exercicios/Lista/index.html">MyList.</a></h3>
 
-<h3>📚 Projeto: <a href="https://sylu4n.github.io/JsUdemy/exercicios/Calculadora/index.html">Calculadora.</a></h3>
+<h3>📚 Calculadora</h3> 
+ <a href="https://sylu4n.github.io/JsUdemy/exercicios/Calculadora/index.html">
+ <img src="./imgReadme/Calculadora.png" alt="Funcionamento do IMC"></a>
+ Ferramentas usadas: functions / keyFrames
+ <h2></h2>
 

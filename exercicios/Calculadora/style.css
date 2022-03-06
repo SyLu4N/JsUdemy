@@ -5,6 +5,12 @@
   src: url(Calculator.ttf);
 }
 
+:root{
+  --corbackground: #c3d2f0;
+  --corpadrao: #0D6A86;
+  --corletter: white;
+  --fontpadrao: 'Patrick Hand', cursive;
+}
 
 *{
   padding: 0;
@@ -30,11 +36,10 @@ body{
 }
 
 .container{
-  background-color: rgb(13, 106, 134);
+  background-image: linear-gradient(to bottom, #064457, var(--corpadrao), #33a6c9) ;
   padding: 30px;
   border-radius: 5px;
   width: 400px;
-  border: 1px solid rgba(0, 0, 0, 0.623);
 }
 
 .display{
@@ -51,6 +56,7 @@ body{
 }
 
 .calculadoraGrid{
+  position: relative;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 4px;
@@ -102,4 +108,22 @@ color: black;
 .btnGray:hover{
   background-color: #19414d;
   color: white;
+}
+
+.by{
+  position: absolute;
+  color: white;
+  bottom: -8%;
+  font-size: 13px;
+  right: -5%;
+}
+
+.by a{
+  color: white;
+  font-style: italic;
+  text-decoration: none;
+}
+
+.by a:hover{
+  text-decoration: underline;
 }

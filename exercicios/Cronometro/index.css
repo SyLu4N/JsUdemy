@@ -57,7 +57,6 @@
   color: white;
   font-size: 5em;
   font-family: 'timer', cursive;  
-  text-shadow:1px 1px var(--corpadrao);
   margin: auto;
   width: 540px;
 }
@@ -184,4 +183,14 @@
 
 .byL:hover{
   text-decoration: underline;
+}
+
+.setTimer{
+  list-style-position: inside;
+  color: white;
+  text-align: center;
+}
+
+.setTimer::first-letter{
+  font-size: 30px;
 }
