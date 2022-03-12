@@ -1,5 +1,6 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
 @font-face {
   font-family: 'timer';
   src: url(img/DS-DIGI.TTF);
@@ -12,58 +13,52 @@
   font-family: sans-serif;
 }
 
-body{
-  font-size: 2em;
-  background-color: rgb(252, 252, 252);  
+:root{
+  --corbackground: #c3d2f0;
+  --corpadrao: #0D6A86;
+  --corletter: white;
+  --fontpadrao: 'Patrick Hand', cursive;
 }
 
 .title{
   display: inline-block ;
   font-size: 1em;
-  text-shadow:1px 1px white;
   font-family: 'Kaushan Script', cursive;
   padding-left: 17px;
-}
-
-.hr{
-  position: absolute;
-  border-bottom: 1px solid black;
-  width: 200px;
-  
+  color: white;
+  font-weight: 100;
 }
 
 .container{
   padding: 10px 20px;
   margin-top: 70px;
   cursor: default;
-}
-
-.content{
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px;
-  padding-right: 30px;
-  padding-left: 30px;
-  background-color: #f8f8f8;
-  border-radius: 5px;
-  max-width: 700px;
-  margin: auto;
-  border: 1px solid black;
-  box-shadow: 0px 0px 3px black;
+  font-size: 2em;
 }
 
-.content > div{
+.content{
+  padding: 10px;
+  padding-left: 30px;
+  background-image: linear-gradient(to bottom, #064457, var(--corpadrao), #33a6c9) ;
+  border-radius: 5px;
+  width: 700px;
+  margin: auto;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.637);
+}
+
+.content{
   position: relative;
-  height: 250px;
 }
 
 .timer{
+  color: white;
   font-size: 5em;
   font-family: 'timer', cursive;  
-  min-width: 680px;
-  text-shadow:1px 1px white;
-  text-align: center;
+  margin: auto;
+  width: 540px;
 }
 
 @media(max-width: 700px){
@@ -96,19 +91,14 @@ body{
   transition-duration: 300ms;
 }
 
-.btn:hover{
-  border: none;
-  background-color: black;
-  color: white;
-}
-
 .start{
-  border: 1px solid green;
-  color: green;
+  border: none;
+  color: white;
+  background-color: rgb(0, 155, 0);
 }
 
 .start:hover{
-  background-color: green;
+  background-color: rgb(0, 136, 0);
 }
 
 .start::after{
@@ -116,7 +106,9 @@ body{
 }
 
 .pause{
-  border: 1px solid rgb(192, 0, 0);
+  border: none;
+  background-color: rgb(192, 0, 0);
+  color: white;
 }
 
 .pause::after{
@@ -124,11 +116,21 @@ body{
 }
 
 .pause:hover{
-  background-color: rgb(192, 0, 0);
+  background-color: rgb(170, 3, 3);
+}
+
+.restart{
+  border: none;
+  background-color: rgba(14, 13, 13, 0.904);
+  color: white;
 }
 
 .restart::after{
   content: ' ⏺︎';
+}
+
+.restart:hover{
+  background-color: black;
 }
 
 .btnNone{
@@ -165,3 +167,30 @@ body{
   }
 }
 
+.by{
+  position: absolute;
+  color: white;
+  bottom: 5%;
+  font-size: 13px;
+  right: 3%;
+  font-style: italic;
+}
+
+.byL{
+  color: white;
+  text-decoration: none;
+}
+
+.byL:hover{
+  text-decoration: underline;
+}
+
+.setTimer{
+  list-style-position: inside;
+  color: white;
+  text-align: center;
+}
+
+.setTimer::first-letter{
+  font-size: 30px;
+}

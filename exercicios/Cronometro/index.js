@@ -3,6 +3,7 @@ function Cronometro() {
   this.keypress();
   this.contador = 0;
   this.clickStart = 0;
+  this.inner = document.querySelector('.setTimer');
   this.pause = document.querySelector('.pause');
   this.restart = document.querySelector('.restart');
   this.timer = document.querySelector('.timer');
@@ -23,13 +24,15 @@ Cronometro.prototype.start = function () {
 }
 
 Cronometro.prototype.startCronometro = function () {
+  if(this.startTimer) return;
+  this.startTimer = true;
   clearInterval(this.timerGo);
   clearInterval(this.pauseAnima);
   clearInterval(this.pauseAnima2);
   this.iniciaCorreto();
   this.clickStart++;
   this.iniciar.innerHTML = 'Iniciar';
-  this.timer.style = 'color: black';
+  this.timer.style = 'color: white';
   for(buttons of this.btnNone) buttons.classList.remove('btnNone');
 }
 
@@ -61,11 +64,12 @@ Cronometro.prototype.pauseCronometro = function () {
   this.timer.style = 'color: rgb(192, 0, 0)';
   this.iniciar.innerHTML = 'Retornar';
   this.piscaTimer();
+  this.startTimer = false;
 }
 
 Cronometro.prototype.piscaTimer = function () {
   this.pauseAnima = setInterval(() => {
-    this.timer.style = 'color: #F8F8F8';
+    this.timer.style = 'color: rgba(0, 0, 0, 0)';
   }, 500);
 
   this.pauseAnima2 = setInterval(() => {
@@ -79,9 +83,17 @@ Cronometro.prototype.restartCronometro = function () {
   clearInterval(this.pauseAnima2);
   this.timer.innerHTML = '00:00:00';
   this.contador = 0;
-  this.timer.style = 'color: black';
+  this.timer.style = 'color: white';
   this.iniciar.innerHTML = 'Iniciar';
   this.clickStart = 0;
+  this.inner.innerHTML = '';
+  this.startTimer = false;
+}
+
+Cronometro.prototype.setTimer = function () {
+  const p = document.createElement('li');
+  this.inner.appendChild(p);
+  p.innerText += `${this.criaSegundos(this.contador * 1000)}`
 }
 
 Cronometro.prototype.keypress = function () {
@@ -90,6 +102,7 @@ Cronometro.prototype.keypress = function () {
     if(el === 112) this.pauseCronometro();
     if(el === 13) this.startCronometro();
     if(el === 114) this.restartCronometro();
+    if(el === 32) this.setTimer();
   });
 }
 

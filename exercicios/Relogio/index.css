@@ -1,19 +1,27 @@
 @charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
 
-:root{
-  --corpadrao: #001a49;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
+:root{
+  --corbackground: #c3d2f0;
+  --corpadrao: #0D6A86;
+  --corletter: white;
+  --fontpadrao: 'Patrick Hand', cursive;
+}
+
+.containerC{
   display: flex;
-  overflow-x: hidden;
-  background-image: url(./img/SL-043021-42650-28.jpg);
-  background-position: fixed;
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 95vh;
   align-items: center;
   justify-content: center;
+  padding: 20px;
+  height: 100vh;
+  font-family: var(--fontpadrao);
+  flex-direction: column;
 }
 
 .container{
@@ -21,13 +29,19 @@ body{
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  text-align: center;
+}
+
+.content{
+  background-color: var(--corpadrao);
+  padding: 10px;
+  border-radius: 5px;
+  background-image: linear-gradient(to bottom, #064457, var(--corpadrao), #2187a7) ;
 }
 
 .data{
   font-size: 4em;
-  color: white;
-  text-shadow: 1.5px 1.5px 2px black;
+  color: var(--corletter);
   text-align: center;
   width: 100%;
   cursor: default;
@@ -36,25 +50,35 @@ body{
 .point{
   font-size: 4em;
   padding-top: 6px;
-  color: white;
+  color: var(--corletter);
   cursor: default;
 }
 
 .container .back{
-  background-color: var(--corpadrao);
   font-size: 5em;
-  height: 100%;
-  padding: 6px;
-  border-radius: 15px ;
-  margin-left: 20px;
-  margin-right: 20px;
-  color: white;
+  padding: 0 8px;
+  border-radius: 20px;
+  margin: 0px 20px 0 20px;
+  color: var(--corletter);
   cursor: default;
   transition-duration:200ms;
-  margin-top: 10px;
+  width: 80px;
 }
 
 .back:hover{
   color: var(--corpadrao);
-  background-color: white;
+  background-color: var(--corbackground);
+}
+
+.by{
+  text-align: center;
+  font-style: italic;
+  font-size: 20px;
+  text-decoration: none;
+  color: var(--corletter);
+  margin: 10px auto;
+}
+
+.by a:hover{
+  text-decoration: underline;
 }
