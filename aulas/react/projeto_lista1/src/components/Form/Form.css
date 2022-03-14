@@ -1,0 +1,43 @@
+.form{
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form input[type="text"]{
+  height: 40px;
+  padding: 0 20px;
+  font-size: 20px;
+  border: 1px solid #ccc;
+  min-width: 80%;
+}
+
+.form button[type="submit"]{
+  border: none;
+  height: 40px;
+  width: 40px;
+  background-color: var(--button);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 300ms;
+}
+
+.form button[type="submit"]:hover{
+  border: none;
+  height: 40px;
+  width: 40px;
+  background-color: #f12d4a;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes rodar{
+  0%{
+    transform: rotate(360deg);
+  }
+}

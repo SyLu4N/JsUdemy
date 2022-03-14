@@ -1,0 +1,20 @@
+.delete{
+  margin-left: 20px;
+  color: var(--button);
+  cursor: pointer;
+  transition: 100ms;
+}
+
+.delete:hover{
+  color: #f12d4a;
+}
+
+.edit{
+  transition: 100ms;
+  cursor: pointer;
+  color: #4dc7e2;
+}
+
+.edit:hover{
+  color: #00caf8;
+}
