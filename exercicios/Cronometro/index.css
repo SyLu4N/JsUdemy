@@ -1,6 +1,7 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@100&display=swap');
 @font-face {
   font-family: 'timer';
   src: url(img/DS-DIGI.TTF);
@@ -20,37 +21,42 @@
   --fontpadrao: 'Patrick Hand', cursive;
 }
 
+body{
+  background-color: black;
+}
+
 .title{
   display: inline-block ;
-  font-size: 1em;
-  font-family: 'Kaushan Script', cursive;
+  font-size: 2em;
+  font-family: 'Smooch Sans', sans-serif;  
   padding-left: 17px;
   color: white;
   font-weight: 100;
+  font-variant: small-caps;
+  font-weight: bold;
 }
 
 .container{
   padding: 10px 20px;
-  margin-top: 70px;
   cursor: default;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 2em;
-}
-
-.content{
-  padding: 10px;
-  padding-left: 30px;
-  background-image: linear-gradient(to bottom, #064457, var(--corpadrao), #33a6c9) ;
-  border-radius: 5px;
-  width: 700px;
+  width: 80%;
   margin: auto;
-  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.637);
+  margin-top: 70px;
 }
 
 .content{
   position: relative;
+  padding: 10px;
+  padding-left: 30px;
+  border-radius: 5px;
+  width: 700px;
+  margin: auto;
+  background-color: #272727;
+  border: 1px solid silver;
 }
 
 .timer{
@@ -91,50 +97,30 @@
   transition-duration: 300ms;
 }
 
-.start{
-  border: none;
-  color: white;
-  background-color: rgb(0, 155, 0);
-}
-
-.start:hover{
-  background-color: rgb(0, 136, 0);
-}
-
 .start::after{
   content: '⏵︎';
-}
-
-.pause{
-  border: none;
-  background-color: rgb(192, 0, 0);
-  color: white;
 }
 
 .pause::after{
   content: '⏸︎';
 }
 
-.pause:hover{
-  background-color: rgb(170, 3, 3);
-}
-
-.restart{
-  border: none;
-  background-color: rgba(14, 13, 13, 0.904);
-  color: white;
-}
-
 .restart::after{
   content: ' ⏺︎';
 }
 
-.restart:hover{
-  background-color: black;
-}
-
 .btnNone{
   display: none;
+}
+
+.btn{
+  border: 1.5px solid rgb(85, 85, 85);
+  background-color: #3b3b3b;
+  color: white;
+}
+
+.btn:hover{
+  background-color: #2e2e2e;
 }
 
 .pause{
@@ -169,15 +155,15 @@
 
 .by{
   position: absolute;
-  color: white;
-  bottom: 5%;
+  color: rgba(255, 255, 255, 0.664);
+  bottom: -8%;
   font-size: 13px;
   right: 3%;
   font-style: italic;
 }
 
 .byL{
-  color: white;
+  color: rgba(255, 255, 255, 0.664);
   text-decoration: none;
 }
 

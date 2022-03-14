@@ -33,6 +33,7 @@ body{
   text-align: center;
   font-weight: 100;
   text-shadow: 1px 1px black;
+  font-variant: small-caps;
 }
 
 .container{
@@ -51,8 +52,10 @@ body{
   width: 100%;
   border-radius: 3px;
   border: 1px solid  black;
-  color: green;
+  color: black;
   font-family: calcu;
+  outline: none;
+  background-color: white;
 }
 
 .calculadoraGrid{
