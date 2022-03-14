@@ -31,7 +31,6 @@ Cronometro.prototype.startCronometro = function () {
   clearInterval(this.pauseAnima2);
   this.iniciaCorreto();
   this.clickStart++;
-  this.iniciar.innerHTML = 'Iniciar';
   this.timer.style = 'color: white';
   for(buttons of this.btnNone) buttons.classList.remove('btnNone');
 }
@@ -55,21 +54,20 @@ Cronometro.prototype.criaSegundos = function (segundos) {
   const data = new Date(segundos);
   return data.toLocaleTimeString('pt-br', {
     hour12: false,
-    timeZone: 'UTC' 
+    timeZone: 'UTC'
   });
 }
 
 Cronometro.prototype.pauseCronometro = function () {
   clearInterval(this.timerGo);
   this.timer.style = 'color: rgb(192, 0, 0)';
-  this.iniciar.innerHTML = 'Retornar';
   this.piscaTimer();
   this.startTimer = false;
 }
 
 Cronometro.prototype.piscaTimer = function () {
   this.pauseAnima = setInterval(() => {
-    this.timer.style = 'color: rgba(0, 0, 0, 0)';
+    this.timer.style = 'color: black';
   }, 500);
 
   this.pauseAnima2 = setInterval(() => {
@@ -84,7 +82,6 @@ Cronometro.prototype.restartCronometro = function () {
   this.timer.innerHTML = '00:00:00';
   this.contador = 0;
   this.timer.style = 'color: white';
-  this.iniciar.innerHTML = 'Iniciar';
   this.clickStart = 0;
   this.inner.innerHTML = '';
   this.startTimer = false;
