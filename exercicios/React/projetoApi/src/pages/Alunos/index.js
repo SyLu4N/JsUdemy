@@ -1,23 +1,20 @@
 import React from 'react';
 import Lodash from 'lodash';
 import { Link } from 'react-router-dom';
-import {
-  FaUserCircle,
-  FaEdit,
-  FaWindowClose,
-  FaExclamation,
-} from 'react-icons/fa';
+import { FaUserCircle, FaWindowClose, FaExclamation } from 'react-icons/fa';
+import { useSelector } from 'react-redux';
+import { AiOutlineUserAdd } from 'react-icons/ai';
 import { toast } from 'react-toastify';
 
 import { Container } from '../../styles/GlobalStyles';
 import axios from '../../services/axios';
 import { AlunoContainer, ProfilePicture, NovoAluno } from './styled';
-
 import Loading from '../../components/Loading';
 
 export default function Alunos() {
   const [alunos, setAlunos] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(false);
+  const id = useSelector((state) => state.auth.user.id);
 
   React.useEffect(() => {
     async function getData() {
@@ -63,6 +60,7 @@ export default function Alunos() {
       novosAlunos.splice(index, 1);
       setAlunos(novosAlunos);
       setIsLoading(false);
+      toast.success(`Aluno(a) ${alunos[index].nome} deletado(a) com sucesso!`);
     } catch (err) {
       const status = Lodash.get(err, 'response.status', 0);
 
@@ -80,38 +78,41 @@ export default function Alunos() {
     <Container>
       <Loading isLoading={isLoading} />
 
-      <h1>Alunos </h1>
-
-      <NovoAluno to="/aluno/">Novo aluno +</NovoAluno>
+      <h1>Meus alunos </h1>
 
       <AlunoContainer>
         {alunos.map((aluno, index) => (
           <div key={String(aluno.id)}>
-            <ProfilePicture>
-              {Lodash.get(aluno, 'Fotos[0].url', false) ? (
-                <img crossOrigin="" src={aluno.Fotos[0].url} alt="" /> //se verdadeiro
+            <Link to={`/aluno/${aluno.id}`} className="alunos">
+              <ProfilePicture>
+                {Lodash.get(aluno, 'Fotos[0].url', false) ? (
+                  <img crossOrigin="" src={aluno.Fotos[0].url} alt="" /> //se verdadeiro
+                ) : (
+                  <FaUserCircle size={36} /> // se falso
+                )}
+              </ProfilePicture>
+
+              <span className="nome">{aluno.nome}</span>
+              <span className="email">{aluno.email}</span>
+              {id ? (
+                <Link onClick={handleDeleteAsk}>
+                  <FaWindowClose className="delete" size={16} />
+                </Link>
               ) : (
-                <FaUserCircle size={36} /> // se falso
+                ''
               )}
-            </ProfilePicture>
 
-            <span className="nome">{aluno.nome}</span>
-            <span className="email">{aluno.email}</span>
-
-            <Link to={`/aluno/${aluno.id}`}>
-              <FaEdit className="edit" size={16} />
+              <FaExclamation
+                size={8}
+                className="exclamation none"
+                onClick={(e) => handleDelete(e, aluno.id, index)}
+              />
             </Link>
-            <Link onClick={handleDeleteAsk} to={`/aluno/${aluno.id}`}>
-              <FaWindowClose className="delete" size={16} />
-            </Link>
-
-            <FaExclamation
-              size={8}
-              className="exclamation none"
-              onClick={(e) => handleDelete(e, aluno.id, index)}
-            />
           </div>
         ))}
+        <NovoAluno to="/aluno/">
+          Novo aluno <AiOutlineUserAdd />
+        </NovoAluno>
       </AlunoContainer>
     </Container>
   );

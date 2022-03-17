@@ -6,7 +6,7 @@ import { primaryColor } from '../../config/colors';
 export const AlunoContainer = styled.div`
   margin-top: 20px;
 
-  div {
+  .alunos {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -53,6 +53,15 @@ export const AlunoContainer = styled.div`
   .block {
     display: block;
   }
+
+  .em {
+    font-weight: bold;
+    font-style: italic;
+  }
+
+  .alunos:hover {
+    margin: 0 -5px;
+  }
 `;
 
 export const ProfilePicture = styled.div`
@@ -64,7 +73,9 @@ export const ProfilePicture = styled.div`
 `;
 
 export const NovoAluno = styled(Link)`
-  display: block;
-  padding: 20px 0 0px 0;
+  display: flex;
+  justify-content: right;
+  margin: 20px 0 0 0;
   color: ${primaryColor};
+  text-align: right;
 `;

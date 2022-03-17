@@ -24,7 +24,7 @@ export const ProfilePicture = styled.div`
   img {
     width: 180px;
     height: 180px;
-    border-radius: 50%;
+    border-radius: 4px;
   }
 
   a {
@@ -38,4 +38,21 @@ export const ProfilePicture = styled.div`
     padding: 6px;
     border-radius: 50%;
   }
+`;
+
+export const Container = styled.div`
+  max-width: 480px;
+  background-color: #fff;
+  margin: 0px auto 30px auto;
+  padding: 5px 30px 30px 30px;
+  border-radius: 0 0 4px 4px;
+`;
+
+export const Content = styled.div`
+  background: linear-gradient(to left, white, #aaa, white);
+  padding: 5px 0;
+  margin: 15px auto 0 auto;
+  max-width: 480px;
+  z-index: 2;
+  border-radius: 4px 4px 0px 0px;
 `;
