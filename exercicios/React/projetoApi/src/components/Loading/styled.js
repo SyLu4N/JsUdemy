@@ -6,33 +6,48 @@ export const Container = styled.div`
   height: 100%;
   top: 0;
   left: 0;
-  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #fff;
   font-size: 30px;
+  flex-direction: column;
 
   div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     position: absolute;
     width: 100%;
     height: 100%;
-    z-index: 1;
     background-color: rgba(0, 0, 0, 0.8);
   }
 
-  span {
-    z-index: 2;
+  .loading {
+    display: flex;
+    align-items: center;
+    animation: 7000s girar infinite;
+  }
+
+  .text {
     animation: 3s carregar alternate-reverse infinite;
+    padding-left: 14px;
   }
 
   @keyframes carregar {
     0% {
-      opacity: 0;
+      opacity: 0.2;
     }
 
     100% {
       opacity: 1;
+    }
+  }
+
+  @keyframes girar {
+    100% {
+      transform: rotate(1000000deg);
     }
   }
 `;

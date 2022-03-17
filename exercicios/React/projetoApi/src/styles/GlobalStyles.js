@@ -17,7 +17,7 @@ body{
 }
 
 html, body, #root{
-  height: 100%;
+  height: 102%;
 }
 
 button{

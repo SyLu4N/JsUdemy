@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import { toast } from 'react-toastify';
 import { useDispatch } from 'react-redux';
 import { FaUserCircle, FaEdit } from 'react-icons/fa';
+import { AiOutlineUserAdd } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 
 import axios from '../../services/axios';
@@ -173,7 +174,10 @@ export default function Aluno({ match }) {
     <Container>
       <Loading isLoading={isLoading} />
 
-      <Title>{id ? `${nome} ${sobrenome}` : 'Novo aluno'}</Title>
+      <Title>
+        {id ? `${nome} ${sobrenome}` : 'Novo aluno'}{' '}
+        <AiOutlineUserAdd size={30} />
+      </Title>
 
       {id && (
         <ProfilePicture>

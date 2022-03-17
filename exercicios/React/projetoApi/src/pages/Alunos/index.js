@@ -98,10 +98,10 @@ export default function Alunos() {
             <span className="nome">{aluno.nome}</span>
             <span className="email">{aluno.email}</span>
 
-            <Link to={`/aluno/${aluno.id}/edit`}>
+            <Link to={`/aluno/${aluno.id}`}>
               <FaEdit className="edit" size={16} />
             </Link>
-            <Link onClick={handleDeleteAsk} to={`/aluno/${aluno.id}/delete`}>
+            <Link onClick={handleDeleteAsk} to={`/aluno/${aluno.id}`}>
               <FaWindowClose className="delete" size={16} />
             </Link>
 
