@@ -21,9 +21,6 @@ export default function Aluno({ match }) {
   const [nome, setNome] = React.useState('');
   const [sobrenome, setSobrenome] = React.useState('');
   const [email, setEmail] = React.useState('');
-  const [idade, setIdade] = React.useState('');
-  let [peso, setPeso] = React.useState('');
-  let [altura, setAltura] = React.useState('');
   const [foto, setFoto] = React.useState('');
   const [isLoading, setIsLoading] = React.useState(false);
 
@@ -34,7 +31,7 @@ export default function Aluno({ match }) {
     async function getData() {
       try {
         setIsLoading(true);
-        const { data } = await axios.get(`/alunos/${id}`);
+        const { data } = await axios.get(`/aprendiz/${id}`);
         const Foto = Lodash.get(data, 'Fotos[0].url', '');
 
         setFoto(Foto);
@@ -42,9 +39,6 @@ export default function Aluno({ match }) {
         setNome(data.nome); //preenche o input com os dados da BD
         setSobrenome(data.sobrenome);
         setEmail(data.email);
-        setIdade(data.idade);
-        setPeso(data.peso);
-        setAltura(data.altura);
 
         setIsLoading(false);
       } catch (err) {
@@ -73,40 +67,19 @@ export default function Aluno({ match }) {
       );
     }
 
-    if (sobrenome.length < 3 || sobrenome.length > 200) {
-      formErros = true;
-      newError(
-        '"Sobrenome" precisa ter de 3 a 50 caracteres',
-        document.querySelector('.sobrenome'),
-      );
+    if (sobrenome) {
+      if (sobrenome.length < 3 || sobrenome.length > 200) {
+        formErros = true;
+        newError(
+          '"Sobrenome" precisa ter de 3 a 50 caracteres',
+          document.querySelector('.sobrenome'),
+        );
+      }
     }
 
     if (!isEmail(email)) {
       formErros = true;
       newError('"E-mail" inválido!', document.querySelector('.email'));
-    }
-
-    if (idade.length < 1 || idade.length > 3) {
-      formErros = true;
-      newError('"Idade" inválida!', document.querySelector('.idade'));
-    }
-
-    if (peso.length < 1 || peso.length > 5) {
-      formErros = true;
-      newError('"Peso" inválido!', document.querySelector('.peso'));
-    }
-
-    if (toString(peso).indexOf(',') !== -1) {
-      peso = peso.replace(',', '.');
-    }
-
-    if (altura.length < 1 || altura.length > 5) {
-      formErros = true;
-      newError('"Altura" inválida!', document.querySelector('.altura'));
-    }
-
-    if (toString(altura).indexOf(',') !== -1) {
-      altura = altura.replace(',', '.');
     }
 
     if (formErros) return;
@@ -119,25 +92,19 @@ export default function Aluno({ match }) {
       setIsLoading(true);
 
       if (id) {
-        await axios.put(`/alunos/${id}`, {
+        await axios.put(`/aprendiz/${id}`, {
           nome,
           sobrenome,
           email,
-          peso,
-          altura,
-          idade,
         });
 
         toast.success(`Aluno(a) editado com sucesso!`);
         history.push('/');
       } else {
-        await axios.post(`/alunos/`, {
+        await axios.post(`/aprendiz/`, {
           nome,
           sobrenome,
           email,
-          altura,
-          peso,
-          idade,
         });
 
         toast.success(`Aluno(a) criado(a) com sucesso!`);
@@ -229,39 +196,6 @@ export default function Aluno({ match }) {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-            />
-          </label>
-
-          <label htmlFor="">
-            Idade
-            <input
-              className="idade"
-              placeholder="Idade"
-              type="number"
-              value={idade}
-              onChange={(e) => setIdade(e.target.value)}
-            />
-          </label>
-
-          <label htmlFor="">
-            Peso
-            <input
-              className="peso"
-              placeholder="Peso"
-              type="text"
-              value={peso}
-              onChange={(e) => setPeso(e.target.value)}
-            />
-          </label>
-
-          <label htmlFor="">
-            Altura
-            <input
-              className="altura"
-              placeholder="Altura"
-              type="text"
-              value={altura}
-              onChange={(e) => setAltura(e.target.value)}
             />
           </label>
 

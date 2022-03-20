@@ -35,15 +35,17 @@ export default function Alunos() {
         setIsLoading(false);
       }
     }
-    console.log(alunos);
     getData();
   }, []);
 
   function handleDeleteAsk(e) {
     e.preventDefault();
     const el = e.currentTarget.nextSibling;
-    el.setAttribute('class', 'block exclamation');
     const close = e.currentTarget;
+
+    console.log(e.currentTarget.nextSibling);
+
+    el.setAttribute('class', 'block exclamation');
     close.setAttribute('class', 'none');
 
     document.addEventListener('click', function fn(click) {
@@ -97,7 +99,6 @@ export default function Alunos() {
           <div key={String(aluno.id)}>
             <Link to={`/aprendiz/${aluno.id}`} className="alunos">
               <ProfilePicture>
-                {console.log(aluno.id)}
                 {Lodash.get(aluno, 'Fotos[0].url', false) ? (
                   <img crossOrigin="" src={aluno.Fotos[0].url} alt="" /> //se verdadeiro
                 ) : (
@@ -108,25 +109,28 @@ export default function Alunos() {
               <span className="nome">{aluno.nome}</span>
               <span className="email">{aluno.email}</span>
               {id ? (
-                <Link onClick={handleDeleteAsk}>
-                  <FaWindowClose className="delete" size={16} />
-                </Link>
+                <div>
+                  <Link onClick={handleDeleteAsk} to="">
+                    <FaWindowClose className="delete" size={16} />
+                  </Link>
+                  <FaExclamation
+                    size={8}
+                    className="exclamation none"
+                    onClick={(e) => handleDelete(e, aluno.id, index)}
+                  />
+                </div>
               ) : (
                 ''
               )}
-
-              <FaExclamation
-                size={8}
-                className="exclamation none"
-                onClick={(e) => handleDelete(e, aluno.id, index)}
-              />
             </Link>
           </div>
         ))}
-        <NovoAluno to="/aprendiz/">
-          Novo aluno <AiOutlineUserAdd />
-        </NovoAluno>
       </AlunoContainer>
+      <NovoAluno to="/aprendiz/" className="addAluno">
+        <Link className="content">
+          Novo aluno <AiOutlineUserAdd />
+        </Link>
+      </NovoAluno>
     </Container>
   );
 }

@@ -1,16 +1,15 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 
 import { primaryColor } from '../../config/colors';
 
 export const AlunoContainer = styled.div`
   margin-top: 20px;
-
   .alunos {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 5px 0;
+    transition-duration: 300ms;
   }
 
   div + div {
@@ -72,10 +71,12 @@ export const ProfilePicture = styled.div`
   }
 `;
 
-export const NovoAluno = styled(Link)`
+export const NovoAluno = styled.div`
+  margin-top: 20px;
   display: flex;
   justify-content: right;
-  margin: 20px 0 0 0;
-  color: ${primaryColor};
-  text-align: right;
+
+  a {
+    color: ${primaryColor};
+  }
 `;
