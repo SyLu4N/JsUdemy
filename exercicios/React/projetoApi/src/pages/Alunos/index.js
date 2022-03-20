@@ -18,12 +18,24 @@ export default function Alunos() {
 
   React.useEffect(() => {
     async function getData() {
-      setIsLoading(true);
-      const response = await axios.get('/alunos');
-      setAlunos(response.data);
-      setIsLoading(false);
-    }
+      try {
+        setIsLoading(true);
+        const response = await axios.get('/aprendiz');
+        setAlunos(response.data);
+        setIsLoading(false);
+      } catch (err) {
+        const status = Lodash.get(err, 'response.status', 0);
 
+        if (status === 401) {
+          toast.error('É necessário estar logado!');
+        } else {
+          toast.error('Ocorreu um erro, tente novamente mais tarde! ');
+        }
+
+        setIsLoading(false);
+      }
+    }
+    console.log(alunos);
     getData();
   }, []);
 
@@ -55,7 +67,7 @@ export default function Alunos() {
 
     try {
       setIsLoading(true);
-      await axios.delete(`/alunos/${id}`);
+      await axios.delete(`/aprendiz/${id}`);
       const novosAlunos = [...alunos];
       novosAlunos.splice(index, 1);
       setAlunos(novosAlunos);
@@ -83,8 +95,9 @@ export default function Alunos() {
       <AlunoContainer>
         {alunos.map((aluno, index) => (
           <div key={String(aluno.id)}>
-            <Link to={`/aluno/${aluno.id}`} className="alunos">
+            <Link to={`/aprendiz/${aluno.id}`} className="alunos">
               <ProfilePicture>
+                {console.log(aluno.id)}
                 {Lodash.get(aluno, 'Fotos[0].url', false) ? (
                   <img crossOrigin="" src={aluno.Fotos[0].url} alt="" /> //se verdadeiro
                 ) : (
@@ -110,7 +123,7 @@ export default function Alunos() {
             </Link>
           </div>
         ))}
-        <NovoAluno to="/aluno/">
+        <NovoAluno to="/aprendiz/">
           Novo aluno <AiOutlineUserAdd />
         </NovoAluno>
       </AlunoContainer>

@@ -49,7 +49,7 @@ export const Container = styled.div`
 `;
 
 export const Content = styled.div`
-  background: linear-gradient(to left, white, #aaa, white);
+  background: white;
   padding: 5px 0;
   margin: 15px auto 0 auto;
   max-width: 480px;
