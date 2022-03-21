@@ -127,7 +127,7 @@ export default function Alunos() {
         ))}
       </AlunoContainer>
       <NovoAluno to="/aprendiz/" className="addAluno">
-        <Link className="content">
+        <Link className="content" to="/aprendiz">
           Novo aluno <AiOutlineUserAdd />
         </Link>
       </NovoAluno>
