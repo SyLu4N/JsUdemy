@@ -3,10 +3,10 @@ import { primaryColor } from '../../config/colors';
 
 export const Nav = styled.nav`
   background: ${primaryColor};
-  padding: 20px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  padding: 20px 30px 20px 30px;
 
   a {
     color: #fff;
@@ -15,6 +15,10 @@ export const Nav = styled.nav`
   }
 
   .logado {
-    margin-bottom: 2px;
+    padding-top: 2px;
+  }
+
+  .logo {
+    font-size: 2em;
   }
 `;

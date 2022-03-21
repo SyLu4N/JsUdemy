@@ -1,8 +1,21 @@
 import styled from 'styled-components';
 import { primaryColor } from '../../config/colors';
+import fundo from '../../images/teste2.png';
 
 export const Form = styled.form`
   margin-top: 15px;
+  .aluno {
+    border: none;
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+    border-radius: 0px;
+    margin-bottom: 10px;
+  }
+
+  .alunoBtn {
+    width: auto;
+    margin-left: 81%;
+  }
 
   button {
     width: 100%;
@@ -49,7 +62,7 @@ export const Container = styled.div`
 `;
 
 export const Content = styled.div`
-  background: white;
+  background: url(${fundo});
   padding: 5px 0;
   margin: 15px auto 0 auto;
   max-width: 480px;

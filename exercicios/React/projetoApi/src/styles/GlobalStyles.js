@@ -31,7 +31,7 @@ button{
   transition: all 300ms;
 
   &:hover{
-    filter: brightness(88%);
+    filter: contrast(150%);
   }
 }
 
@@ -45,6 +45,11 @@ button{
 a{
   text-decoration: none;
   color: ${colors.primaryDarkColor};
+  transition-duration: 200ms;
+
+  &:hover{
+    filter: contrast(150%);
+  }
 }
 
 ul{
@@ -73,6 +78,22 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
+}
+
+.click {
+  cursor: pointer;
+}
+
+.none {
+    display: none;
+}
+
+.flex {
+  display: flex;
+}
+
+.block {
+  display: block;
 }
 `;
 

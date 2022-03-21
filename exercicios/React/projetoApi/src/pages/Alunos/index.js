@@ -4,15 +4,17 @@ import { Link } from 'react-router-dom';
 import { FaUserCircle, FaWindowClose, FaExclamation } from 'react-icons/fa';
 import { useSelector } from 'react-redux';
 import { AiOutlineUserAdd } from 'react-icons/ai';
+import { BiSearchAlt2 } from 'react-icons/bi';
 import { toast } from 'react-toastify';
 
 import { Container } from '../../styles/GlobalStyles';
 import axios from '../../services/axios';
-import { AlunoContainer, ProfilePicture, NovoAluno } from './styled';
+import { AlunoContainer, ProfilePicture, NovoAluno, Search } from './styled';
 import Loading from '../../components/Loading';
 
 export default function Alunos() {
   const [alunos, setAlunos] = React.useState([]);
+  const [search, setSearch] = React.useState('');
   const [isLoading, setIsLoading] = React.useState(false);
   const id = useSelector((state) => state.auth.user.id);
 
@@ -22,6 +24,7 @@ export default function Alunos() {
         setIsLoading(true);
         const response = await axios.get('/aprendiz');
         setAlunos(response.data);
+        console.log(response.data);
         setIsLoading(false);
       } catch (err) {
         const status = Lodash.get(err, 'response.status', 0);
@@ -88,11 +91,41 @@ export default function Alunos() {
     }
   };
 
+  let open = false;
+  function handleSearch() {
+    const search = document.querySelector('.search');
+    const filtro = search.value.toUpperCase();
+    const novosSearchAlunos = [];
+    console.log(filtro);
+
+    if (!open) {
+      search.setAttribute('class', 'search flex');
+      open = true;
+    }
+    alunos.map((aluno) => {
+      const filtrado = aluno;
+      if (filtrado.nome.toUpperCase() === filtro) {
+        novosSearchAlunos.push(filtrado);
+      }
+
+      setAlunos(novosSearchAlunos);
+    });
+  }
+
   return (
     <Container>
       <Loading isLoading={isLoading} />
 
-      <h1>Meus alunos </h1>
+      <Search className="flex">
+        <h1>Meus alunos </h1>
+        <input
+          type="text"
+          value={search}
+          className="none search"
+          onChange={(e) => setSearch(e.target.value)}
+        />
+        <BiSearchAlt2 size={30} className="click" onClick={handleSearch} />
+      </Search>
 
       <AlunoContainer>
         {alunos.map((aluno, index) => (

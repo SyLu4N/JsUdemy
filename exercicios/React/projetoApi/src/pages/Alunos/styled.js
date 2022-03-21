@@ -80,3 +80,16 @@ export const NovoAluno = styled.div`
     color: ${primaryColor};
   }
 `;
+
+export const Search = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: default;
+
+  .search {
+    width: 200px;
+    margin-left: 10px;
+    height: 30px;
+  }
+`;

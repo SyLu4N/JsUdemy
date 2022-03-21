@@ -166,40 +166,74 @@ export default function Aluno({ match }) {
 
       <Container>
         <Form onSubmit={handleSubmit}>
-          <label htmlFor="">
-            Nome
+          {id ? (
             <input
-              className="nome"
+              className="aluno"
               placeholder="Nome"
               type="text"
               value={nome}
               onChange={(e) => setNome(e.target.value)}
             />
-          </label>
+          ) : (
+            <label htmlFor="">
+              Nome
+              <input
+                className="nome"
+                placeholder="Nome"
+                type="text"
+                value={nome}
+                onChange={(e) => setNome(e.target.value)}
+              />
+            </label>
+          )}
 
-          <label htmlFor="">
-            Sobrenome
+          {id ? (
             <input
-              className="sobrenome"
+              className="aluno"
               placeholder="Sobrenome"
               type="text"
               value={sobrenome}
               onChange={(e) => setSobrenome(e.target.value)}
             />
-          </label>
+          ) : (
+            <label htmlFor="">
+              Sobrenome
+              <input
+                placeholder="Nome"
+                type="text"
+                value={sobrenome}
+                onChange={(e) => setSobrenome(e.target.value)}
+              />
+            </label>
+          )}
 
-          <label htmlFor="">
-            E-mail
+          {id ? (
             <input
-              className="email"
+              className="aluno"
               placeholder="E-mail"
-              type="email"
+              type="text"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
-          </label>
+          ) : (
+            <label htmlFor="">
+              E-mail
+              <input
+                placeholder="E-mail"
+                type="text"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </label>
+          )}
 
-          <button type="submit">{id ? 'Salvar' : 'Criar Aluno'}</button>
+          {id ? (
+            <button type="submit" className="alunoBtn">
+              Salvar
+            </button>
+          ) : (
+            <button type="submit">Criar Aluno</button>
+          )}
         </Form>
       </Container>
     </>
