@@ -10,6 +10,10 @@ export default createGlobalStyle`
   box-sizing: border-box;
 }
 
+.primaryColor {
+  color: ${colors.primaryColor};
+}
+
 body{
   font-family: sans-serif;
   background: ${colors.primaryDarkColor};
@@ -85,7 +89,7 @@ input::-webkit-inner-spin-button {
 }
 
 .none {
-    display: none;
+  display: none;
 }
 
 .flex {
@@ -104,4 +108,5 @@ export const Container = styled.section`
   padding: 30px;
   border-radius: 4px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow-y: hidden;
 `;

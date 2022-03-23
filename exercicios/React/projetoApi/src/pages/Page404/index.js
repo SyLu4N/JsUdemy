@@ -1,10 +1,14 @@
 import React from 'react';
-import { Container } from '../../styles/GlobalStyles';
+import { Link } from 'react-router-dom';
+import badPage from '../../images/404.svg';
+import { Content } from './styled';
 
 export default function Page404() {
   return (
-    <Container>
+    <Content>
+      <img src={badPage} alt="" />
       <h1>Página não encontrada</h1>
-    </Container>
+      <Link to="/">Voltar para página principal</Link>
+    </Content>
   );
 }

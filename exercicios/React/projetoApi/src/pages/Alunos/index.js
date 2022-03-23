@@ -9,14 +9,22 @@ import { toast } from 'react-toastify';
 
 import { Container } from '../../styles/GlobalStyles';
 import axios from '../../services/axios';
-import { AlunoContainer, ProfilePicture, NovoAluno, Search } from './styled';
+import {
+  AlunoContainer,
+  ProfilePicture,
+  NovoAluno,
+  Search,
+  Content,
+} from './styled';
 import Loading from '../../components/Loading';
+import Welcome from '../../images/welcome.svg';
 
 export default function Alunos() {
   const [alunos, setAlunos] = React.useState([]);
-  const [search, setSearch] = React.useState('');
   const [isLoading, setIsLoading] = React.useState(false);
+  const [search, setSearch] = React.useState('');
   const id = useSelector((state) => state.auth.user.id);
+  const [mostraAlunos, setMostraAlunos] = React.useState([]);
 
   React.useEffect(() => {
     async function getData() {
@@ -24,7 +32,7 @@ export default function Alunos() {
         setIsLoading(true);
         const response = await axios.get('/aprendiz');
         setAlunos(response.data);
-        console.log(response.data);
+        setMostraAlunos(response.data);
         setIsLoading(false);
       } catch (err) {
         const status = Lodash.get(err, 'response.status', 0);
@@ -34,7 +42,6 @@ export default function Alunos() {
         } else {
           toast.error('Ocorreu um erro, tente novamente mais tarde! ');
         }
-
         setIsLoading(false);
       }
     }
@@ -73,9 +80,9 @@ export default function Alunos() {
     try {
       setIsLoading(true);
       await axios.delete(`/aprendiz/${id}`);
-      const novosAlunos = [...alunos];
-      novosAlunos.splice(index, 1);
-      setAlunos(novosAlunos);
+      const novosAlunosDel = [...alunos];
+      novosAlunosDel.splice(index, 1);
+      setAlunos(novosAlunosDel);
       setIsLoading(false);
       toast.success(`Aluno(a) ${alunos[index].nome} deletado(a) com sucesso!`);
     } catch (err) {
@@ -94,76 +101,95 @@ export default function Alunos() {
   let open = false;
   function handleSearch() {
     const search = document.querySelector('.search');
-    const filtro = search.value.toUpperCase();
-    const novosSearchAlunos = [];
-    console.log(filtro);
-
     if (!open) {
       search.setAttribute('class', 'search flex');
       open = true;
+    } else {
+      search.setAttribute('class', 'search none');
+      open = false;
     }
-    alunos.map((aluno) => {
-      const filtrado = aluno;
-      if (filtrado.nome.toUpperCase() === filtro) {
-        novosSearchAlunos.push(filtrado);
-      }
+  }
 
-      setAlunos(novosSearchAlunos);
+  async function askSearch() {
+    const search = document.querySelector('.search');
+    const filtro = await search.value.toUpperCase();
+    const novosSearchAlunos = [];
+
+    alunos.map((aluno) => {
+      if (aluno.nome.toUpperCase().indexOf(filtro) !== -1) {
+        novosSearchAlunos.push(aluno);
+      }
     });
+
+    setMostraAlunos(novosSearchAlunos);
   }
 
   return (
-    <Container>
-      <Loading isLoading={isLoading} />
+    <>
+      {id ? (
+        <Container>
+          <Loading isLoading={isLoading} />
 
-      <Search className="flex">
-        <h1>Meus alunos </h1>
-        <input
-          type="text"
-          value={search}
-          className="none search"
-          onChange={(e) => setSearch(e.target.value)}
-        />
-        <BiSearchAlt2 size={30} className="click" onClick={handleSearch} />
-      </Search>
+          <Search className="flex">
+            <h1>Meus alunos </h1>
+            <input
+              type="text"
+              value={search}
+              className="none search"
+              onChange={(e) => {
+                setSearch(e.target.value);
+                askSearch();
+              }}
+            />
+            <BiSearchAlt2 size={30} className="click" onClick={handleSearch} />
+          </Search>
 
-      <AlunoContainer>
-        {alunos.map((aluno, index) => (
-          <div key={String(aluno.id)}>
-            <Link to={`/aprendiz/${aluno.id}`} className="alunos">
-              <ProfilePicture>
-                {Lodash.get(aluno, 'Fotos[0].url', false) ? (
-                  <img crossOrigin="" src={aluno.Fotos[0].url} alt="" /> //se verdadeiro
-                ) : (
-                  <FaUserCircle size={36} /> // se falso
-                )}
-              </ProfilePicture>
+          <AlunoContainer>
+            {mostraAlunos.map((aluno, index) => (
+              <div key={String(aluno.id)}>
+                <Link to={`/aprendiz/${aluno.id}`} className="alunos">
+                  <ProfilePicture>
+                    {Lodash.get(aluno, 'Fotos[0].url', false) ? (
+                      <img crossOrigin="" src={aluno.Fotos[0].url} alt="" /> //se verdadeiro
+                    ) : (
+                      <FaUserCircle size={36} /> // se falso
+                    )}
+                  </ProfilePicture>
 
-              <span className="nome">{aluno.nome}</span>
-              <span className="email">{aluno.email}</span>
-              {id ? (
-                <div>
-                  <Link onClick={handleDeleteAsk} to="">
-                    <FaWindowClose className="delete" size={16} />
-                  </Link>
-                  <FaExclamation
-                    size={8}
-                    className="exclamation none"
-                    onClick={(e) => handleDelete(e, aluno.id, index)}
-                  />
-                </div>
-              ) : (
-                ''
-              )}
+                  <span className="nome">{aluno.nome}</span>
+                  <span className="email">{aluno.email}</span>
+                  {id ? (
+                    <div>
+                      <Link onClick={handleDeleteAsk} to="">
+                        <FaWindowClose className="delete" size={16} />
+                      </Link>
+                      <FaExclamation
+                        size={8}
+                        className="exclamation none"
+                        onClick={(e) => handleDelete(e, aluno.id, index)}
+                      />
+                    </div>
+                  ) : (
+                    ''
+                  )}
+                </Link>
+              </div>
+            ))}
+          </AlunoContainer>
+          <NovoAluno to="/aprendiz/" className="addAluno">
+            <Link className="content" to="/aprendiz">
+              Novo aluno <AiOutlineUserAdd />
             </Link>
-          </div>
-        ))}
-      </AlunoContainer>
-      <NovoAluno to="/aprendiz/" className="addAluno">
-        <Link className="content" to="/aprendiz">
-          Novo aluno <AiOutlineUserAdd />
-        </Link>
-      </NovoAluno>
-    </Container>
+          </NovoAluno>
+        </Container>
+      ) : (
+        <>
+          <Content>
+            <img src={Welcome} alt="" />
+            <Link to="/register">Criar minha conta</Link>
+          </Content>
+        </>
+      )}
+    </>
   );
 }

@@ -93,3 +93,22 @@ export const Search = styled.div`
     height: 30px;
   }
 `;
+
+export const Content = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 50px;
+
+  a {
+    transition: 300ms;
+    color: ${primaryColor};
+    font-size: 2em;
+
+    &:hover {
+      filter: none;
+      text-decoration: underline;
+    }
+  }
+`;
