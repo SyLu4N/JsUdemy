@@ -1,11 +1,5 @@
 import React from 'react';
-import {
-  FaHome,
-  FaUserAlt,
-  FaSignInAlt,
-  FaCircle,
-  FaPowerOff,
-} from 'react-icons/fa';
+import { FaUserAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -17,10 +11,28 @@ export default function Header() {
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
   const dispatch = useDispatch();
 
+  const nomeStored = useSelector((state) => state.auth.user.nome);
+  const emailStored = useSelector((state) => state.auth.user.email);
+
   const handleLogout = (e) => {
     e.preventDefault();
     dispatch(actions.loginFailure());
     history.push('/');
+  };
+
+  let open = true;
+
+  const handleUser = (e) => {
+    e.preventDefault();
+    const perfil = document.querySelector('.perfil');
+
+    if (open) {
+      perfil.setAttribute('class', 'perfil flex');
+      open = false;
+    } else {
+      perfil.setAttribute('class', 'perfil none');
+      open = true;
+    }
   };
 
   return (
@@ -28,25 +40,30 @@ export default function Header() {
       <Link to="/" className="logo">
         MySchool
       </Link>
-      <div>
-        <Link to="/">
-          <FaHome size={24} />
-        </Link>
-        <Link to="/register">
-          <FaUserAlt size={22} />
-        </Link>
-        {isLoggedIn ? (
-          <Link onClick={handleLogout} to="/logout">
-            <FaPowerOff size={22} />
+
+      <Link to="" className="white">
+        <FaUserAlt size={22} onClick={handleUser} />
+      </Link>
+
+      <div className="perfil none">
+        <div className="hr">
+          <p>
+            <FaUserAlt size={18} />
+          </p>
+          <p>{nomeStored}</p>
+        </div>
+
+        <div>
+          <Link to="/register" className="pPerfil">
+            Meu Perfil
           </Link>
-        ) : (
-          <Link to="/login">
-            <FaSignInAlt size={24} />
+        </div>
+
+        <div>
+          <Link to="/logout" className="pPerfil">
+            Sair
           </Link>
-        )}
-        {isLoggedIn && (
-          <FaCircle size={24} color="#66ff33" className="logado" />
-        )}
+        </div>
       </div>
     </Nav>
   );
