@@ -2,15 +2,17 @@ import styled from 'styled-components';
 import { primaryColor } from '../../config/colors';
 
 export const Nav = styled.nav`
+  @import url('https://fonts.googleapis.com/css2?family=Inspiration&display=swap');
+
   background: ${primaryColor};
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 20px 30px 20px 30px;
   position: relative;
+  height: 60px;
 
   a {
-    margin: 0 10px 0 0;
     font-weight: bold;
 
     &:hover {
@@ -18,13 +20,20 @@ export const Nav = styled.nav`
     }
   }
 
+  .nav {
+    margin: 0 100px;
+  }
+
   .logado {
     padding-top: 2px;
   }
 
   .logo {
-    font-size: 2em;
+    font-weight: normal;
+    font-family: 'Inspiration', cursive;
+    font-size: 2.2em;
     color: white;
+    text-shadow: 0px 0px 6px black;
   }
 
   .pPerfil {
@@ -53,7 +62,7 @@ export const Nav = styled.nav`
     position: absolute;
     padding: 4px;
     top: 70%;
-    right: 5px;
+    right: 8%;
     color: ${primaryColor};
     flex-direction: column;
     align-items: flex-start;

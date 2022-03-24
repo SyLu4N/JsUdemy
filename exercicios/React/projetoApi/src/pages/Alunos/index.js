@@ -15,6 +15,7 @@ import {
   NovoAluno,
   Search,
   Content,
+  Opacity,
 } from './styled';
 import Loading from '../../components/Loading';
 import Welcome from '../../images/welcome.svg';
@@ -125,7 +126,7 @@ export default function Alunos() {
   }
 
   return (
-    <>
+    <Opacity>
       {id ? (
         <Container>
           <Loading isLoading={isLoading} />
@@ -190,6 +191,6 @@ export default function Alunos() {
           </Content>
         </>
       )}
-    </>
+    </Opacity>
   );
 }

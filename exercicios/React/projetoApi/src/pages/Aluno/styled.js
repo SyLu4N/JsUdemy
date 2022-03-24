@@ -63,8 +63,9 @@ export const Container = styled.div`
 
 export const Content = styled.div`
   background: url(${fundo});
+  background-size: contain;
   padding: 5px 0;
-  margin: 15px auto 0 auto;
+  margin: 20px auto 0 auto;
   max-width: 480px;
   z-index: 2;
   border-radius: 4px 4px 0px 0px;

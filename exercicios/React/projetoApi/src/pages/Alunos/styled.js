@@ -112,3 +112,11 @@ export const Content = styled.div`
     }
   }
 `;
+
+export const Opacity = styled.div`
+  background-color: rgb(255, 255, 255, 0.5);
+  width: 100%;
+  height: 100%;
+  padding: 30px 0;
+  margin: 0;
+`;

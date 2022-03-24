@@ -1,6 +1,7 @@
 import styled, { createGlobalStyle } from 'styled-components';
 import * as colors from '../config/colors';
 import 'react-toastify/dist/ReactToastify.css';
+import background from '../images/fundoTeste.jpg';
 
 export default createGlobalStyle`
 *{
@@ -16,12 +17,14 @@ export default createGlobalStyle`
 
 body{
   font-family: sans-serif;
-  background: ${colors.primaryDarkColor};
+  background-image: url(${background});
+  background-color: #fff;
+  background-size: cover;
   color: ${colors.primaryDarkColor};
 }
 
 html, body, #root{
-  height: 102%;
+  height: 100%;
 }
 
 button{
@@ -103,10 +106,10 @@ input::-webkit-inner-spin-button {
 
 export const Container = styled.section`
   max-width: 480px;
-  background-color: #fff;
-  margin: 30px auto;
-  padding: 30px;
-  border-radius: 4px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: rgb(255, 255, 255, 0.6);
+  box-shadow: 0px 0px 20px white;
+  margin: 40px auto;
+  padding: 5px;
+  border-radius: 20px;
   overflow-y: hidden;
 `;

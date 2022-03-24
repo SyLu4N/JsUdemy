@@ -37,11 +37,13 @@ export default function Header() {
 
   return (
     <Nav>
-      <Link to="/" className="logo">
+      <Link to="/" className="logo nav">
         MySchool
       </Link>
 
-      <Link to="" className="white">
+      {id ? () : ()}
+
+      <Link to="" className="white nav">
         <FaUserAlt size={22} onClick={handleUser} />
       </Link>
 

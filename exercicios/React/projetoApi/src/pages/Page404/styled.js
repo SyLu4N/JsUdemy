@@ -8,6 +8,8 @@ export const Content = styled.div`
   flex-direction: column;
   margin-top: -30px;
   overflow: hidden;
+  background-color: rgb(255, 255, 255, 0.8);
+  padding-bottom: 110px;
 
   a {
     transition: 300ms;
@@ -16,13 +18,15 @@ export const Content = styled.div`
 
     &:hover {
       filter: none;
-      text-decoration: underline;
+      text-decoration: none;
+      font-size: 34px;
     }
   }
 
   h1 {
-    margin-top: -30px;
-    color: white;
+    margin-top: -80px;
+    color: #3f3d56;
+    margin-bottom: 60px;
   }
 
   img {
