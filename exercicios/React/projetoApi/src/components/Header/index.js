@@ -12,7 +12,6 @@ export default function Header() {
   const dispatch = useDispatch();
 
   const nomeStored = useSelector((state) => state.auth.user.nome);
-  const emailStored = useSelector((state) => state.auth.user.email);
 
   const handleLogout = (e) => {
     e.preventDefault();
@@ -29,10 +28,25 @@ export default function Header() {
     if (open) {
       perfil.setAttribute('class', 'perfil flex');
       open = false;
+      document.addEventListener('click', function click(event) {
+        const teste = document.querySelector('.test');
+        const el = event.target;
+        const path = teste.firstChild;
+
+        if (el !== perfil && el !== teste && el !== path) {
+          closeNav();
+          document.removeEventListener('click', click);
+        }
+      });
     } else {
-      perfil.setAttribute('class', 'perfil none');
-      open = true;
+      closeNav();
     }
+  };
+
+  const closeNav = () => {
+    const perfil = document.querySelector('.perfil');
+    perfil.setAttribute('class', 'perfil none');
+    open = true;
   };
 
   return (
@@ -41,32 +55,47 @@ export default function Header() {
         MySchool
       </Link>
 
-      {id ? () : ()}
+      {isLoggedIn ? (
+        <>
+          <Link to="" className="nav teste">
+            <FaUserAlt size={22} onClick={handleUser} className="test" />
+          </Link>
 
-      <Link to="" className="white nav">
-        <FaUserAlt size={22} onClick={handleUser} />
-      </Link>
+          <div className="perfil none">
+            <div className="hr">
+              <p>
+                <FaUserAlt size={18} />
+              </p>
+              <p>{nomeStored}</p>
+            </div>
 
-      <div className="perfil none">
-        <div className="hr">
-          <p>
-            <FaUserAlt size={18} />
-          </p>
-          <p>{nomeStored}</p>
-        </div>
+            <div>
+              <Link to="/register" className="pPerfil" onClick={closeNav}>
+                Meu Perfil
+              </Link>
+            </div>
 
+            <div>
+              <Link
+                to="/logout"
+                className="pPerfil"
+                onClick={(closeNav, handleLogout)}
+              >
+                Sair
+              </Link>
+            </div>
+          </div>
+        </>
+      ) : (
         <div>
-          <Link to="/register" className="pPerfil">
-            Meu Perfil
+          <Link to="/sobre" className="nav noLoggindIn">
+            Sobre
+          </Link>
+          <Link to="/login" className="nav noLoggindIn">
+            Logar
           </Link>
         </div>
-
-        <div>
-          <Link to="/logout" className="pPerfil">
-            Sair
-          </Link>
-        </div>
-      </div>
+      )}
     </Nav>
   );
 }

@@ -7,8 +7,7 @@ export const Nav = styled.nav`
   background: ${primaryColor};
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 20px 30px 20px 30px;
+  justify-content: space-around;
   position: relative;
   height: 60px;
 
@@ -21,17 +20,21 @@ export const Nav = styled.nav`
   }
 
   .nav {
-    margin: 0 100px;
+    color: white;
   }
 
   .logado {
     padding-top: 2px;
   }
 
+  .noLoggindIn {
+    margin: 0 10px;
+  }
+
   .logo {
     font-weight: normal;
     font-family: 'Inspiration', cursive;
-    font-size: 2.2em;
+    font-size: 2em;
     color: white;
     text-shadow: 0px 0px 6px black;
   }
@@ -62,13 +65,17 @@ export const Nav = styled.nav`
     position: absolute;
     padding: 4px;
     top: 70%;
-    right: 8%;
+    right: 19%;
     color: ${primaryColor};
     flex-direction: column;
     align-items: flex-start;
     border: 1px solid #ccc;
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
     min-width: 150px;
+  }
+
+  .none {
+    display: none;
   }
 
   .hr {
