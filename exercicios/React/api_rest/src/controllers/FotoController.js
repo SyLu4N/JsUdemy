@@ -13,23 +13,28 @@ function FotoController() {
 FotoController.prototype.index = async function (req, res) {
   try {
     const user = await User.findByPk(req.userId);
+    console.log(user.id);
 
     if (!user.id) {
       return res.status(401);
     }
 
-    const fotos = await Foto.findAll();
-
-    const novasFotos = fotos.filter(foto => {
-      if (foto.aluno_id === user.id) return foto;
-      return 0;
+    const alunos = await Aprendiz.findAll({
+      attributes: ['user_id', 'id'],
+      include: {
+        model: Foto,
+        attributes: ['originalname', 'filename', 'url', 'id'],
+      },
     });
 
-    return res.json(novasFotos);
+    console.log(alunos);
+
+    const novosAlunos = alunos.filter((aluno) => aluno.user_id === user.id);
+    return res.json(novosAlunos);
   } catch (e) {
     console.log(e);
     return res.status(400).json({
-      errors: 'Algo inesperado aconteceu!',
+      errors: ['Algo inesperado aconteceu!'],
     });
   }
 };
@@ -84,6 +89,7 @@ FotoController.prototype.store = function (req, res) {
 
       return res.json(foto);
     } catch (e) {
+      console.log(e);
       return res.status(400).json({
         errors: ['Algo inesperado aconteceu!'],
       });

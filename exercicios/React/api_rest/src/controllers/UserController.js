@@ -1,7 +1,6 @@
 import User from '../models/User';
 import Aprendiz from '../models/Aprendiz';
 
-// store
 class UserController {
   async store(req, res) {
     try {
@@ -14,7 +13,6 @@ class UserController {
     }
   }
 
-  // index
   async index(req, res) {
     try {
       const users = await User.findAll({

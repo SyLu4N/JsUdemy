@@ -22,7 +22,7 @@ AprendizController.prototype.index = async function (req, res) {
       order: [['id', 'DESC'], [Foto, 'id', 'DESC']], // ASC > Crescente DESC > Decrescente
       include: {
         model: Foto,
-        attributes: ['originalname', 'filename', 'url'],
+        attributes: ['originalname', 'filename', 'url', 'id'],
       },
     });
 
@@ -53,7 +53,7 @@ AprendizController.prototype.show = async function (req, res) {
       order: [['id', 'DESC'], [Foto, 'id', 'DESC']], // ASC > Crescente DESC > Decrescente
       include: {
         model: Foto,
-        attributes: ['originalname', 'filename', 'url'],
+        attributes: ['originalname', 'filename', 'url', 'id'],
       },
     });
 

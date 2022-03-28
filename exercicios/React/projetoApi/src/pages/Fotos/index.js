@@ -74,8 +74,8 @@ export default function Fotos({ match }) {
   async function handlePerfil(e, index) {
     try {
       e.preventDefault();
-      const id = fotos[index];
-      console.log(id);
+      const id = fotos[index].id;
+      console.log(fotos[index].id);
 
       await axios.put(`/foto/${id}`);
       fotos.splice(0, 0, fotos.splice(index, 1)[0]);
@@ -115,7 +115,7 @@ export default function Fotos({ match }) {
         <ProfilePicture>
           {fotos
             ? fotos.map((galeria, index) => (
-                <div key={String(index)}>
+                <div key={String(galeria.id)}>
                   <Link to="">
                     <img
                       crossOrigin=""
