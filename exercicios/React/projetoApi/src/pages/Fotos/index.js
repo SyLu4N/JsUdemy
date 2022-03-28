@@ -3,6 +3,7 @@ import Lodash from 'lodash';
 import { toast } from 'react-toastify';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import { Container } from '../../styles/GlobalStyles';
 import Loading from '../../components/Loading';
@@ -70,11 +71,25 @@ export default function Fotos({ match }) {
     }
   };
 
-  function handlePerfil(e, index) {
-    console.log(e.target.src);
+  async function handlePerfil(e, index) {
+    try {
+      e.preventDefault();
+      const id = fotos[index];
+      console.log(id);
 
-    fotos.splice(0, 0, fotos.splice(index, 1)[0]);
-    setFotos(fotos);
+      await axios.put(`/foto/${id}`);
+      fotos.splice(0, 0, fotos.splice(index, 1)[0]);
+      setFotos(fotos);
+    } catch (err) {
+      const data = Lodash.get(err, 'response.data', {});
+      const errors = Lodash.get(data, 'errors', []);
+
+      if (errors.length > 0) {
+        errors.map((error) => toast.error(error));
+      } else {
+        toast.error('Algo deu errado, tente novamente mais tarde');
+      }
+    }
   }
 
   return (
@@ -98,16 +113,17 @@ export default function Fotos({ match }) {
       {fotos.length > 0 ? <Title>Sua galeria</Title> : ''}
       <Content>
         <ProfilePicture>
-          {console.log(fotos)}
           {fotos
             ? fotos.map((galeria, index) => (
                 <div key={String(index)}>
-                  <img
-                    crossOrigin=""
-                    src={galeria.url}
-                    alt="Foto aluno"
-                    onClick={(e) => handlePerfil(e, index)}
-                  />
+                  <Link to="">
+                    <img
+                      crossOrigin=""
+                      src={galeria.url}
+                      alt="Foto aluno"
+                      onClick={(e) => handlePerfil(e, index)}
+                    />
+                  </Link>
                 </div>
               ))
             : ''}

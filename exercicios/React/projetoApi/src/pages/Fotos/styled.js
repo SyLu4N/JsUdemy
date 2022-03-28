@@ -6,8 +6,8 @@ export const Title = styled.h1`
 
 export const Form = styled.form`
   label {
-    width: 180px;
-    height: 180px;
+    width: 175px;
+    height: 175px;
     display: flex;
     background-color: #eee;
     justify-content: center;
@@ -15,6 +15,12 @@ export const Form = styled.form`
     margin: 20px auto;
     cursor: pointer;
     position: relative;
+    border-radius: 10px;
+    transition-duration: 300ms;
+
+    &:hover {
+      filter: brightness(90%);
+    }
   }
 
   img {
@@ -28,15 +34,15 @@ export const Form = styled.form`
     position: absolute;
     color: white;
     display: none;
-    top: 0%;
+    top: -2.7%;
   }
 
   .esconde:hover p {
     display: block;
     filter: brightness(80%);
     background-color: rgba(0, 0, 0, 0.4);
-    padding: 43% 28%;
-    border-radius: 6px;
+    padding: 45.5% 29%;
+    border-radius: 10px;
   }
 
   input {
