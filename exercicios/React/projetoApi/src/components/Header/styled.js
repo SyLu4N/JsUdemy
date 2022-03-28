@@ -2,8 +2,6 @@ import styled from 'styled-components';
 import { primaryColor } from '../../config/colors';
 
 export const Nav = styled.nav`
-  @import url('https://fonts.googleapis.com/css2?family=Inspiration&display=swap');
-
   background: ${primaryColor};
   display: flex;
   align-items: center;
@@ -33,7 +31,7 @@ export const Nav = styled.nav`
 
   .logo {
     font-weight: normal;
-    font-family: 'Inspiration', cursive;
+    font-family: 'Hurricane', cursive;
     font-size: 2em;
     color: white;
     text-shadow: 0px 0px 6px black;

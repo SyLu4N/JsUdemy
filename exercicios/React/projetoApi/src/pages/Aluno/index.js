@@ -199,7 +199,7 @@ export default function Aluno({ match }) {
             <label htmlFor="">
               Sobrenome
               <input
-                placeholder="Nome"
+                placeholder="Sobrenome"
                 type="text"
                 value={sobrenome}
                 onChange={(e) => setSobrenome(e.target.value)}

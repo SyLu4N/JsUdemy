@@ -10,6 +10,7 @@ import { Title, Form } from './styled';
 import axios from '../../services/axios';
 import history from '../../services/history';
 import * as actions from '../../store/modules/auth/actions';
+import { ProfilePicture, Content } from '../Fotos/styled';
 
 export default function Fotos({ match }) {
   const dispatch = useDispatch();
@@ -18,13 +19,15 @@ export default function Fotos({ match }) {
 
   const [isLoading, setIsLoading] = React.useState(false);
   const [foto, setFoto] = React.useState('');
+  const [fotos, setFotos] = React.useState('');
 
   React.useEffect(() => {
     const getData = async () => {
       try {
         setIsLoading(true);
-        const { data } = await axios.get(`/alunos/${id}`);
+        const { data } = await axios.get(`/aprendiz/${id}`);
         setFoto(Lodash.get(data, 'Fotos[0].url', ''));
+        setFotos(Lodash.get(data, 'Fotos', ''));
         setIsLoading(false);
       } catch {
         toast.error('Erro, tente novamente mais tarde!');
@@ -55,8 +58,8 @@ export default function Fotos({ match }) {
         },
       });
 
+      location.reload();
       toast.success('Foto enviada com sucesso!');
-
       setIsLoading(false);
     } catch (err) {
       setIsLoading(false);
@@ -67,12 +70,17 @@ export default function Fotos({ match }) {
     }
   };
 
+  function handlePerfil(e, index) {
+    console.log(e.target.src);
+
+    fotos.splice(0, 0, fotos.splice(index, 1)[0]);
+    setFotos(fotos);
+  }
+
   return (
     <Container>
       <Loading isLoading={isLoading} />
-
-      <Title>Foto</Title>
-
+      <Title>Foto de Perfil</Title>
       <Form>
         <label htmlFor="foto">
           {foto ? (
@@ -86,6 +94,25 @@ export default function Fotos({ match }) {
           <input type="file" id="foto" onChange={handleChange} />
         </label>
       </Form>
+
+      {fotos.length > 0 ? <Title>Sua galeria</Title> : ''}
+      <Content>
+        <ProfilePicture>
+          {console.log(fotos)}
+          {fotos
+            ? fotos.map((galeria, index) => (
+                <div key={String(index)}>
+                  <img
+                    crossOrigin=""
+                    src={galeria.url}
+                    alt="Foto aluno"
+                    onClick={(e) => handlePerfil(e, index)}
+                  />
+                </div>
+              ))
+            : ''}
+        </ProfilePicture>
+      </Content>
     </Container>
   );
 }

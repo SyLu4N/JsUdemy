@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { primaryColor } from '../../config/colors';
-import fundo from '../../images/teste2.png';
 
 export const Form = styled.form`
   margin-top: 15px;
@@ -53,20 +52,21 @@ export const ProfilePicture = styled.div`
   }
 `;
 
-export const Container = styled.div`
-  max-width: 480px;
-  background-color: #fff;
-  margin: 0px auto 30px auto;
-  padding: 5px 30px 30px 30px;
-  border-radius: 0 0 4px 4px;
-`;
-
 export const Content = styled.div`
-  background: url(${fundo});
+  background: url('/img/teste2.png');
   background-size: contain;
   padding: 5px 0;
   margin: 20px auto 0 auto;
   max-width: 480px;
   z-index: 2;
   border-radius: 4px 4px 0px 0px;
+  box-shadow: inset 0px -1px 10px 20px white;
+`;
+
+export const Container = styled.div`
+  max-width: 480px;
+  background-color: #fff;
+  margin: 0px auto 30px auto;
+  padding: 5px 30px 30px 30px;
+  border-radius: 0 0 4px 4px;
 `;

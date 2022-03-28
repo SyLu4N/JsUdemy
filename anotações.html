@@ -1,7 +1,8 @@
 <h1>Atalhos!</h1>
 
 Ctrl + U = Abrir código fonte da página
-Alt + Shitf + a = <!--  -->
+Alt + Shitf + a =
+<!--  -->
 Alt + Shift + Seta para baixo = Copiar linha
 Alt + Z = Quebra de linha automatica
 --------------------------------------------------------------------------
@@ -15,65 +16,101 @@ Estrutura do Body
 <aside>Sobre o artigo</aside>
 <footer>Rodapé</footer>
 --------------------------------------------------------------------------
-Comando 
+Comando
 <style>
+  :root {
+    /* Acesso a config rápidas */
+    --corescura: #3a0606;
+    --fontpadrao: 'Arial';
+  }
 
-  :root{ /* Acesso a config rápidas */
-      --corescura: #3a0606;
-      --fontpadrao: 'Arial';
-    }
+  overflow: hidden;
+  /* Oque passar do texto é escondido */
+  overflow: scroll;
+  /* Barra de rolagem para oque passar */
+  overflow: auto;
+  /* Caso passe, cria a barra de rolagem */
 
-  overflow: hidden; /* Oque passar do texto é escondido */
-  overflow: scroll; /* Barra de rolagem para oque passar */
-  overflow: auto; /* Caso passe, cria a barra de rolagem */
+  <hr>
+  /* Linha horizontal */
+  <br>
+  /* Quebra linha */
+  &lt
+  /* < */
+  &gt
+  /* > */
+  repeat(10, 1fr)
+  /* Vai repetir 10x */
+  z-index: 1:
 
-  <hr> /* Linha horizontal */
-  <br> /* Quebra linha */
-  &lt /* < */ 
-  &gt /* > */
-  repeat(10, 1fr) /* Vai repetir 10x */
-  z-index: 1: /* Fica na frente dos outros conteúdos. */
-::after or ::before{ /* after Depois > before Antes */
-      content: '»' ; /* Adiciona itens */ ;}
+  /* Fica na frente dos outros conteúdos. */
+  ::after or ::before {
+    /* after Depois > before Antes */
+    content: '»';
+    /* Adiciona itens */
+    ;
+  }
 
-  body{
+  body {
 
-    align-items: center; /* centraliza itens no centro */
-    justify-content: center; /* Centraliza meu conteudo */
-    justify-content: space-between; /* Esquerda e Direita */
+    align-items: center;
+    /* centraliza itens no centro */
+    justify-content: center;
+    /* Centraliza meu conteudo */
+    justify-content: space-between;
+    /* Esquerda e Direita */
 
-    display: inline-block;/* Na mesma linha mas config de block */
-    display: inline; /* Na mesma linha */
-    display: block; /* Config de block */
+    display: inline-block;
+    /* Na mesma linha mas config de block */
+    display: inline;
+    /* Na mesma linha */
+    display: block;
+    /* Config de block */
     display: flex;
-    flex-direction: column-reverse; /* direção do flex */
+    flex-direction: column-reverse;
+    /* direção do flex */
 
-    padding: 0px; /* Espaço Interno */
-    margin: 0px; /* Espaço Externo */
+    padding: 0px;
+    /* Espaço Interno */
+    margin: 0px;
+    /* Espaço Externo */
 
-    box-sizing: border-box; /* tamanho exato para borda */
-    border: 1px dashed black;/* borda do conteudo */
+    box-sizing: border-box;
+    /* tamanho exato para borda */
+    border: 1px dashed black;
+    /* borda do conteudo */
     /* tamanho > tipo > cor. Tipos = solid = linha > dashed = tracejado */
-    border-radius: 10px; /* Arredondar as bordas */
-    box-shadow: 10px 10px 10px black; /* sombra em forma de caixa */
+    border-radius: 10px;
+    /* Arredondar as bordas */
+    box-shadow: 10px 10px 10px black;
+    /* sombra em forma de caixa */
     /* Lado > Baixo > Borrar > Cor */
 
-    transition-duration: 2s; /* Tempo para  a animação */
+    transition-duration: 2s;
+    /* Tempo para  a animação */
 
-    float: left; /* Ocupa o espaço esquerdo. pode ir algo do lado */
-    clear: left; /* Limpa a esquerda */
-    scroll-behavior: smooth /* Animação de rolar a página */
+    float: left;
+    /* Ocupa o espaço esquerdo. pode ir algo do lado */
+    clear: left;
+    /* Limpa a esquerda */
+    scroll-behavior: smooth
+      /* Animação de rolar a página */
   }
 </style>
 --------------------------------------------------------------------------
 Grid
 
 display: grid;
-grid-row = <!-- fileira -->
-grid-column = <!-- Colunas -->
-grid-template-columns:repeat(auto-fill, minmax(320px, 1fr)); <!-- Auto responsivo -->
-grid-column-start: 1; <!-- Começa no coluna  1 -->
-grid-column-end: 1; <!-- Termina na coluna 1 -->
+grid-row =
+<!-- fileira -->
+grid-column =
+<!-- Colunas -->
+grid-template-columns:repeat(auto-fill, minmax(320px, 1fr));
+<!-- Auto responsivo -->
+grid-column-start: 1;
+<!-- Começa no coluna  1 -->
+grid-column-end: 1;
+<!-- Termina na coluna 1 -->
 --------------------------------------------------------------------------
 Altura e Largura
 
@@ -83,90 +120,119 @@ overflow: auto; /* Caso passe, cria a barra de rolagem */
 
 1fr = Ocupa o restante do espaço
 
-height: 100px; = Altura 
-width: 100px; = Largura 
+height: 100px; = Altura
+width: 100px; = Largura
 
-max-width: 100px; = responsividade 
+max-width: 100px; = responsividade
 min-width: 500px;
 
 max-height: 200px;
 min-height: 100px;
 
-height: 100vh; = 100% da minha tela 
+height: 100vh; = 100% da minha tela
 width: 100vh;
 
-width: 100%; = Ocupa 100% do espaço. Serve para imagens 
+width: 100%; = Ocupa 100% do espaço. Serve para imagens
 
 *{ /* zerar padding e margin geral */
-  margin: 0px;
-  padding: 0px;
+margin: 0px;
+padding: 0px;
 }
 --------------------------------------------------------------------------
 Display: Flex
 
-flex-direction = row <!-- Direção do Flex. Row = Horizontal Coluns = Vertical  -->
-flex-wrap: wrap = <!-- Permite quebrar a linha do meu flex -->
-flex-flow: row wrap = <!-- ShortHand. Direção > Wrap -->
+flex-direction = row
+<!-- Direção do Flex. Row = Horizontal Coluns = Vertical  -->
+flex-wrap: wrap =
+<!-- Permite quebrar a linha do meu flex -->
+flex-flow: row wrap =
+<!-- ShortHand. Direção > Wrap -->
 
-flex-basis: 320px = <!-- Tamanho do meu elemento -->
-flex-grow: 1 proporção = <!-- Usa todo espaço para dividir os elementos -->
-flex-grow: 0 not = <!-- Não usa todo espaço para dividir os elementos -->
-flex-shrink: 1 proporção = <!-- Nosso conteúdo diminuiu -->
-flex-shrink: 0 not = <!-- Nosso conteúdo não diminuiu -->
-flex: flex-grow > flex-shrink > flex-basis <!-- Shorthand do flex -->
+flex-basis: 320px =
+<!-- Tamanho do meu elemento -->
+flex-grow: 1 proporção =
+<!-- Usa todo espaço para dividir os elementos -->
+flex-grow: 0 not =
+<!-- Não usa todo espaço para dividir os elementos -->
+flex-shrink: 1 proporção =
+<!-- Nosso conteúdo diminuiu -->
+flex-shrink: 0 not =
+<!-- Nosso conteúdo não diminuiu -->
+flex: flex-grow > flex-shrink > flex-basis
+<!-- Shorthand do flex -->
 
 <h1>Aling-Items</h1>
 
-Aling-Items: flex-start <!-- começa em cima e pequeno -->
-Aling-Items: flex-end <!-- em baixo -->
-Aling-Items: center <!-- Centralizado no meio do elemento pai -->
-Aling-Items: baseline <!-- Alinha pelo texto -->
-Aling-Items: stretch <!-- Estica até a altura máxima -->
+Aling-Items: flex-start
+<!-- começa em cima e pequeno -->
+Aling-Items: flex-end
+<!-- em baixo -->
+Aling-Items: center
+<!-- Centralizado no meio do elemento pai -->
+Aling-Items: baseline
+<!-- Alinha pelo texto -->
+Aling-Items: stretch
+<!-- Estica até a altura máxima -->
 
 <h1>Justify-Content</h1>
 
-Justify-Content: flex-start = <!-- Começo do conteúdo -->
-Justify-Content: flex-end = <!-- Final do conteúdo -->
-Justify-Content: Center = <!-- Centraliza o conteúdo -->
-Justify-Content: space-around = <!-- Espalha o conteúdo com espaços -->
-Justify-Content: space-between = <!-- Espalha o conteúdo com espaços exatos -->
-Justify-Content: space-evenly = <!-- Espalha o conteúdo com espaços iguais -->
+Justify-Content: flex-start =
+<!-- Começo do conteúdo -->
+Justify-Content: flex-end =
+<!-- Final do conteúdo -->
+Justify-Content: Center =
+<!-- Centraliza o conteúdo -->
+Justify-Content: space-around =
+<!-- Espalha o conteúdo com espaços -->
+Justify-Content: space-between =
+<!-- Espalha o conteúdo com espaços exatos -->
+Justify-Content: space-evenly =
+<!-- Espalha o conteúdo com espaços iguais -->
 --------------------------------------------------------------------------
 <h1>F O N T S</h1>
 
 <style>
-  body{
+  body {
     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
     @font-face {
-      font-family: 'Work Sans' ;
+      font-family: 'Work Sans';
       src: url(aula/fonts/worksans.tff);
     }
-    h1{
-    <span> /*para destaque em line*/
-    <pre> utiliza os espaços e tudo </pre>
-    <code> para citar códigos </code>
-    <blockquote cite="site ou autor"> citação maiores
-    /* não pode ir em p */
-    <q cite="site ou autor"> citação </q>
-    <sub> Rebaixado </sub>
-    <sup> Elevado </sup>
-    <small> texto um pouco menor </small>
-    <ins> Underline </ins> ou <u> </u>
-    <del> Tachado </del> ou <s> </s>
-    font-variant: small-caps; /* Tudo maiusculo porém pequeno */
-    text-transform: uppercase; /* MAIUSCULO */
-    text-transform: lowercase; /* minusculo */
-    text-align: center; /* Centraliza o texto */
-    font-weight: bold; /* Peso da font | lighter > normal > bold > bolder ou 100,200,300... */
-    font-size: 16px; /* Tamanho | px > rem > em > cm > mm > pt */
-    font-family: 'Arial, Helvetica'; /* Fonte */
-    text-shadow: 1px 1px 2px black; /* Sombra no texto | Height > width > borrar > cor  */
-    text-indent: 3px; /* Indentação do texto */
-    line-height: 1em; /* altura que o texto ocupa */
-    letter-spacing: 2px; /* Espaçamento do text */
-    <strong> negrito  or <b> /*negrito sem semântica*/
-    <em> itálico  or <i> /*itálico sem semântica*/
-    <abbr> /*explica uma abreviação ou text.*/
+
+    h1 {
+      <span>
+      /*para destaque em line*/
+      <pre>utiliza os espaços e tudo </pre><code>para citar códigos </code><blockquote cite="site ou autor">citação maiores
+      /* não pode ir em p */
+      <q cite="site ou autor">citação </q><sub>Rebaixado </sub><sup>Elevado </sup><small>texto um pouco menor </small><ins>Underline </ins>ou <u></u><del>Tachado </del>ou <s></s>font-variant: small-caps;
+      /* Tudo maiusculo porém pequeno */
+      text-transform: uppercase;
+      /* MAIUSCULO */
+      text-transform: lowercase;
+      /* minusculo */
+      text-align: center;
+      /* Centraliza o texto */
+      font-weight: bold;
+      /* Peso da font | lighter > normal > bold > bolder ou 100,200,300... */
+      font-size: 16px;
+      /* Tamanho | px > rem > em > cm > mm > pt */
+      font-family: 'Arial, Helvetica';
+      /* Fonte */
+      text-shadow: 1px 1px 2px black;
+      /* Sombra no texto | Height > width > borrar > cor  */
+      text-indent: 3px;
+      /* Indentação do texto */
+      line-height: 1em;
+      /* altura que o texto ocupa */
+      letter-spacing: 2px;
+      /* Espaçamento do text */
+      <strong>negrito or <b>
+      /*negrito sem semântica*/
+      <em>itálico or <i>
+      /*itálico sem semântica*/
+      <abbr>
+      /*explica uma abreviação ou text.*/
     }
   }
 </style>
@@ -174,135 +240,162 @@ Justify-Content: space-evenly = <!-- Espalha o conteúdo com espaços iguais -->
 <h1>ShortHend</h1>
 
 <style>
-body{
-  border: 1px solid black;
- /* Tamanho > tipo > Cor */
-  font: italic bolder 30px 'Work Sans';
-  /* Style > peso > tamanho > fonte */
-  text-shadow: 1px 1px 2px black;
-  /* Height > width > borrar > cor  */
-  padding: 10px 10px 10px 10px;
-  /* topo > direita > baixo > Esquerda */
-  margin: 10px 10px 10px 10px;
-  /* topo > direita > baixo > Esquerda */
-  box-shadow: 10px 10px 10px black; 
-  /* Lado > Baixo > Borrar > Cor */
-  background: black url(imagem.png) center center no-repeat cover fixed;
-  /* Cor > tipo de fundo > posição > repetição > size(n pega) > attachment */
-  grid-area: um / um / quatro / tres; 
-  /* Linha > Coluna > Linha > Coluna */
-}
-
+  body {
+    border: 1px solid black;
+    /* Tamanho > tipo > Cor */
+    font: italic bolder 30px 'Work Sans';
+    /* Style > peso > tamanho > fonte */
+    text-shadow: 1px 1px 2px black;
+    /* Height > width > borrar > cor  */
+    padding: 10px 10px 10px 10px;
+    /* topo > direita > baixo > Esquerda */
+    margin: 10px 10px 10px 10px;
+    /* topo > direita > baixo > Esquerda */
+    box-shadow: 10px 10px 10px black;
+    /* Lado > Baixo > Borrar > Cor */
+    background: black url(imagem.png) center center no-repeat cover fixed;
+    /* Cor > tipo de fundo > posição > repetição > size(n pega) > attachment */
+    grid-area: um / um / quatro / tres;
+    /* Linha > Coluna > Linha > Coluna */
+  }
 </style>
 --------------------------------------------------------------------------
 <h1>Background</h1>
 
 <style>
-  body{
-    background-image: url();/* Imagem por caminho ou link */
-    background-size: 100px 100px; /* Tamanho da imagem de fundo */
+  body {
+    background-image: url();
+    /* Imagem por caminho ou link */
+    background-size: 100px 100px;
+    /* Tamanho da imagem de fundo */
     /* largura > altura */
-    background-repeat: repeat;/* configura a repitação ou não da imagem */
+    background-repeat: repeat;
+    /* configura a repitação ou não da imagem */
     /* repeat = repetir (padrão) > no-repeat = não repetir > repeat x = repetição horizontal > repeat y = repetição vertical */
-    background-position: left center; /* centralização da imagem */
-    background-attachment: fixed; /* Trava o fundo */
-    background-image: linear-gradient(to top, blue, red); /* Degrade */
+    background-position: left center;
+    /* centralização da imagem */
+    background-attachment: fixed;
+    /* Trava o fundo */
+    background-image: linear-gradient(to top, blue, red);
+    /* Degrade */
     /* Tipos: top > left > rigth > bottom */
-    background-size: 100%, 100%; /* tamanho do fundo */
+    background-size: 100%, 100%;
+    /* tamanho do fundo */
     /* contain = mostra a imagem inteira > cover = ocupa 100% da tela */
   }
-  
 </style>
 --------------------------------------------------------------------------
 <h1>L i n k s</h1>
 
 <a href="www.facebook.com" target="_blank" rel="external">Click aqui/a>
-  <!-- href= url / target= abrir em nova aba ou não / rel= explicação para o google --> 
+  <!-- href= url / target= abrir em nova aba ou não / rel= explicação para o google -->
   <!-- Tipos de target: _blank (nova aba) / _self (mesma aba) -->
   <!-- Tipos de rel: next (próxima aba) / external (fora do site) -->
---------------------------------------------------------------------------
-Pseudo-Classes
+  --------------------------------------------------------------------------
+  Pseudo-Classes
 
-active = <!-- Já clickado -->
-hover = <!-- Interação com o mause -->
-visited = <!-- Quando já visitado -->
-not(.meio) = <!-- Todos menos a classe meio -->
-link = <!-- Nunca visitados -->
-focus = <!-- Quando ativo/Usando -->
-disabled = <!-- Desabilitar -->
-enabled = <!-- Ativador -->
---------------------------------------------------------------------------
-Pseudo-Elemento
+  active =
+  <!-- Já clickado -->
+  hover =
+  <!-- Interação com o mause -->
+  visited =
+  <!-- Quando já visitado -->
+  not(.meio) =
+  <!-- Todos menos a classe meio -->
+  link =
+  <!-- Nunca visitados -->
+  focus =
+  <!-- Quando ativo/Usando -->
+  disabled =
+  <!-- Desabilitar -->
+  enabled =
+  <!-- Ativador -->
+  --------------------------------------------------------------------------
+  Pseudo-Elemento
 
-after = <!-- Depois -->
-before = <!-- Antes -->
-first-letter = <!-- Primeira Letra -->
-first-line = <!-- Primeira Linha -->
---------------------------------------------------------------------------
-Formulário
+  after =
+  <!-- Depois -->
+  before =
+  <!-- Antes -->
+  first-letter =
+  <!-- Primeira Letra -->
+  first-line =
+  <!-- Primeira Linha -->
+  --------------------------------------------------------------------------
+  Formulário
 
-autocomplete = off or on <!-- completa ou não oq está escrevendo -->
-placeholder = <!-- mensagem informativa dentro da caixa  -->
-values = <!-- Define um valor para a marcação -->
-required  = <!-- Precisa ser marcado ou preenchido -->
-checked = <!-- Já marcado -->
-disable = <!-- Desativada -->
-minlength = <!-- Caracter minimos -->
-maxlength = <!-- Caracter maximos -->
---------------------------------------------------------------------------
-Target=
+  autocomplete = off or on
+  <!-- completa ou não oq está escrevendo -->
+  placeholder =
+  <!-- mensagem informativa dentro da caixa  -->
+  values =
+  <!-- Define um valor para a marcação -->
+  required =
+  <!-- Precisa ser marcado ou preenchido -->
+  checked =
+  <!-- Já marcado -->
+  disable =
+  <!-- Desativada -->
+  minlength =
+  <!-- Caracter minimos -->
+  maxlength =
+  <!-- Caracter maximos -->
+  --------------------------------------------------------------------------
+  Target=
 
-_blank: abre a página em uma nova janela/aba;
-_self: abre a página na mesma janela;
-_parent: abre a página na mesma janela do link;
-_top: cancela todos os demais frames e abre a nova página no mesmo navegador.
---------------------------------------------------------------------------
-<h1>SIMBOLOGIA</h1>
+  _blank: abre a página em uma nova janela/aba;
+  _self: abre a página na mesma janela;
+  _parent: abre a página na mesma janela do link;
+  _top: cancela todos os demais frames e abre a nova página no mesmo navegador.
+  --------------------------------------------------------------------------
+  <h1>SIMBOLOGIA</h1>
 
-<p>ID em CSS vira #</p>
-<p>Class em CSS vira .</p>
-<p>Pseudo-Class em CSS vira :</p>
-<p>Pseudo-Element em CSS vira ::</p>
-<p>Filho em CSS vira > </p>
---------------------------------------------------------------------------
-<h1>Centralizando uma box</h1>
-<style>
-  #container{
-    position: relative; /* Padrão */
-    height: 81.5vh;
-    padding: 50px;
-    background-image: url(../aula22img/imgs/target001.png);
-    background-color: purple;
-    background-size: 100% 100%;
-  }
-  #conteudo{
-    background-image: url(../aula22img/imgs/target001.png);
-    background-size: 100% 100%;
-    position: absolute;
-    background-color: yellow;
-    height: 200px;
-    width: 400px;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
-</style>
+  <p>ID em CSS vira #</p>
+  <p>Class em CSS vira .</p>
+  <p>Pseudo-Class em CSS vira :</p>
+  <p>Pseudo-Element em CSS vira ::</p>
+  <p>Filho em CSS vira > </p>
+  --------------------------------------------------------------------------
+  <h1>Centralizando uma box</h1>
+  <style>
+    #container {
+      position: relative;
+      /* Padrão */
+      height: 81.5vh;
+      padding: 50px;
+      background-image: url(../aula22img/imgs/target001.png);
+      background-color: purple;
+      background-size: 100% 100%;
+    }
 
---------------------------------------------------------------------------
+    #conteudo {
+      background-image: url(../aula22img/imgs/target001.png);
+      background-size: 100% 100%;
+      position: absolute;
+      background-color: yellow;
+      height: 200px;
+      width: 400px;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
 
-<h1> OUTROS </h1>
+  --------------------------------------------------------------------------
 
-<!-- Box ocupa a linha inteira e sempre pula uma linha quando conjurado-->
-<!-- Inline Ocupa a mesma linha e não ocupa a linha toda -->
-<!-- Id só podemos um único por página -->
-<!-- Class podemos ilimitados por página -->
-<!-- Sempre quando definido height ou width, vira block -->
-<!-- Block usa <margin> -->
-<!-- Inline ou line usa <text-aling> -->
-<!-- @ = Regra  -->
-<!-- * = Config Global -->
-<!-- https://www.svgbackgrounds.com/ = imagem de fundo -->
-<!-- https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element = tags Html -->
-<!-- https://undraw.co/search = svg -->
-<!-- https://icon-icons.com/pt/icones/busca/firefox = icones -->
-<!-- https://unicode-table.com/pt/html-entities/ = simbolos -->
+  <h1> OUTROS </h1>
+
+  <!-- Box ocupa a linha inteira e sempre pula uma linha quando conjurado-->
+  <!-- Inline Ocupa a mesma linha e não ocupa a linha toda -->
+  <!-- Id só podemos um único por página -->
+  <!-- Class podemos ilimitados por página -->
+  <!-- Sempre quando definido height ou width, vira block -->
+  <!-- Block usa <margin> -->
+  <!-- Inline ou line usa <text-aling> -->
+  <!-- @ = Regra  -->
+  <!-- * = Config Global -->
+  <!-- https://www.svgbackgrounds.com/ = imagem de fundo -->
+  <!-- https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element = tags Html -->
+  <!-- https://undraw.co/search = svg -->
+  <!-- https://icon-icons.com/pt/icones/busca/firefox = icones -->
+  <!-- https://unicode-table.com/pt/html-entities/ = simbolos -->
