@@ -10,6 +10,51 @@ function FotoController() {
 
 }
 
+FotoController.prototype.index = async function (req, res) {
+  try {
+    const user = await User.findByPk(req.userId);
+
+    if (!user.id) {
+      return res.status(401);
+    }
+
+    const fotos = await Foto.findAll();
+
+    const novasFotos = fotos.filter(foto => {
+      if (foto.aluno_id === user.id) return foto;
+      return 0;
+    });
+
+    return res.json(novasFotos);
+  } catch (e) {
+    console.log(e);
+    return res.status(400).json({
+      errors: 'Algo inesperado aconteceu!',
+    });
+  }
+};
+
+// eslint-disable-next-line consistent-return
+FotoController.prototype.show = async function (req, res) {
+  try {
+    const { id } = req.params;
+
+    if (!id) {
+      return res.status(400).json({
+        errors: ['ID não encontrado'],
+      });
+    }
+
+    const foto = await Foto.findByPk(id);
+
+    return res.json(foto);
+  } catch (e) {
+    res.json({
+      errors: ['Algo inesperado aconteceu, tente novamente mais tarde!'],
+    });
+  }
+};
+
 FotoController.prototype.store = function (req, res) {
   return upload(req, res, async (err) => {
     if (err) {
@@ -23,7 +68,7 @@ FotoController.prototype.store = function (req, res) {
       const { aluno_id } = req.body; // recebe o id do aluno "body"
       if (!aluno_id || aluno_id === '' || aluno_id === undefined) {
         return res.status(400).json({
-          errors: 'ID do aluno precisa ser mandando',
+          errors: ['ID do aluno precisa ser mandando'],
         });
       }
 
@@ -31,7 +76,7 @@ FotoController.prototype.store = function (req, res) {
 
       if (!aluno) {
         return res.status(400).json({
-          errors: 'Aluno não existe',
+          errors: ['Aluno não existe'],
         });
       }
 
@@ -39,9 +84,60 @@ FotoController.prototype.store = function (req, res) {
 
       return res.json(foto);
     } catch (e) {
-      console.log(e);
       return res.status(400).json({
-        errors: 'Algo inesperado aconteceu!',
+        errors: ['Algo inesperado aconteceu!'],
+      });
+    }
+  });
+};
+
+FotoController.prototype.update = async function (req, res) {
+  return upload(req, res, async (err) => {
+    if (err) {
+      return res.status(400).json({
+        errors: [err.code],
+      });
+    }
+
+    try {
+      const { id: user_id } = await User.findByPk(req.userId);
+
+      if (!user_id) {
+        return res.status(400).json({
+          errors: ['É necessário estar logado para isso!'],
+        });
+      }
+
+      const { id } = req.body;
+      console.log(req.body);
+
+      if (!id) {
+        return res.status(400).json({
+          errors: ['É necessário o ID da foto!'],
+        });
+      }
+
+      const foto = await Foto.findByPk(id);
+      const { originalname, filename } = req.file; // recebe o arquivo "file"
+
+      if (!foto) {
+        return res.status(400).json({
+          errors: ['Foto não encontrado!'],
+        });
+      }
+
+      if (foto.aluno_id !== user_id) {
+        return res.status(400).json({
+          errors: ['Aprendiz não encontrado!'],
+        });
+      }
+
+      const fotoAtt = await foto.update({ id, originalname, filename });
+
+      return res.json(fotoAtt);
+    } catch (e) {
+      return res.status(400).json({
+        errors: e.errors.map(erro => erro.message),
       });
     }
   });
@@ -55,29 +151,28 @@ FotoController.prototype.delete = async function (req, res) {
       return res.status(401);
     }
 
-    const { foto_id } = req.body; // recebe o id da foto
+    const { id } = req.params;
 
-    if (!foto_id || foto_id === '' || foto_id === undefined) {
+    if (!id || id === '' || id === undefined) {
       return res.status(400).json({
-        errors: 'ID da foto precisa ser mandando',
+        errors: ['ID da foto precisa ser mandando'],
       });
     }
 
-    const foto = await Aprendiz.findByPk(foto_id);
+    const foto = await Foto.findByPk(id);
 
     if (!foto) {
       return res.status(400).json({
-        errors: 'Foto não existe',
+        errors: ['Foto não existe'],
       });
     }
 
     await foto.destroy();
 
-    return res.json(foto);
+    return res.json('Foto deleta com sucesso!');
   } catch (e) {
-    console.log(e);
     return res.status(400).json({
-      errors: 'Algo inesperado aconteceu!',
+      errors: ['Algo inesperado aconteceu!'],
     });
   }
 };

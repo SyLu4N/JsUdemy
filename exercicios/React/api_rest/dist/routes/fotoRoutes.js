@@ -4,6 +4,10 @@ var _loginRequired = require('../middlewares/loginRequired'); var _loginRequired
 
 const router = new (0, _express.Router)();
 
+router.get('/', _loginRequired2.default, _FotoController2.default.index);
+router.get('/:id', _loginRequired2.default, _FotoController2.default.show);
 router.post('/', _loginRequired2.default, _FotoController2.default.store);
+router.put('/', _loginRequired2.default, _FotoController2.default.update);
+router.delete('/:id', _loginRequired2.default, _FotoController2.default.delete);
 
 exports. default = router;
