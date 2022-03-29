@@ -31,6 +31,7 @@
  ✓ Working With React-Dom! <br>
  ✓ Working With React-Icons! <br>
  ✓ Working With Axios! <br>
+ ✓ Working With EJS! <br>
 
  <h1>✅Projects</h1>
  <h3>📚 Relógio</h3> 
