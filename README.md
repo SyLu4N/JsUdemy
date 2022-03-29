@@ -57,7 +57,7 @@
  <h2></h2>
 
 <h3>📚 Lista</h3> 
-<a href="https://sylu4n.github.io/JsUdemy/exercicios/Lista/index.html">MyList.</a> 
+<a href="https://sylu4n.github.io/JsUdemy/exercicios/Lista/index.html"> 
 <img src="./imgReadme/lista.gif" alt="Funcionamento da Lista"></a>
  Ferramentas usadas: functions / JSON / LocalStorage  
  <h2></h2>
