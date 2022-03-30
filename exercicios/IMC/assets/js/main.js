@@ -50,7 +50,7 @@ IMC.prototype.checkInput = function () {
   for(error of this.form.querySelectorAll('.errorForm')) error.remove();
 
   if(!this.peso.value || this.peso.value === 'undefined') this.newError(this.peso, '* Peso inválido');
-  if(!this.altura.value || this.altura.value === 'undefined') this.newError(this.altura, '* Altura inválido');
+  if(!this.altura.value || this.altura.value === 'undefined') this.newError(this.altura, '* Altura inválida');
   if(this.error) this.calculo(this.altura.value, this.peso.value);
 };
 

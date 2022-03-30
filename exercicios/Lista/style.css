@@ -1,9 +1,9 @@
 @charset "UTF-8";
 
 :root{
-  --cordestaque: #35E7E6;
-  --corfundo: rgba(238, 238, 238, 0.445);
-  --corpadrao: #2F2E41;
+  --cordestaque: #2A98B9;
+  --corfundo: #105d740c;
+  --corpadrao: #2A98B9;
 
 }
 
@@ -26,6 +26,10 @@ em{
   cursor: pointer;
 }
 
+input{
+  padding-left: 10px;
+}
+
 .container{
   display: flex;
   background-color: white;
@@ -37,19 +41,31 @@ em{
 }
 
 .titleLista{
-  color: var(--corpadrao);
   font-size: 2em;
 }
 
+h1, h2{
+  color: var(--corpadrao);
+  padding-left: 15px;
+}
+
 .intro{
-  padding: 0;
+  padding-right: 40px;
   margin: 0px;
   color: var(--cordestaque);
   font-size: 2.2em;
+  text-align: center;
+}
+
+aside{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 50px;
 }
 
 aside p{
-  max-width: 400px;
+  max-width: 450px;
   font-size: 1.4em;
 }
 
@@ -63,10 +79,6 @@ aside p{
   border: 1px solid darkgray;
   padding: 15px;
   border-top: none;
-}
-
-.titleLista{
-  padding-left: 15px;
 }
 
 .grid{
@@ -112,11 +124,6 @@ li{
   background-color: var(--corfundo);
   border-radius: 10px 10px 0 0;
   margin-top: 20px;
-}
-
-h2{
-  padding-left: 15px;
-  color:#2F2E41;
 }
 
 .border{

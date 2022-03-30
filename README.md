@@ -27,11 +27,16 @@
  ✓ Working With Mongoose! <br>
  ✓ Working With TypeScript! <br>
  ✓ Working With React! <br>
+ ✓ Working With React-Redux! <br>
+ ✓ Working With React-Dom! <br>
+ ✓ Working With React-Icons! <br>
+ ✓ Working With Axios! <br>
+ ✓ Working With EJS! <br>
 
  <h1>✅Projects</h1>
  <h3>📚 Relógio</h3> 
  
- <a href="https://sylu4n.github.io/JsUdemy/exercicios/Relogio/index.html"><img src="./imgReadme/Relogio.png" alt="Funcionamento do relógio"></a>
+ <a href="https://sylu4n.github.io/JsUdemy/exercicios/Relogio/index.html"><img src="./imgReadme/Relogio.gif" alt="Funcionamento do relógio"></a>
  Ferramentas usadas: Date / setInterval / functions
  <h2></h2>
 
@@ -42,16 +47,18 @@
 
 <h3>📚 IMC</h3> 
  <a href="https://sylu4n.github.io/JsUdemy/exercicios/IMC/index.html">
- <img src="./imgReadme/IMC.png" alt="Funcionamento do IMC"></a>
+ <img src="./imgReadme/IMC.gif" alt="Funcionamento do IMC"></a>
  Ferramentas usadas: functions / keyFrames
  <h2></h2>
 
 <h3>📚 Calculadora</h3> 
  <a href="https://sylu4n.github.io/JsUdemy/exercicios/Calculadora/index.html">
- <img src="./imgReadme/Calculadora.png" alt="Funcionamento do IMC"></a>
+ <img src="./imgReadme/Calculadora.gif" alt="Funcionamento do IMC"></a>
  Ferramentas usadas: functions
  <h2></h2>
 
-<h3>📚 Projeto: <a href="https://sylu4n.github.io/JsUdemy/exercicios/Lista/index.html">MyList.</a></h3>
-
-
+<h3>📚 Lista</h3> 
+<a href="https://sylu4n.github.io/JsUdemy/exercicios/Lista/index.html"> 
+<img src="./imgReadme/lista.gif" alt="Funcionamento da Lista"></a>
+ Ferramentas usadas: functions / JSON / LocalStorage  
+ <h2></h2>

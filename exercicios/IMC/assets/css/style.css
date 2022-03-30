@@ -167,7 +167,6 @@ form input:focus{
   color: rgb(245, 0, 0);
   font-size: 20px;
   font-style: italic;
-  text-shadow: 1px 1px rgba(0, 0, 0, 0.63);
 }
 
 .none{
@@ -227,12 +226,10 @@ form input:focus{
 
   25%{
     transform: rotate(0deg);
-    animation-delay: 5s;
   }
 
   50%{
     transform: rotate(20deg);
-    animation-delay: 5s;
   }
 
   75%{
