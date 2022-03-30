@@ -99,7 +99,7 @@ export const Content = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-top: 50px;
+  margin-top: 10px;
 
   a {
     transition: 300ms;
@@ -116,7 +116,30 @@ export const Content = styled.div`
 export const Opacity = styled.div`
   background-color: rgb(255, 255, 255, 0.5);
   width: 100%;
-  height: 100%;
-  padding: 30px 0;
+  padding: 20px 0;
   margin: 0;
+`;
+
+export const Limpo = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  h1 {
+    font-size: 2.5em;
+  }
+
+  img {
+    margin: 30px auto;
+    width: 500px;
+  }
+
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1em;
+    width: 500px;
+  }
 `;

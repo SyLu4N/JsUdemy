@@ -49,9 +49,9 @@ function* registerRequest({ payload }) {
         password,
       });
       const response = yield call(axios.post, '/tokens', payload);
-      yield put(actions.loginSuccess({ ...response.data }));
       toast.success('Conta criada com sucesso');
       yield put(actions.registerCreatedSuccess({ nome, email, password }));
+      yield put(actions.loginSuccess({ ...response.data }));
       history.push('/');
     }
   } catch (e) {

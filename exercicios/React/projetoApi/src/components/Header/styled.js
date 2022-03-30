@@ -10,10 +10,10 @@ export const Nav = styled.nav`
   height: 64px;
 
   a {
-    font-weight: bold;
+    font-weight: normal;
 
     &:hover {
-      filter: none;
+      text-decoration: underline;
     }
   }
 
@@ -35,6 +35,10 @@ export const Nav = styled.nav`
     font-size: 3em;
     color: white;
     text-shadow: 0px 0px 3px rgba(0, 0, 0, 1);
+
+    &:hover {
+      text-decoration: none;
+    }
   }
 
   .pPerfil {

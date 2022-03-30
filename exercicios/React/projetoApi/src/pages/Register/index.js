@@ -18,6 +18,7 @@ export default function Register() {
   const [nome, setNome] = React.useState('');
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
+  const [passwordCheck, setPasswordCheck] = React.useState('');
 
   React.useEffect(() => {
     if (!id) return;
@@ -51,6 +52,22 @@ export default function Register() {
       );
     }
 
+    if (!id && !passwordCheck.length) {
+      formErros = true;
+      newError(
+        '* Campo obrigatório!',
+        document.querySelector('.passwordCheck'),
+      );
+    }
+
+    if (!id && passwordCheck !== password) {
+      formErros = true;
+      newError(
+        'Senhas devem ser iguais!',
+        document.querySelector('.passwordCheck'),
+      );
+    }
+
     if (formErros) return;
 
     dispatch(actions.registerRequest({ nome, email, password, id }));
@@ -67,44 +84,91 @@ export default function Register() {
     <Container>
       <Loading isLoading={isLoading} />
 
-      <h1>{id ? ` Minha conta` : 'Crie sua conta'}</h1>
+      {id ? (
+        <>
+          <h1>Minha conta</h1>
 
-      <Form onSubmit={handleSubmit}>
-        <label htmlFor="nome">
-          Nome
-          <input
-            type="text"
-            value={nome}
-            onChange={(e) => setNome(e.target.value)}
-            placeholder="Seu nome"
-            className="nome"
-          />
-        </label>
+          <Form onSubmit={handleSubmit}>
+            <label htmlFor="nome">
+              Nome
+              <input
+                type="text"
+                value={nome}
+                onChange={(e) => setNome(e.target.value)}
+                placeholder="Seu nome"
+                className="nome"
+              />
+            </label>
 
-        <label htmlFor="email">
-          Email
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="Seu e-mail"
-            className="email"
-          />
-        </label>
+            <label htmlFor="email">
+              Email
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Seu e-mail"
+                className="email"
+              />
+            </label>
+            <button type="submit">Salvar</button>
+          </Form>
+        </>
+      ) : (
+        <>
+          <h1>Crie sua conta</h1>
 
-        <label htmlFor="password">
-          Senha
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder="Sua senha"
-            className="password"
-          />
-        </label>
+          <Form onSubmit={handleSubmit}>
+            <label htmlFor="nome">
+              Nome
+              <input
+                type="text"
+                value={nome}
+                onChange={(e) => setNome(e.target.value)}
+                placeholder="Seu nome"
+                className="nome"
+              />
+            </label>
 
-        <button type="submit">{id ? 'Salvar' : 'Criar conta'}</button>
-      </Form>
+            <label htmlFor="email">
+              Email
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Seu e-mail"
+                className="email"
+              />
+            </label>
+
+            <label htmlFor="password">
+              Senha
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="Sua senha"
+                className="password"
+              />
+            </label>
+
+            <label htmlFor="passwordCheck">
+              Repita a senha
+              <input
+                type="password"
+                value={passwordCheck}
+                onChange={(e) => setPasswordCheck(e.target.value)}
+                placeholder="Repita a senha"
+                className="passwordCheck"
+              />
+            </label>
+
+            <button type="submit">Cadastrar-se</button>
+            <p className="login">
+              Tem uma conta? <a href="/login"> Conecte-se</a>
+            </p>
+          </Form>
+        </>
+      )}
     </Container>
   );
 }

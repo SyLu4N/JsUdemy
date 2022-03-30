@@ -9,6 +9,7 @@ import { toast } from 'react-toastify';
 
 import { Container } from '../../styles/GlobalStyles';
 import axios from '../../services/axios';
+import history from '../../services/history';
 import {
   AlunoContainer,
   ProfilePicture,
@@ -16,6 +17,7 @@ import {
   Search,
   Content,
   Opacity,
+  Limpo,
 } from './styled';
 import Loading from '../../components/Loading';
 import Welcome from '../../images/welcome.svg';
@@ -39,9 +41,11 @@ export default function Alunos() {
         const status = Lodash.get(err, 'response.status', 0);
 
         if (status === 401) {
+          setIsLoading(false);
           return;
         } else {
           toast.error('Ocorreu um erro, tente novamente mais tarde! ');
+          setIsLoading(false);
         }
         setIsLoading(false);
       }
@@ -82,9 +86,9 @@ export default function Alunos() {
     try {
       setIsLoading(true);
       await axios.delete(`/aprendiz/${id}`);
-      const novosAlunosDel = [...alunos];
+      const novosAlunosDel = [...mostraAlunos];
       novosAlunosDel.splice(index, 1);
-      setAlunos(novosAlunosDel);
+      setMostraAlunos(novosAlunosDel);
       setIsLoading(false);
       toast.success(`Aluno(a) ${alunos[index].nome} deletado(a) com sucesso!`);
     } catch (err) {
@@ -126,64 +130,84 @@ export default function Alunos() {
     setMostraAlunos(novosSearchAlunos);
   }
 
+  function handleNewStudent() {
+    history.push('/aprendiz');
+  }
+
   return (
     <Opacity>
       {id ? (
-        <Container>
+        <>
           <Loading isLoading={isLoading} />
 
-          <Search className="flex">
-            <h1>Meus alunos </h1>
-            <input
-              type="text"
-              value={search}
-              className="none search"
-              onChange={(e) => {
-                setSearch(e.target.value);
-                askSearch();
-              }}
-            />
-            <BiSearchAlt2 size={30} className="click" onClick={handleSearch} />
-          </Search>
+          {mostraAlunos.length < 1 ? (
+            <Limpo>
+              <h1>Ainda não temos alunos salvos!</h1>
+              <img src="/img/alunosLimpo.svg" alt="Ilustração lista vazia" />
+              <button onClick={handleNewStudent}>
+                Criar primeiro aluno <AiOutlineUserAdd size={26} />
+              </button>
+            </Limpo>
+          ) : (
+            <Container>
+              <Search className="flex">
+                <h1>Meus alunos </h1>
+                <input
+                  type="text"
+                  value={search}
+                  className="none search"
+                  onChange={(e) => {
+                    setSearch(e.target.value);
+                    askSearch();
+                  }}
+                />
+                <BiSearchAlt2
+                  size={30}
+                  className="click"
+                  onClick={handleSearch}
+                />
+              </Search>
 
-          <AlunoContainer>
-            {mostraAlunos.map((aluno, index) => (
-              <div key={String(aluno.id)}>
-                <Link to={`/aprendiz/${aluno.id}`} className="alunos">
-                  <ProfilePicture>
-                    {Lodash.get(aluno, 'Fotos[0].url', false) ? (
-                      <img crossOrigin="" src={aluno.Fotos[0].url} alt="" /> //se verdadeiro
-                    ) : (
-                      <FaUserCircle size={36} /> // se falso
-                    )}
-                  </ProfilePicture>
+              <AlunoContainer>
+                {mostraAlunos.map((aluno, index) => (
+                  <div key={String(aluno.id)}>
+                    <Link to={`/aprendiz/${aluno.id}`} className="alunos">
+                      <ProfilePicture>
+                        {Lodash.get(aluno, 'Fotos[0].url', false) ? (
+                          <img crossOrigin="" src={aluno.Fotos[0].url} alt="" /> //se verdadeiro
+                        ) : (
+                          <FaUserCircle size={36} /> // se falso
+                        )}
+                      </ProfilePicture>
 
-                  <span className="nome">{aluno.nome}</span>
-                  <span className="email">{aluno.email}</span>
-                  {id ? (
-                    <div>
-                      <Link onClick={handleDeleteAsk} to="">
-                        <FaWindowClose className="delete" size={16} />
-                      </Link>
-                      <FaExclamation
-                        size={8}
-                        className="exclamation none"
-                        onClick={(e) => handleDelete(e, aluno.id, index)}
-                      />
-                    </div>
-                  ) : (
-                    ''
-                  )}
+                      <span className="nome">{aluno.nome}</span>
+                      <span className="email">{aluno.email}</span>
+                      {id ? (
+                        <div>
+                          <Link onClick={handleDeleteAsk} to="">
+                            <FaWindowClose className="delete" size={16} />
+                          </Link>
+                          <FaExclamation
+                            size={8}
+                            className="exclamation none"
+                            onClick={(e) => handleDelete(e, aluno.id, index)}
+                          />
+                        </div>
+                      ) : (
+                        ''
+                      )}
+                    </Link>
+                  </div>
+                ))}
+              </AlunoContainer>
+              <NovoAluno to="/aprendiz/" className="addAluno">
+                <Link className="content" to="/aprendiz">
+                  Novo aluno <AiOutlineUserAdd />
                 </Link>
-              </div>
-            ))}
-          </AlunoContainer>
-          <NovoAluno to="/aprendiz/" className="addAluno">
-            <Link className="content" to="/aprendiz">
-              Novo aluno <AiOutlineUserAdd />
-            </Link>
-          </NovoAluno>
-        </Container>
+              </NovoAluno>
+            </Container>
+          )}
+        </>
       ) : (
         <>
           <Content>
