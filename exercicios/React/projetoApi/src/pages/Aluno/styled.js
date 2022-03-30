@@ -19,6 +19,11 @@ export const Form = styled.form`
   button {
     width: 100%;
   }
+
+  .titleNew {
+    text-align: center;
+    font-size: 24px;
+  }
 `;
 
 export const Title = styled.h1`
@@ -69,4 +74,8 @@ export const Container = styled.div`
   margin: 0px auto 30px auto;
   padding: 5px 30px 30px 30px;
   border-radius: 0 0 4px 4px;
+
+  .mt {
+    margin-top: 50px;
+  }
 `;

@@ -54,10 +54,6 @@ a{
   text-decoration: none;
   color: ${colors.primaryDarkColor};
   transition-duration: 200ms;
-
-  &:hover{
-    filter: contrast(150%);
-  }
 }
 
 ul{

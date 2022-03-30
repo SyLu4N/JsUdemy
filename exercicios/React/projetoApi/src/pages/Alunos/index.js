@@ -77,6 +77,7 @@ export default function Alunos() {
 
   const handleDelete = async (e, id, index) => {
     e.persist();
+    e.preventDefault();
 
     try {
       setIsLoading(true);

@@ -67,7 +67,7 @@ export default function Register() {
     <Container>
       <Loading isLoading={isLoading} />
 
-      <h1>{id ? 'Editar dados' : 'Crie sua conta'}</h1>
+      <h1>{id ? ` Minha conta` : 'Crie sua conta'}</h1>
 
       <Form onSubmit={handleSubmit}>
         <label htmlFor="nome">

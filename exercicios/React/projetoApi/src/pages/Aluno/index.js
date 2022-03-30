@@ -138,43 +138,66 @@ export default function Aluno({ match }) {
 
   return (
     <>
-      <Content>
-        <Loading isLoading={isLoading} />
+      {id ? (
+        <>
+          <Content>
+            <Loading isLoading={isLoading} />
 
-        <Title>
-          {id ? (
-            `${nome} ${sobrenome}`
-          ) : (
-            <p>
+            <Title>
+              {nome} {sobrenome}
+            </Title>
+
+            <ProfilePicture>
+              {foto ? (
+                <img src={foto} alt={nome} crossOrigin="" />
+              ) : (
+                <FaUserCircle size={180} />
+              )}
+              <Link to={`/fotos/${id}`}>
+                <FaEdit size={24} />
+              </Link>
+            </ProfilePicture>
+          </Content>
+
+          <Container>
+            <Form onSubmit={handleSubmit}>
+              <input
+                className="aluno"
+                placeholder="Nome"
+                type="text"
+                value={nome}
+                onChange={(e) => setNome(e.target.value)}
+              />
+
+              <input
+                className="aluno"
+                placeholder="Sobrenome"
+                type="text"
+                value={sobrenome}
+                onChange={(e) => setSobrenome(e.target.value)}
+              />
+
+              <input
+                className="aluno"
+                placeholder="E-mail"
+                type="text"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+
+              <button type="submit" className="alunoBtn">
+                Salvar
+              </button>
+            </Form>
+          </Container>
+        </>
+      ) : (
+        <Container>
+          <Form onSubmit={handleSubmit} className="mt">
+            <p className="titleNew">
               Novo aluno <AiOutlineUserAdd size={30} />
             </p>
-          )}
-        </Title>
-        {id && (
-          <ProfilePicture>
-            {foto ? (
-              <img src={foto} alt={nome} crossOrigin="" />
-            ) : (
-              <FaUserCircle size={180} />
-            )}
-            <Link to={`/fotos/${id}`}>
-              <FaEdit size={24} />
-            </Link>
-          </ProfilePicture>
-        )}
-      </Content>
 
-      <Container>
-        <Form onSubmit={handleSubmit}>
-          {id ? (
-            <input
-              className="aluno"
-              placeholder="Nome"
-              type="text"
-              value={nome}
-              onChange={(e) => setNome(e.target.value)}
-            />
-          ) : (
             <label htmlFor="">
               Nome
               <input
@@ -185,17 +208,7 @@ export default function Aluno({ match }) {
                 onChange={(e) => setNome(e.target.value)}
               />
             </label>
-          )}
 
-          {id ? (
-            <input
-              className="aluno"
-              placeholder="Sobrenome"
-              type="text"
-              value={sobrenome}
-              onChange={(e) => setSobrenome(e.target.value)}
-            />
-          ) : (
             <label htmlFor="">
               Sobrenome
               <input
@@ -205,17 +218,7 @@ export default function Aluno({ match }) {
                 onChange={(e) => setSobrenome(e.target.value)}
               />
             </label>
-          )}
 
-          {id ? (
-            <input
-              className="aluno"
-              placeholder="E-mail"
-              type="text"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          ) : (
             <label htmlFor="">
               E-mail
               <input
@@ -225,17 +228,11 @@ export default function Aluno({ match }) {
                 onChange={(e) => setEmail(e.target.value)}
               />
             </label>
-          )}
 
-          {id ? (
-            <button type="submit" className="alunoBtn">
-              Salvar
-            </button>
-          ) : (
             <button type="submit">Criar Aluno</button>
-          )}
-        </Form>
-      </Container>
+          </Form>
+        </Container>
+      )}
     </>
   );
 }
