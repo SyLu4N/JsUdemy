@@ -39,7 +39,7 @@ export default function Alunos() {
         const status = Lodash.get(err, 'response.status', 0);
 
         if (status === 401) {
-          toast.error('É necessário estar logado!');
+          return;
         } else {
           toast.error('Ocorreu um erro, tente novamente mais tarde! ');
         }

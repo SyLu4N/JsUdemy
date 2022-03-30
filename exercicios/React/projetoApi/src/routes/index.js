@@ -9,6 +9,7 @@ import Fotos from '../pages/Fotos';
 import Register from '../pages/Register';
 import Login from '../pages/Login';
 import Page404 from '../pages/Page404';
+import Sobre from '../pages/Sobre';
 
 export default function Routes() {
   return (
@@ -19,6 +20,7 @@ export default function Routes() {
       <MyRoute exact path="/fotos/:id" component={Fotos} isClosed />
       <MyRoute exact path="/login/" component={Login} isClosed={false} />
       <MyRoute exact path="/register/" component={Register} isClosed={false} />
+      <MyRoute exact path="/sobre/" component={Sobre} isClosed={false} />
       <MyRoute exact path="*" component={Page404} />
     </Switch>
   );

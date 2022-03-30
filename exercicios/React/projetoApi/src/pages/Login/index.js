@@ -74,6 +74,15 @@ export default function Login(props) {
           />
         </label>
         <button type="submit">Entrar agora</button>
+        <div className="flex">
+          <p>
+            <a href="/register">Ainda não tenho conta</a>
+          </p>
+          <p>|</p>
+          <p>
+            <a href="">Esqueci minha senha</a>
+          </p>
+        </div>
       </Form>
     </Container>
   );

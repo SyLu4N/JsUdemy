@@ -7,7 +7,7 @@ export const Nav = styled.nav`
   align-items: center;
   justify-content: space-around;
   position: relative;
-  height: 60px;
+  height: 64px;
 
   a {
     font-weight: bold;
@@ -32,9 +32,9 @@ export const Nav = styled.nav`
   .logo {
     font-weight: normal;
     font-family: 'Hurricane', cursive;
-    font-size: 2em;
+    font-size: 3em;
     color: white;
-    text-shadow: 0px 0px 6px black;
+    text-shadow: 0px 0px 3px rgba(0, 0, 0, 1);
   }
 
   .pPerfil {
