@@ -10,7 +10,7 @@ var _bcryptjs = require('bcryptjs'); var _bcryptjs2 = _interopRequireDefault(_bc
         validate: {
           len: {
             args: [3, 255],
-            msg: 'Campo nome deve ter entre 3 e 255 caracteres',
+            msg: 'Campo "Nome" deve ter entre 3 e 255 caracteres',
           },
         },
       },
@@ -23,6 +23,23 @@ var _bcryptjs = require('bcryptjs'); var _bcryptjs2 = _interopRequireDefault(_bc
         validate: {
           isEmail: {
             msg: 'Email inválido',
+          },
+        },
+      },
+      usuario: {
+        type: _sequelize2.default.STRING,
+        defaultValue: '',
+        unique: { // se não for unico
+          msg: 'Usuário já existe', // msg de erro
+        },
+        validate: {
+          len: {
+            args: [6, 16],
+            msg: 'Campo "Usuário" deve ter entre 6 e 16 caracteres',
+          },
+          is: {
+            args: /^[a-z, 0-9]+$/i,
+            msg: 'Campo "Usuário" só pode conter letras e números',
           },
         },
       },

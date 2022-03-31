@@ -16,7 +16,7 @@ class UserController {
   async index(req, res) {
     try {
       const users = await _User2.default.findAll({
-        attributes: ['id', 'nome', 'email'],
+        attributes: ['id', 'nome', 'email', 'usuario'],
         order: [['id', 'DESC'], [_Aprendiz2.default, 'id', 'DESC']], // ASC > Crescente DESC > Decrescente
         include: {
           // Adicionando o aprendiz
