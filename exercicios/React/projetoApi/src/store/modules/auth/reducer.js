@@ -15,6 +15,7 @@ export default function (state = initialState, action) {
       newState.isLoggedIn = true;
       newState.token = action.payload.token;
       newState.user = action.payload.user;
+      console.log(newState.user);
       newState.isLoading = false;
       return newState;
     }
@@ -35,6 +36,7 @@ export default function (state = initialState, action) {
       const newState = { ...state };
       newState.user.nome = action.payload.nome;
       newState.user.email = action.payload.email;
+      newState.user.usuario = action.payload.usuario;
       newState.isLoading = false;
       return newState;
     }

@@ -6,23 +6,28 @@ import { Container } from '../../styles/GlobalStyles';
 import { Form } from './styled';
 import Loading from '../../components/Loading';
 import * as actions from '../../store/modules/auth/actions';
-import history from '../../services/history';
 
 export default function Register() {
-  const id = useSelector((state) => state.auth.user.id);
-  const isLoading = useSelector((state) => state.auth.isLoading);
-
-  React.useEffect(() => {
-    if (id) history.push('/user');
-  }, [id]);
-
   const dispatch = useDispatch();
+
+  const id = useSelector((state) => state.auth.user.id);
+  const nomeStored = useSelector((state) => state.auth.user.nome);
+  const emailStored = useSelector((state) => state.auth.user.email);
+  const usuarioStored = useSelector((state) => state.auth.user.usuario);
+  console.log(usuarioStored);
+  const isLoading = useSelector((state) => state.auth.isLoading);
 
   const [nome, setNome] = React.useState('');
   const [email, setEmail] = React.useState('');
   const [usuario, setUsuario] = React.useState('');
   const [password, setPassword] = React.useState('');
   const [passwordCheck, setPasswordCheck] = React.useState('');
+
+  React.useEffect(() => {
+    setNome(nomeStored);
+    setEmail(emailStored);
+    setUsuario(usuarioStored);
+  }, [emailStored, id, nomeStored, usuarioStored]);
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -111,6 +116,7 @@ export default function Register() {
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Seu e-mail"
             className="email"
+            disabled
           />
         </label>
 
@@ -125,29 +131,7 @@ export default function Register() {
           />
         </label>
 
-        <label htmlFor="password">
-          Senha
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder="Sua senha"
-            className="password"
-          />
-        </label>
-
-        <label htmlFor="passwordCheck">
-          Repita a senha
-          <input
-            type="password"
-            value={passwordCheck}
-            onChange={(e) => setPasswordCheck(e.target.value)}
-            placeholder="Repita a senha"
-            className="passwordCheck"
-          />
-        </label>
-
-        <button type="submit">Cadastrar-se</button>
+        <button type="submit">Salvar</button>
         <p className="login">
           Tem uma conta? <a href="/login"> Conecte-se</a>
         </p>

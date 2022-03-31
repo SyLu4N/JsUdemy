@@ -10,6 +10,7 @@ import Register from '../pages/Register';
 import Login from '../pages/Login';
 import Page404 from '../pages/Page404';
 import Sobre from '../pages/Sobre';
+import User from '../pages/User';
 
 export default function Routes() {
   return (
@@ -21,6 +22,7 @@ export default function Routes() {
       <MyRoute exact path="/login/" component={Login} isClosed={false} />
       <MyRoute exact path="/register/" component={Register} isClosed={false} />
       <MyRoute exact path="/sobre/" component={Sobre} isClosed={false} />
+      <MyRoute exact path="/user/" component={User} isClosed={false} />
       <MyRoute exact path="*" component={Page404} />
     </Switch>
   );

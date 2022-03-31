@@ -31,26 +31,32 @@ function persistRehydrate({ payload }) {
 }
 
 function* registerRequest({ payload }) {
-  const { id, nome, email, password } = payload;
+  const { id, nome, email, usuario, password } = payload;
 
   try {
     if (id) {
       yield call(axios.put, '/users', {
         email,
+        usuario,
         nome,
         password: password || undefined,
       });
       toast.success('Conta alterada com sucesso!');
-      yield put(actions.registerUpdatedSuccess({ nome, email, password }));
+      yield put(
+        actions.registerUpdatedSuccess({ nome, email, usuario, password }),
+      );
     } else {
       yield call(axios.post, '/users', {
         email,
+        usuario,
         nome,
         password,
       });
       const response = yield call(axios.post, '/tokens', payload);
       toast.success('Conta criada com sucesso');
-      yield put(actions.registerCreatedSuccess({ nome, email, password }));
+      yield put(
+        actions.registerCreatedSuccess({ nome, email, usuario, password }),
+      );
       yield put(actions.loginSuccess({ ...response.data }));
       history.push('/');
     }
