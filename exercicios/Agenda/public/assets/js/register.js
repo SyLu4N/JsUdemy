@@ -8,30 +8,38 @@ Register.prototype.events = function () {
     e.preventDefault();
     this.validaInput(e);
   });
-  this.okay = true;
 };
 
 Register.prototype.validaInput = function (e) {
   const el = e.target;
   const input = el.querySelectorAll('input');
   
+  this.okay = true;
+
   for(let error of this.form.querySelectorAll('.errorForm')) error.remove();
 
   for(let value of input){
     if(!value.value) {
       this.newError(value, `* Campo obrigatório!`);
-
+      this.okay = false;
     }else if(value.name === 'nome'){
       const campo = value.value;
-      if(campo.length < 3 || campo.length > 50) this.newError(value,'"Nome" deve conter de 4 a 50 caracteres');
-    
+      if(campo.length < 3 || campo.length > 50) {
+        this.newError(value,'"Nome" deve conter de 4 a 50 caracteres');
+        this.okay = false;
+      }
     }else if(value.name === 'log'){
       const campo = value.value;
-      if(campo.length < 4 || campo.length > 14) this.newError(value,'"Usuário" deve conter de 4 a 14 caracteres')
-    
+      if(campo.length < 4 || campo.length > 14) {
+        this.newError(value,'"Usuário" deve conter de 4 a 14 caracteres');
+        this.okay = false;
+      }
     }else if(value.name === 'email'){
       const campo = value.value;
-      if(campo.length < 4|| campo.indexOf('@') === -1 || campo.indexOf('.') === -1)this.newError(value, '"E-mail" inválido!');
+      if(campo.length < 4|| campo.indexOf('@') === -1 || campo.indexOf('.') === -1) {
+        this.newError(value, '"E-mail" inválido!');
+        this.okay = false;
+      }
     }
   }
 
@@ -44,9 +52,11 @@ Register.prototype.validaSenha = function () {
 
   if(senha.value){
     if(senha.value.length < 6 || senha.value.length > 12){
+      this.okay = false;
       this.newError(senha, 'Senha deve conter de 6 a 12 caracteres');
     } 
     if(senha.value !== senha2.value){
+      this.okay = false;
       this.newError(senha2, 'As senhas devem ser iguais.')
       this.newError(senha, 'As senhas devem ser iguais.')
     }
@@ -56,8 +66,8 @@ Register.prototype.validaSenha = function () {
 };
 
 Register.prototype.newError = function (campo, msg) {
+
   if(campo.classList.contains('name')){
-    this.okay = false;
     campo = this.form.querySelector('.nameLabel');
     const p = document.createElement('p');
     p.innerText = msg;
@@ -66,7 +76,6 @@ Register.prototype.newError = function (campo, msg) {
   }
 
   if(campo.classList.contains('log')){
-    this.okay = false;
     campo = this.form.querySelector('.logLabel');
     const p = document.createElement('p');
     p.innerText = msg;
@@ -75,7 +84,6 @@ Register.prototype.newError = function (campo, msg) {
   }
 
   if(campo.classList.contains('email')){
-    this.okay = false;
     campo = this.form.querySelector('.emailLabel');
     const p = document.createElement('p');
     p.innerText = msg;
@@ -84,7 +92,6 @@ Register.prototype.newError = function (campo, msg) {
   }
 
   if(campo.classList.contains('password')){
-    this.okay = false;
     campo = this.form.querySelector('.passwordLabel');
     const p = document.createElement('p');
     p.innerText = msg;
@@ -93,7 +100,6 @@ Register.prototype.newError = function (campo, msg) {
   }
 
   if(campo.classList.contains('passwordCopy')){
-    this.okay = false;
     campo = this.form.querySelector('.passwordCopyLabel');
     const p = document.createElement('p');
     p.innerText = msg;
@@ -103,7 +109,6 @@ Register.prototype.newError = function (campo, msg) {
 };
 
 Register.prototype.enviaInput = function () {
-  console.log(this.okay);
   if(this.okay) this.form.submit();
 }
 
