@@ -63,7 +63,8 @@
  Ferramentas usadas: functions / JSON / LocalStorage  
  <h2></h2>
 
- <h3>📚 Agenda</h3> 
-<img src="./imgReadme/AgendaGif.gif" alt="Funcionamento da Lista" style=" margin: auto;">
- Ferramentas usadas: functions / JSON / LocalStorage  
+<h3>📚 Agenda</h3> 
+<a href="https://www.linkedin.com/posts/luan-sim%C3%B5es-617492236_com-base-nos-estudos-da-udemy-consegui-desenvolver-activity-6915747020548788224-S2O1?utm_source=linkedin_share&utm_medium=member_desktop_web">
+<img src="./imgReadme/AgendaGif.gif" alt="Funcionamento da Lista"></a>
+ Ferramentas usadas: Webpack / JSON / LocalStorage / Node.js / BABEL / NoSQL / EJS / mongoose / Validator / Class / Function /entre outros...
  <h2></h2>
