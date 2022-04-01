@@ -64,6 +64,6 @@
  <h2></h2>
 
  <h3>📚 Agenda</h3> 
-<img src="./imgReadme/Agenda.mp4" alt="Funcionamento da Lista">
+<img src="./imgReadme/AgendaGif.gif" alt="Funcionamento da Lista">
  Ferramentas usadas: functions / JSON / LocalStorage  
  <h2></h2>
