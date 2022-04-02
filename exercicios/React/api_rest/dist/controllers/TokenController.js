@@ -6,15 +6,15 @@ function TokenController() {
 }
 
 TokenController.prototype.store = async (req, res) => {
-  const { email = '', password = '' } = req.body;
+  const { email = '', usuario = '', password = '' } = req.body;
 
-  if (!email || !password) {
+  if (!password || (!usuario && !email)) {
     return res.status(401).json({
       errors: ['Credênciais inválidas.'],
     });
   }
 
-  const user = await _User2.default.findOne({ where: { email } });
+  const user = await _User2.default.findOne({ where: { email } }) || await _User2.default.findOne({ where: { usuario } });
 
   if (!user) {
     return res.status(401).json({
@@ -29,11 +29,17 @@ TokenController.prototype.store = async (req, res) => {
   }
 
   const { id } = user;
-  const token = _jsonwebtoken2.default.sign({ id, email }, process.env.TOKEN_SECRET, {
+
+  const token = _jsonwebtoken2.default.sign({ id, email, usuario }, process.env.TOKEN_SECRET, {
     expiresIn: process.env.TOKEN_EXPIRATION,
   });
 
-  return res.json({ token, user: { nome: user.nome, id, email } });
+  return res.json({
+    token,
+    user: {
+      nome: user.nome, id, email: user.email, usuario: user.usuario,
+    },
+  });
 };
 
 exports. default = new TokenController();

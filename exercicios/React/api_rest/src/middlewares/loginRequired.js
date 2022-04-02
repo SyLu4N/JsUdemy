@@ -25,7 +25,7 @@ export default async (req, res, next) => {
 
     if (!user) {
       return res.status(401).json({
-        errors: ['Usuário inválido!'],
+        errors: ['Token expirado ou inválido'],
       });
     }
 
