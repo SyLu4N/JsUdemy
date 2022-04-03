@@ -238,5 +238,8 @@ export default function Aluno({ match }) {
 }
 
 Aluno.propTypes = {
-  match: PropTypes.shape({}).isRequired, //Validando match
+  match: PropTypes.shape({}).isRequired,
 };
+
+
+

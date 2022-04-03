@@ -13,17 +13,20 @@ export default function Login(props) {
 
   const prevPath = Lodash.get(props, 'location.state.prevPath', '/'); //volta para a página caso não logado
 
-  const [email, setEmail] = React.useState('');
+  const [log, setLog] = React.useState('');
   const [password, setPassword] = React.useState('');
   const isLoading = useSelector((state) => state.auth.isLoading);
 
   function handleSubmit(e) {
     e.preventDefault();
     let formErros = false;
+    for(let apagar of document.querySelectorAll('.error')) apagar.delete();
 
-    if (!isEmail(email)) {
-      formErros = true;
-      newError('"E-mail" inválido!', document.querySelector('.email'));
+    if(log.indexOf('@') !== -1 || log.length < 6) {
+      if (!isEmail(log)) {
+        formErros = true;
+        newError('E-mail ou Usuário inválido!', document.querySelector('.email'));
+      }
     }
 
     if (password.length < 6 || password.length > 50) {
@@ -37,7 +40,7 @@ export default function Login(props) {
   }
 
   async function sendForm() {
-    dispatch(actions.loginRequest({ email, password, prevPath }));
+    dispatch(actions.loginRequest({ log, password, prevPath }));
   }
 
   function newError(msg, campo) {
@@ -54,13 +57,13 @@ export default function Login(props) {
 
       <Form onSubmit={handleSubmit}>
         <label htmlFor="">
-          E-mail
+          E-mail ou Usuário
           <input
             className="email"
             type="text"
-            placeholder="Seu E-mail"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Seu E-mail ou Usuário"
+            value={log}
+            onChange={(e) => setLog(e.target.value)}
           />
         </label>
         <label htmlFor="">
@@ -87,3 +90,6 @@ export default function Login(props) {
     </Container>
   );
 }
+
+
+
