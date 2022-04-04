@@ -15,4 +15,14 @@ export const Form = styled.form`
   .login a {
     color: ${primaryColor};
   }
+
+  div {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+  }
+
+  .salvar {
+    width: 100px;
+  }
 `;

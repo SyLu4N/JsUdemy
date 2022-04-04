@@ -20,12 +20,15 @@ export default function Login(props) {
   function handleSubmit(e) {
     e.preventDefault();
     let formErros = false;
-    for(let apagar of document.querySelectorAll('.error')) apagar.delete();
+    for (let apagar of document.querySelectorAll('.error')) apagar.delete();
 
-    if(log.indexOf('@') !== -1 || log.length < 6) {
+    if (log.indexOf('@') !== -1 || log.length < 6) {
       if (!isEmail(log)) {
         formErros = true;
-        newError('E-mail ou Usuário inválido!', document.querySelector('.email'));
+        newError(
+          'E-mail ou Usuário inválido!',
+          document.querySelector('.email'),
+        );
       }
     }
 
@@ -57,21 +60,19 @@ export default function Login(props) {
 
       <Form onSubmit={handleSubmit}>
         <label htmlFor="">
-          E-mail ou Usuário
           <input
             className="email"
             type="text"
-            placeholder="Seu E-mail ou Usuário"
+            placeholder="E-mail ou usuário"
             value={log}
             onChange={(e) => setLog(e.target.value)}
           />
         </label>
         <label htmlFor="">
-          Senha
           <input
             className="password"
             type="password"
-            placeholder="Sua senha"
+            placeholder="Senha"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
@@ -90,6 +91,3 @@ export default function Login(props) {
     </Container>
   );
 }
-
-
-

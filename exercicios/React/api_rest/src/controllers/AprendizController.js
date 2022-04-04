@@ -158,7 +158,7 @@ AprendizController.prototype.delete = async function (req, res) {
 
     if (!user_id) {
       return res.status(401).json({
-        errors: ['É necessário estar logado para isso!'],
+        errors: ['É necessário estar logado para isso.'],
       });
     }
 
@@ -166,7 +166,7 @@ AprendizController.prototype.delete = async function (req, res) {
 
     if (!id) {
       return res.status(400).json({
-        errors: ['É necessário o ID do aprendiz!'],
+        errors: ['É necessário o ID do aprendiz.'],
       });
     }
 
@@ -174,14 +174,14 @@ AprendizController.prototype.delete = async function (req, res) {
 
     if (!aprendiz) {
       return res.status(400).json({
-        errors: ['Aprendiz não encontrado!'],
+        errors: ['Aprendiz não encontrado.'],
       });
     }
 
     const aprendiz2 = await Aprendiz.findByPk(id);
     if (aprendiz2.user_id !== user_id) {
       return res.status(400).json({
-        errors: ['Aprendiz não encontrado!'],
+        errors: ['Aprendiz não encontrado.'],
       });
     }
 

@@ -22,9 +22,6 @@ export default class Aprendiz extends Model {
       email: {
         type: Sequelize.STRING,
         defaultValue: '',
-        unique: {
-          msg: 'E-mail já cadastrado',
-        },
         isEmail: {
           msg: 'E-mail inválido!',
         },

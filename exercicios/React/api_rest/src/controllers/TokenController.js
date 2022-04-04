@@ -6,15 +6,25 @@ function TokenController() {
 }
 
 TokenController.prototype.store = async (req, res) => {
-  const { email = '', usuario = '', password = '' } = req.body;
+  const { log = '', password = '' } = req.body;
 
-  if (!password || (!usuario && !email)) {
+  if (!password || !log) {
     return res.status(401).json({
       errors: ['Credênciais inválidas.'],
     });
   }
 
-  const user = await User.findOne({ where: { email } }) || await User.findOne({ where: { usuario } });
+  let user = '';
+  let email = '';
+  let usuario = '';
+
+  if(log.indexOf('@') !== -1){
+    email = log;
+    user = await User.findOne({ where: { email } });
+  }else {
+    usuario = log;
+    user = await User.findOne({ where: { usuario } });
+  }
 
   if (!user) {
     return res.status(401).json({
@@ -30,7 +40,7 @@ TokenController.prototype.store = async (req, res) => {
 
   const { id } = user;
 
-  const token = jwt.sign({ id, email, usuario }, process.env.TOKEN_SECRET, {
+  const token = jwt.sign({ id, log }, process.env.TOKEN_SECRET, {
     expiresIn: process.env.TOKEN_EXPIRATION,
   });
 

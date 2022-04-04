@@ -33,6 +33,7 @@ AlunoController.prototype.store = async function (req, res) {
   }
 };
 
+// olá mundo!
 AlunoController.prototype.show = async function (req, res) {
   try {
     const { id } = req.params;

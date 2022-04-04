@@ -8,5 +8,5 @@ git commit -am "$message"
 git push
 ssh 35.247.223.255 \
   'git -C /home/SyLu4N/api ' \
-  'pull origin master && ' \
+  'pull origin main && ' \
   'pm2 restart api && sudo systemctl restart nginx'

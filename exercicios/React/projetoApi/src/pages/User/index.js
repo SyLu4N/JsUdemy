@@ -128,13 +128,15 @@ export default function Register() {
             onChange={(e) => setUsuario(e.target.value)}
             placeholder="Seu usuário"
             className="usuario"
+            disabled
           />
         </label>
 
-        <button type="submit">Salvar</button>
-        <p className="login">
-          Tem uma conta? <a href="/login"> Conecte-se</a>
-        </p>
+        <div>
+          <button type="submit" className="salvar">
+            Salvar
+          </button>
+        </div>
       </Form>
     </Container>
   );

@@ -78,7 +78,6 @@ class UserController {
     }
   }
 
-  // Delete
   async delete(req, res) {
     try {
       const user = await User.findByPk(req.userId);
