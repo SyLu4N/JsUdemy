@@ -65,10 +65,10 @@
 
 <h3>📚 Agenda</h3> 
 <h1 align="center">
-<a href="https://www.linkedin.com/posts/luan-sim%C3%B5es-617492236_com-base-nos-estudos-da-udemy-consegui-desenvolver-activity-6915748380409274370-2Zz3?utm_source=linkedin_share&utm_medium=member_desktop_web">
-<img src="./imgReadme/AgendaGif.gif" alt="Funcionamento da Lista"></a>
+  <a href="https://www.linkedin.com/posts/luan-sim%C3%B5es-617492236_com-base-nos-estudos-da-udemy-consegui-desenvolver-activity-6915748380409274370-2Zz3?utm_source=linkedin_share&utm_medium=member_desktop_web">
+  <img src="./imgReadme/AgendaGif.gif" alt="Funcionamento da Lista"></a>
+  <p>Ferramentas usadas: Webpack / JSON / LocalStorage / Node.js / BABEL / NoSQL / EJS / mongoose / Validator / Class / Function /entre outros...</p>
 </h1> 
 <br>
- Ferramentas usadas: Webpack / JSON / LocalStorage / Node.js / BABEL / NoSQL / EJS / mongoose / Validator / Class / Function /entre outros...
 
  <h2></h2>
