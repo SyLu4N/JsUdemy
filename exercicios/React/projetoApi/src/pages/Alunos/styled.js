@@ -75,10 +75,6 @@ export const NovoAluno = styled.div`
   margin-top: 20px;
   display: flex;
   justify-content: right;
-
-  a {
-    color: ${primaryColor};
-  }
 `;
 
 export const Search = styled.div`

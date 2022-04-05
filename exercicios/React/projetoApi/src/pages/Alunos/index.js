@@ -58,7 +58,7 @@ export default function Alunos() {
     const el = e.currentTarget.nextSibling;
     const close = e.currentTarget;
 
-    console.log(e.currentTarget.nextSibling);
+    const ee = e.target;
 
     el.setAttribute('class', 'block exclamation');
     close.setAttribute('class', 'none');
@@ -67,7 +67,8 @@ export default function Alunos() {
       const clique = click.target;
       if (
         !clique.classList.contains('exclamation') &&
-        !clique.classList.contains('delete')
+        !clique.classList.contains('delete') &&
+        clique !== ee
       ) {
         el.removeAttribute('class');
         el.setAttribute('class', 'none');
@@ -89,6 +90,7 @@ export default function Alunos() {
       const novosAlunosDel = [...mostraAlunos];
       novosAlunosDel.splice(index, 1);
       setMostraAlunos(novosAlunosDel);
+      setAlunos(novosAlunosDel);
       setIsLoading(false);
       toast.success(`Aluno(a) ${alunos[index].nome} deletado(a) com sucesso!`);
     } catch (err) {
@@ -126,7 +128,6 @@ export default function Alunos() {
         novosSearchAlunos.push(aluno);
       }
     });
-
     setMostraAlunos(novosSearchAlunos);
   }
 

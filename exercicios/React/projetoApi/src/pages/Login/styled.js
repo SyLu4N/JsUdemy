@@ -14,8 +14,4 @@ export const Form = styled.form`
     font-size: 14px;
     color: ${primaryColor};
   }
-
-  .flex a {
-    color: ${primaryColor};
-  }
 `;

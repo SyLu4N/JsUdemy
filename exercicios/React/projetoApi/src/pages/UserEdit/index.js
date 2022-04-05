@@ -106,10 +106,17 @@ export default function Register() {
           />
         </label>
 
+        <p>
+          <a href="/editPassword">Trocar senha</a>
+        </p>
         <div>
-          <p>
-            <a href="/editPassword">Trocar senha</a>
-          </p>
+          <button
+            type="submit"
+            className="cancelar"
+            onClick={() => history.push('/user')}
+          >
+            Cancelar
+          </button>
           <button type="submit" className="salvar" onClick={handleSubmit}>
             Salvar
           </button>

@@ -12,26 +12,22 @@ export const Form = styled.form`
     text-align: center;
   }
 
-  .login a {
-    color: ${primaryColor};
-  }
-
   div {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     width: 100%;
   }
 
-  div > p a {
-    color: ${primaryColor};
-
-    &:hover {
-      color: red;
-    }
+  .salvar {
+    border: 1px solid ${primaryColor};
+    width: 100px;
   }
 
-  .salvar {
-    width: 100px;
+  .cancelar {
+    border: 1px solid ${primaryColor};
+    background: #fff;
+    color: ${primaryColor};
+    margin-right: 20px;
   }
 `;
