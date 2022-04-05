@@ -11,6 +11,8 @@ import Login from '../pages/Login';
 import Page404 from '../pages/Page404';
 import Sobre from '../pages/Sobre';
 import User from '../pages/User';
+import UserEdit from '../pages/UserEdit';
+import EditPassword from '../pages/EditPassword';
 
 export default function Routes() {
   return (
@@ -22,7 +24,9 @@ export default function Routes() {
       <MyRoute exact path="/login/" component={Login} isClosed={false} />
       <MyRoute exact path="/register/" component={Register} isClosed={false} />
       <MyRoute exact path="/sobre/" component={Sobre} isClosed={false} />
-      <MyRoute exact path="/user/" component={User} isClosed={false} />
+      <MyRoute exact path="/user/" component={User} isClosed />
+      <MyRoute exact path="/user/:id" component={UserEdit} isClosed />
+      <MyRoute exact path="/EditPassWord" component={EditPassword} isClosed />
       <MyRoute exact path="*" component={Page404} />
     </Switch>
   );

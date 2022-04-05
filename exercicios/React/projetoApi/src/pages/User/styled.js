@@ -1,19 +1,13 @@
 import styled from 'styled-components';
-import { primaryColor } from '../../config/colors';
 
-export const Form = styled.form`
+export const Form = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 15px;
 
-  .login {
-    margin-top: 6px;
-    font-size: 14px;
-    text-align: center;
-  }
-
-  .login a {
-    color: ${primaryColor};
+  p {
+    font-family: 'Hurricane', cursive;
+    font-size: 3em;
   }
 
   div {
@@ -22,7 +16,8 @@ export const Form = styled.form`
     width: 100%;
   }
 
-  .salvar {
+  .edit {
+    margin-top: 20px;
     width: 100px;
   }
 `;

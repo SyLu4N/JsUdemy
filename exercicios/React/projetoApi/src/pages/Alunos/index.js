@@ -140,7 +140,7 @@ export default function Alunos() {
         <>
           <Loading isLoading={isLoading} />
 
-          {mostraAlunos.length < 1 ? (
+          {alunos.length < 1 ? (
             <Limpo>
               <h1>Ainda não temos alunos salvos!</h1>
               <img src="/img/alunosLimpo.svg" alt="Ilustração lista vazia" />

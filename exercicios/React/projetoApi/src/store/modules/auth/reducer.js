@@ -15,7 +15,6 @@ export default function (state = initialState, action) {
       newState.isLoggedIn = true;
       newState.token = action.payload.token;
       newState.user = action.payload.user;
-      console.log(newState.user);
       newState.isLoading = false;
       return newState;
     }
