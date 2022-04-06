@@ -48,8 +48,7 @@ export default function Register() {
 
     if (formErros) return;
 
-    dispatch(actions.registerRequest({ password, id }));
-    history.push('/user');
+    dispatch(actions.changePasswordRequest({ oldPassword, password, id }));
   }
 
   function newError(msg, campo) {
@@ -70,7 +69,7 @@ export default function Register() {
             type="password"
             value={oldPassword}
             onChange={(e) => setOldPassword(e.target.value)}
-            placeholder="Senha anterior"
+            placeholder="Senha atual"
             className="oldPassword"
           />
         </label>
@@ -97,13 +96,13 @@ export default function Register() {
 
         <div>
           <button
-            type="submit"
+            type="button"
             className="cancelar"
             onClick={() => history.push('/user')}
           >
             Cancelar
           </button>
-          <button type="submit" className="salvar" onClick={handleSubmit}>
+          <button type="submit" className="salvar">
             Salvar
           </button>
         </div>

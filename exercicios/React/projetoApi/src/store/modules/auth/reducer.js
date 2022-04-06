@@ -58,6 +58,24 @@ export default function (state = initialState, action) {
       return newState;
     }
 
+    case types.CHANGE_PASSWORD_REQUEST: {
+      const newState = { ...state };
+      newState.isLoading = true;
+      return newState;
+    }
+
+    case types.CHANGE_PASSWORD_SUCCESS: {
+      const newState = { ...state };
+      newState.isLoading = false;
+      return newState;
+    }
+
+    case types.CHANGE_PASSWORD_FAILURE: {
+      const newState = { ...state };
+      newState.isLoading = false;
+      return newState;
+    }
+
     default: {
       return state;
     }

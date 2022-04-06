@@ -48,3 +48,24 @@ export function registerCreatedSuccess(payload) {
     payload,
   };
 }
+
+export function changePasswordRequest(payload) {
+  return {
+    type: types.CHANGE_PASSWORD_REQUEST,
+    payload,
+  };
+}
+
+export function changePasswordSuccess(payload) {
+  return {
+    type: types.CHANGE_PASSWORD_SUCCESS,
+    payload,
+  };
+}
+
+export function changePasswordFailure(payload) {
+  return {
+    type: types.CHANGE_PASSWORD_FAILURE,
+    payload,
+  };
+}

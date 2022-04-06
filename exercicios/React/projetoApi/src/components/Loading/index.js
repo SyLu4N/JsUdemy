@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { BiLoaderCircle } from 'react-icons/bi';
+import { RiLoader2Line } from 'react-icons/ri';
 
 import { Container } from './styled';
 
@@ -10,7 +10,7 @@ export default function Loading({ isLoading }) {
     <Container>
       <div>
         <span className="loading">
-          <BiLoaderCircle size={55} />
+          <RiLoader2Line size={55} />
         </span>
         <span className="text">Carregando...</span>
       </div>

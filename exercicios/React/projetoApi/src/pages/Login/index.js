@@ -20,7 +20,7 @@ export default function Login(props) {
   function handleSubmit(e) {
     e.preventDefault();
     let formErros = false;
-    for (let apagar of document.querySelectorAll('.error')) apagar.delete();
+    for (let apagar of document.querySelectorAll('.error')) apagar.remove();
 
     if (log.indexOf('@') !== -1 || log.length < 6) {
       if (!isEmail(log)) {

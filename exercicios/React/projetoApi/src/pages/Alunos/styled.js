@@ -10,6 +10,15 @@ export const AlunoContainer = styled.div`
     justify-content: space-between;
     padding: 5px 0;
     transition-duration: 300ms;
+    cursor: pointer;
+  }
+
+  a {
+    color: rgb(1, 1, 1, 0.9);
+
+    &:hover {
+      color: black;
+    }
   }
 
   div + div {
@@ -87,6 +96,15 @@ export const Search = styled.div`
     width: 200px;
     margin-left: 10px;
     height: 30px;
+  }
+
+  div {
+    display: flex;
+    align-items: center;
+  }
+
+  .click {
+    margin-left: 15px;
   }
 `;
 

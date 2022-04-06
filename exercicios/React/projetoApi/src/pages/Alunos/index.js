@@ -153,26 +153,31 @@ export default function Alunos() {
             <Container>
               <Search className="flex">
                 <h1>Meus alunos </h1>
-                <input
-                  type="text"
-                  value={search}
-                  className="none search"
-                  onChange={(e) => {
-                    setSearch(e.target.value);
-                    askSearch();
-                  }}
-                />
-                <BiSearchAlt2
-                  size={30}
-                  className="click"
-                  onClick={handleSearch}
-                />
+                <div>
+                  <input
+                    type="text"
+                    value={search}
+                    className="none search"
+                    onChange={(e) => {
+                      setSearch(e.target.value);
+                      askSearch();
+                    }}
+                  />
+                  <BiSearchAlt2
+                    size={30}
+                    className="click"
+                    onClick={handleSearch}
+                  />
+                </div>
               </Search>
 
               <AlunoContainer>
                 {mostraAlunos.map((aluno, index) => (
                   <div key={String(aluno.id)}>
-                    <Link to={`/aprendiz/${aluno.id}`} className="alunos">
+                    <div
+                      onClick={() => history.push(`/aprendiz/${aluno.id}`)}
+                      className="alunos"
+                    >
                       <ProfilePicture>
                         {Lodash.get(aluno, 'Fotos[0].url', false) ? (
                           <img crossOrigin="" src={aluno.Fotos[0].url} alt="" /> //se verdadeiro
@@ -197,7 +202,7 @@ export default function Alunos() {
                       ) : (
                         ''
                       )}
-                    </Link>
+                    </div>
                   </div>
                 ))}
               </AlunoContainer>

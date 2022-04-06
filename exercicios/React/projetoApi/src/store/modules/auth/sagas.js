@@ -6,6 +6,31 @@ import * as types from '../types';
 import axios from '../../../services/axios';
 import history from '../../../services/history';
 
+function* changePasswordRequest({ payload }) {
+  try {
+    const { oldPassword, password } = payload;
+    console.log(oldPassword, password);
+
+    const teste = yield call(axios.put, '/users/password/', {
+      oldPassword,
+      password,
+    });
+    toast.success('Senha alterada com sucesso!');
+    history.push(`/user/${payload.id}`);
+    yield put(actions.changePasswordSuccess(teste));
+  } catch (e) {
+    const errors = get(e, 'response.data.errors', []);
+
+    if (errors.length > 0) {
+      errors.map((error) => toast.error(error));
+    } else {
+      toast.error('Algo deu errado, tente novamente mais tarde');
+    }
+
+    yield put(actions.changePasswordFailure());
+  }
+}
+
 function* loginRequest({ payload }) {
   try {
     const response = yield call(axios.post, '/tokens', payload);
@@ -67,7 +92,6 @@ function* registerRequest({ payload }) {
     if (status === 401) {
       toast.error('Você precisa fazer login novamente');
       yield put(actions.loginFailure());
-      return history.push('/login');
     }
 
     if (errors.length > 0) {
@@ -81,6 +105,7 @@ function* registerRequest({ payload }) {
 }
 
 export default all([
+  takeLatest(types.CHANGE_PASSWORD_REQUEST, changePasswordRequest),
   takeLatest(types.LOGIN_REQUEST, loginRequest),
   takeLatest(types.PERSIST_REHYDRATE, persistRehydrate),
   takeLatest(types.REGISTER_REQUEST, registerRequest),

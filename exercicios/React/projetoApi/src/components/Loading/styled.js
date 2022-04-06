@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { primaryColor } from '../../config/colors';
 
 export const Container = styled.div`
   position: absolute;
@@ -21,18 +22,21 @@ export const Container = styled.div`
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(255, 255, 255, 0.8);
   }
 
   .loading {
     display: flex;
     align-items: center;
     animation: 7000s girar infinite;
+    color: ${primaryColor};
+    opacity: 0.9;
   }
 
   .text {
     animation: 3s carregar alternate-reverse infinite;
     padding-left: 14px;
+    color: ${primaryColor};
   }
 
   @keyframes carregar {
@@ -47,7 +51,7 @@ export const Container = styled.div`
 
   @keyframes girar {
     100% {
-      transform: rotate(1000000deg);
+      transform: rotate(2000000deg);
     }
   }
 `;
