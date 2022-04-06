@@ -21,6 +21,7 @@ export const Form = styled.form`
   }
 
   .titleNew {
+    margin-bottom: 20px;
     text-align: center;
     font-size: 24px;
   }

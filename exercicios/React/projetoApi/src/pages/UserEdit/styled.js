@@ -19,7 +19,7 @@ export const Form = styled.form`
   div {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     width: 100%;
   }
 
@@ -32,6 +32,14 @@ export const Form = styled.form`
   }
 
   .salvar {
+    border: 1px solid ${primaryColor};
     width: 100px;
+  }
+
+  .cancelar {
+    border: 1px solid ${primaryColor};
+    background-color: #fff;
+    color: ${primaryColor};
+    margin-right: 20px;
   }
 `;

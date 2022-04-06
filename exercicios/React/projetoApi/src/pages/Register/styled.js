@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { primaryColor } from '../../config/colors';
 
 export const Form = styled.form`
   display: flex;
@@ -10,9 +9,5 @@ export const Form = styled.form`
     margin-top: 6px;
     font-size: 14px;
     text-align: center;
-  }
-
-  .login a {
-    color: ${primaryColor};
   }
 `;

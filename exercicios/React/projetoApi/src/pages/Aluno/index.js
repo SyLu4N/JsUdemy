@@ -199,7 +199,6 @@ export default function Aluno({ match }) {
             </p>
 
             <label htmlFor="">
-              Nome
               <input
                 className="nome"
                 placeholder="Nome"
@@ -210,7 +209,6 @@ export default function Aluno({ match }) {
             </label>
 
             <label htmlFor="">
-              Sobrenome
               <input
                 placeholder="Sobrenome"
                 type="text"
@@ -220,7 +218,6 @@ export default function Aluno({ match }) {
             </label>
 
             <label htmlFor="">
-              E-mail
               <input
                 placeholder="E-mail"
                 type="text"
@@ -240,6 +237,3 @@ export default function Aluno({ match }) {
 Aluno.propTypes = {
   match: PropTypes.shape({}).isRequired,
 };
-
-
-

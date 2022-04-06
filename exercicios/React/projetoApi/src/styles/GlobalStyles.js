@@ -52,8 +52,12 @@ button{
 
 a{
   text-decoration: none;
-  color: ${colors.primaryDarkColor};
+  color: ${colors.primaryColor};
   transition-duration: 200ms;
+
+  &:hover{
+    color: red;
+  }
 }
 
 ul{
