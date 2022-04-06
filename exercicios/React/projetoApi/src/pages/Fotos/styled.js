@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { primaryColor } from '../../config/colors';
 
 export const Title = styled.h1`
   text-align: center;
@@ -45,7 +46,7 @@ export const Form = styled.form`
     border-radius: 10px;
   }
 
-  input {
+  .none {
     display: none;
   }
 `;
@@ -78,8 +79,31 @@ export const ProfilePicture = styled.div`
   }
 `;
 
-export const Content = styled.div`
+export const Center = styled.div`
   display: flex;
   justify-content: center;
   max-width: 470px;
+
+  input {
+    display: flex;
+    margin-top: 8px;
+  }
+
+  div {
+    display: flex;
+    justify-content: flex-end;
+  }
+  button {
+    display: flex;
+    justify-content: center;
+    width: 70px;
+    margin-left: 20px;
+    margin-top: 20px;
+  }
+
+  .cancelar {
+    border: 1px solid ${primaryColor};
+    background-color: #fff;
+    color: ${primaryColor};
+  }
 `;

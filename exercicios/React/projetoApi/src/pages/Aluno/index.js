@@ -10,7 +10,15 @@ import { Link } from 'react-router-dom';
 
 import axios from '../../services/axios';
 import history from '../../services/history';
-import { Form, ProfilePicture, Title, Content, Container } from './styled';
+import {
+  Form,
+  ProfilePicture,
+  Title,
+  Content,
+  Container,
+  Fotos,
+  ProfilePicture2,
+} from './styled';
 import Loading from '../../components/Loading';
 import * as actions from '../../store/modules/auth/actions';
 
@@ -22,34 +30,23 @@ export default function Aluno({ match }) {
   const [sobrenome, setSobrenome] = React.useState('');
   const [email, setEmail] = React.useState('');
   const [foto, setFoto] = React.useState('');
+  const [fotos, setFotos] = React.useState('');
   const [isLoading, setIsLoading] = React.useState(false);
 
   React.useEffect(() => {
-    //preenche os dados do form
-    if (!id) return;
-
-    async function getData() {
+    const getData = async () => {
       try {
         setIsLoading(true);
         const { data } = await axios.get(`/aprendiz/${id}`);
-        const Foto = Lodash.get(data, 'Fotos[0].url', '');
-
-        setFoto(Foto);
-
-        setNome(data.nome); //preenche o input com os dados da BD
-        setSobrenome(data.sobrenome);
-        setEmail(data.email);
-
+        setFoto(Lodash.get(data, 'Fotos[0].url', ''));
+        setFotos(Lodash.get(data, 'Fotos', ''));
         setIsLoading(false);
-      } catch (err) {
+      } catch {
+        toast.error('Erro, tente novamente mais tarde!');
         setIsLoading(false);
-        const status = Lodash.get(err, 'response.status', 0);
-        const errors = Lodash.get(err, 'response.data.errors', []);
-
-        if (status === 400) errors.map((error) => toast.error(error));
         history.push('/');
       }
-    }
+    };
 
     getData();
   }, [id]);
@@ -136,6 +133,27 @@ export default function Aluno({ match }) {
     campo.insertAdjacentElement('afterend', p);
   }
 
+  async function handlePerfil(e, index) {
+    try {
+      e.preventDefault();
+      const id = fotos[index].id;
+      console.log(fotos[index].id);
+
+      await axios.put(`/foto/${id}`);
+      fotos.splice(0, 0, fotos.splice(index, 1)[0]);
+      setFotos(fotos);
+    } catch (err) {
+      const data = Lodash.get(err, 'response.data', {});
+      const errors = Lodash.get(data, 'errors', []);
+
+      if (errors.length > 0) {
+        errors.map((error) => toast.error(error));
+      } else {
+        toast.error('Algo deu errado, tente novamente mais tarde');
+      }
+    }
+  }
+
   return (
     <>
       {id ? (
@@ -154,42 +172,30 @@ export default function Aluno({ match }) {
                 <FaUserCircle size={180} />
               )}
               <Link to={`/fotos/${id}`}>
-                <FaEdit size={24} />
+                <FaEdit className="edit" size={24} />
               </Link>
             </ProfilePicture>
           </Content>
 
-          <Container>
-            <Form onSubmit={handleSubmit}>
-              <input
-                className="aluno"
-                placeholder="Nome"
-                type="text"
-                value={nome}
-                onChange={(e) => setNome(e.target.value)}
-              />
-
-              <input
-                className="aluno"
-                placeholder="Sobrenome"
-                type="text"
-                value={sobrenome}
-                onChange={(e) => setSobrenome(e.target.value)}
-              />
-
-              <input
-                className="aluno"
-                placeholder="E-mail"
-                type="text"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-
-              <button type="submit" className="alunoBtn">
-                Salvar
-              </button>
-            </Form>
-          </Container>
+          <Fotos>
+            {fotos.length > 0 ? <Title>Sua galeria</Title> : ''}
+            <ProfilePicture2>
+              {fotos
+                ? fotos.map((galeria, index) => (
+                    <div key={String(galeria.id)}>
+                      <Link to="">
+                        <img
+                          crossOrigin=""
+                          src={galeria.url}
+                          alt="Foto aluno"
+                          onClick={(e) => handlePerfil(e, index)}
+                        />
+                      </Link>
+                    </div>
+                  ))
+                : ''}
+            </ProfilePicture2>
+          </Fotos>
         </>
       ) : (
         <Container>

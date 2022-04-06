@@ -55,6 +55,14 @@ export const ProfilePicture = styled.div`
     background-color: ${primaryColor};
     padding: 6px;
     border-radius: 50%;
+
+    &:hover {
+      color: #eee;
+    }
+  }
+
+  a > .edit {
+    color: #fff;
   }
 `;
 
@@ -78,5 +86,33 @@ export const Container = styled.div`
 
   .mt {
     margin-top: 50px;
+  }
+`;
+
+export const Fotos = styled.div`
+  display: flex;
+  justify-content: center;
+  max-width: 470px;
+`;
+
+export const ProfilePicture2 = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 150px));
+  align-items: center;
+  gap: 5px;
+  max-width: 100%;
+
+  img {
+    cursor: pointer;
+    height: 150px;
+    width: 150px;
+    border-radius: 2px;
+    margin: auto;
+    transition-duration: 300ms;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.05);
+    }
   }
 `;
