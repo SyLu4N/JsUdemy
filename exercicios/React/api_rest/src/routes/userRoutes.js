@@ -13,6 +13,8 @@ router.post('/', userController.store);
 router.put('/', loginRequired, userController.update);
 router.delete('/', loginRequired, userController.delete);
 
+router.put('/password/', loginRequired, userController.changePassword);
+
 export default router;
 
 /*

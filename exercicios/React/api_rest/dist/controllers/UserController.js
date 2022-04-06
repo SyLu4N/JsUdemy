@@ -31,7 +31,9 @@ class UserController {
       return res.json(users);
     } catch (e) {
       console.log('ferro', e);
-      return res.status(404).json(null);
+      return res.status(400).json({
+        errors: e.errors.map(err => err.message),
+      });
     }
   }
 
@@ -48,7 +50,9 @@ class UserController {
       });
     } catch (e) {
       res.status(404);
-      return res.status(404).json(null);
+      return res.status(400).json({
+        errors: e.errors.map(err => err.message),
+      });
     }
   }
 
@@ -62,7 +66,6 @@ class UserController {
           errors: ['Usuário não existe.'],
         });
       }
-
       const att = await user.update(req.body);
       const {
         id, nome, email, usuario,
@@ -71,9 +74,43 @@ class UserController {
         id, nome, email, usuario,
       });
     } catch (e) {
-      console.log(e);
       return res.status(400).json({
         errors: e.errors.map(err => err.message),
+      });
+    }
+  }
+
+  async changePassword(req, res) {
+    try {
+      const user = await _User2.default.findByPk(req.userId);
+
+      if (!user) {
+        return res.status(401).json({
+          errors: ['É necessário estar logado!'],
+        });
+      }
+
+      const { oldPassword } = req.body;
+      const passwordCheck = await user.passwordIsValid(oldPassword);
+
+      if (!passwordCheck) {
+        return res.status(401).json({
+          errors: ['Senha incorreta.'],
+        });
+      }
+
+      if (oldPassword === req.body.password) {
+        return res.status(401).json({
+          errors: ['Senha deve ser diferente da atual.'],
+        });
+      }
+
+      await user.update(req.body);
+
+      return res.json('Senha atualizada com sucesso!');
+    } catch (e) {
+      return res.status(400).json({
+        errors: ['Algo deu errado!'],
       });
     }
   }

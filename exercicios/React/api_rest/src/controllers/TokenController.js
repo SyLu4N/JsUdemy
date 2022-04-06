@@ -18,10 +18,10 @@ TokenController.prototype.store = async (req, res) => {
   let email = '';
   let usuario = '';
 
-  if(log.indexOf('@') !== -1){
+  if (log.indexOf('@') !== -1) {
     email = log;
     user = await User.findOne({ where: { email } });
-  }else {
+  } else {
     usuario = log;
     user = await User.findOne({ where: { usuario } });
   }
