@@ -13,6 +13,7 @@ export const Container = styled.div`
   color: #fff;
   font-size: 30px;
   flex-direction: column;
+  z-index: 4;
 
   div {
     display: flex;

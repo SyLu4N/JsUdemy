@@ -216,7 +216,7 @@ export default function Fotos({ match }) {
             <button
               type="button"
               className="cancelar"
-              onClick={() => history.push('/')}
+              onClick={() => history.push(`/aprendiz/${id}`)}
             >
               Cancelar
             </button>

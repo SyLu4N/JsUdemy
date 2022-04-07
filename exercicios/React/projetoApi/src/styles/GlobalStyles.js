@@ -109,7 +109,7 @@ export const Container = styled.section`
   max-width: 480px;
   background-color: rgb(255, 255, 255, 0.6);
   box-shadow: 0px 0px 20px white;
-  margin: 40px auto;
+  margin: 20px auto;
   padding: 5px;
   border-radius: 20px;
   overflow-y: hidden;

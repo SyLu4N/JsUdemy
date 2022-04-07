@@ -67,14 +67,12 @@ export const ProfilePicture = styled.div`
 `;
 
 export const Content = styled.div`
-  background: url('/img/teste2.png');
   background-size: contain;
   padding: 5px 0;
   margin: 20px auto 0 auto;
   max-width: 480px;
   z-index: 2;
   border-radius: 4px 4px 0px 0px;
-  box-shadow: inset 0px -1px 10px 20px white;
 `;
 
 export const Container = styled.div`
@@ -91,8 +89,10 @@ export const Container = styled.div`
 
 export const Fotos = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   max-width: 470px;
+  margin: 30px auto;
 `;
 
 export const ProfilePicture2 = styled.div`
@@ -101,6 +101,7 @@ export const ProfilePicture2 = styled.div`
   align-items: center;
   gap: 5px;
   max-width: 100%;
+  margin-bottom: 20px;
 
   img {
     cursor: pointer;
@@ -114,5 +115,9 @@ export const ProfilePicture2 = styled.div`
       cursor: pointer;
       transform: scale(1.05);
     }
+  }
+
+  div {
+    height: 150px;
   }
 `;
