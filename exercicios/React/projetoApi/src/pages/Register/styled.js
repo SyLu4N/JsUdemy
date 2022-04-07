@@ -4,6 +4,7 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
   margin-top: 15px;
+  margin-bottom: 20px;
 
   .login {
     margin-top: 6px;
