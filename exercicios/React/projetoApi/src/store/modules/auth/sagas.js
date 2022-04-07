@@ -9,7 +9,6 @@ import history from '../../../services/history';
 function* changePasswordRequest({ payload }) {
   try {
     const { oldPassword, password } = payload;
-    console.log(oldPassword, password);
 
     const teste = yield call(axios.put, '/users/password/', {
       oldPassword,
@@ -42,7 +41,6 @@ function* loginRequest({ payload }) {
     history.push(payload.prevPath);
   } catch (e) {
     toast.error('Usuário ou senha inválidos.');
-
     yield put(actions.loginFailure());
   }
 }
@@ -77,20 +75,23 @@ function* registerRequest({ payload }) {
         nome,
         password,
       });
-      const response = yield call(axios.post, '/tokens', payload);
+
+      const log = usuario;
+      const teste = { log: log, password: password };
+      const response = yield call(axios.post, '/tokens', teste);
       toast.success('Conta criada com sucesso');
       yield put(
         actions.registerCreatedSuccess({ nome, email, usuario, password }),
       );
-      yield put(actions.loginSuccess({ ...response.data }));
       history.push('/');
+      yield put(actions.loginSuccess({ ...response.data }));
+      axios.defaults.headers.Authorization = `Bearer ${response.data.token}`; //token header
     }
   } catch (e) {
     const errors = get(e, 'response.data.errors', []);
     const status = get(e, 'response.status', 0);
 
     if (status === 401) {
-      toast.error('Você precisa fazer login novamente');
       yield put(actions.loginFailure());
     }
 

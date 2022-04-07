@@ -132,7 +132,19 @@ export default function Alunos() {
   }
 
   function handleNewStudent() {
-    history.push('/aprendiz');
+    history.push('/aprendiz/');
+  }
+
+  function handleStudent(e, aluno) {
+    const el = e.target;
+    if (
+      el.classList.contains('delete') ||
+      el.classList.contains('exclamation')
+    ) {
+      return e.preventDefault();
+    } else {
+      history.push(`/aprendiz/${aluno.id}`);
+    }
   }
 
   return (
@@ -173,35 +185,31 @@ export default function Alunos() {
 
               <AlunoContainer>
                 {mostraAlunos.map((aluno, index) => (
-                  <div key={String(aluno.id)}>
-                    <div
-                      onClick={() => history.push(`/aprendiz/${aluno.id}`)}
-                      className="alunos"
-                    >
-                      <ProfilePicture>
-                        {Lodash.get(aluno, 'Fotos[0].url', false) ? (
-                          <img crossOrigin="" src={aluno.Fotos[0].url} alt="" /> //se verdadeiro
-                        ) : (
-                          <FaUserCircle size={36} /> // se falso
-                        )}
-                      </ProfilePicture>
-
-                      <span className="nome">{aluno.nome}</span>
-                      <span className="email">{aluno.email}</span>
-                      {id ? (
-                        <div>
-                          <Link onClick={handleDeleteAsk} to="">
-                            <FaWindowClose className="delete" size={16} />
-                          </Link>
-                          <FaExclamation
-                            size={8}
-                            className="exclamation none"
-                            onClick={(e) => handleDelete(e, aluno.id, index)}
-                          />
-                        </div>
+                  <div
+                    key={String(aluno.id)}
+                    className="alunos"
+                    onClick={(e) => handleStudent(e, aluno)}
+                  >
+                    <ProfilePicture>
+                      {Lodash.get(aluno, 'Fotos[0].url', false) ? (
+                        <img crossOrigin="" src={aluno.Fotos[0].url} alt="" /> //se verdadeiro
                       ) : (
-                        ''
+                        <FaUserCircle size={36} /> // se falso
                       )}
+                    </ProfilePicture>
+
+                    <span className="nome">{aluno.nome}</span>
+                    <span className="email">{aluno.email}</span>
+
+                    <div>
+                      <Link onClick={handleDeleteAsk} to="">
+                        <FaWindowClose className="delete" size={16} />
+                      </Link>
+                      <FaExclamation
+                        size={8}
+                        className="exclamation none"
+                        onClick={(e) => handleDelete(e, aluno.id, index)}
+                      />
                     </div>
                   </div>
                 ))}

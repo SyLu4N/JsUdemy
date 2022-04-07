@@ -8,6 +8,7 @@ export const Nav = styled.nav`
   justify-content: space-around;
   position: relative;
   height: 64px;
+  z-index: 5;
 
   a {
     font-weight: normal;

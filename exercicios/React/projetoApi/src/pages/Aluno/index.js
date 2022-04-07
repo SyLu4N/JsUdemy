@@ -42,9 +42,7 @@ export default function Aluno({ match }) {
         setFotos(Lodash.get(data, 'Fotos', ''));
         setIsLoading(false);
       } catch {
-        toast.error('Erro, tente novamente mais tarde!');
         setIsLoading(false);
-        history.push('/');
       }
     };
 
