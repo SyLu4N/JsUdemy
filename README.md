@@ -77,7 +77,7 @@
 <h6 align="center">
   <a href="https://www.linkedin.com/posts/luan-sim%C3%B5es-617492236_com-base-nos-estudos-da-udemy-consegui-desenvolver-activity-6915748380409274370-2Zz3?utm_source=linkedin_share&utm_medium=member_desktop_web">
   <img src="./imgReadme/SchoolGif.gif" alt="Funcionamento da MySchool"></a>
-</h1> 
+</h6> 
 <br>
  Ferramentas usadas: React / React-Redux / Webpack / JSON / LocalStorage / Node.js / BABEL / NoSQL / EJS / mongoose / Validator / Class / Function /entre outros...
 
