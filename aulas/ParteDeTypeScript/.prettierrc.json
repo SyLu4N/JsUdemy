@@ -1,0 +1,8 @@
+{
+  "semi": true, // ponto e vírgula
+  "trailingComma": "all", // Virgula em objetos
+  "singleQuote": true, // Aspas simples
+  "printWidth": 80, // Máximo da linha
+  "tabWidth": 2, // Espaços do tab
+  "endOfLine": "auto"
+}
