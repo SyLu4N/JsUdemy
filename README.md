@@ -81,5 +81,3 @@
 <br>
  Ferramentas usadas: React / React-Redux / React-Router-Dom / React-Icons / Axios / History / Styled / Webpack / JSON / LocalStorage / Node.js / BABEL / MySQL / mongoose / Validator / Class / Function /entre outros...
 
- <h2></h2>
-
