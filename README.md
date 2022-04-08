@@ -75,7 +75,7 @@
 
  <h3>📚 MySchool</h3> 
 <h6 align="center">
-  <a href="https://www.linkedin.com/posts/luan-sim%C3%B5es-617492236_com-base-nos-estudos-da-udemy-consegui-desenvolver-activity-6915748380409274370-2Zz3?utm_source=linkedin_share&utm_medium=member_desktop_web">
+  <a href="https://www.linkedin.com/posts/luan-sim%C3%B5es-617492236_com-base-nos-estudos-em-react-desenvolvi-activity-6918023647324479488-r-PV?utm_source=linkedin_share&utm_medium=member_desktop_web">
   <img src="./imgReadme/SchoolGif.gif" alt="Funcionamento da MySchool"></a>
 </h6> 
 <br>
