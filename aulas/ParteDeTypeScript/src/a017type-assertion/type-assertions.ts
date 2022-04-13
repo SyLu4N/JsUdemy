@@ -22,3 +22,5 @@ body4.toFixed(2);
 // No-null assertion (!)
 const body2 = document.querySelector('body')!;
 body2.style.background = 'red';
+
+export default input;

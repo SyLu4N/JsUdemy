@@ -88,17 +88,17 @@ body {
 }
 
 .form .error-message {
+  display: none;
+}
+
+.errorForm {
   font-size: 9pt;
   padding: 5px 0;
   color: var(--error-color);
   font-style: italic;
-  display: none;
 }
 
-.form .show-error-message .error-message {
-  display: block;
+.errorInput {
+  border: 1px solid var(--error-color)!important;
 }
 
-.form .show-error-message input[type] {
-  border-color: var(--error-color);
-}
