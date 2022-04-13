@@ -7,7 +7,7 @@ form.addEventListener('submit', (e: Event): void => {
   e.preventDefault();
   checkForm();
   checkPassword();
-  if (!isError) form.submit();
+  if (!isError) alert('Enviado!');
 });
 
 function checkForm(): void {

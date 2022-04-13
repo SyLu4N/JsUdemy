@@ -21,7 +21,7 @@ form.addEventListener('submit', (e) => {
     checkForm();
     checkPassword();
     if (!isError)
-        form.submit();
+        alert('Enviado!');
 });
 function checkForm() {
     form.querySelectorAll('.errorForm').forEach((item) => {
