@@ -95,13 +95,23 @@ Cronometro.prototype.restartCronometro = function () {
   this.clickStart = 0;
   this.inner.innerHTML = '';
   this.startTimer = false;
+  this.setTimerContador = 1;
+  this.inner.classList.add('justCenter');
 }
 
 Cronometro.prototype.setTimer = function () {
-  const p = document.createElement('li');
-  this.inner.appendChild(p);
-  p.innerText += `${this.setTimerContador} ${this.criaSegundos(this.contador * 1000)}`
+  const p = document.createElement('p');
+  const contador = document.createElement('em');
+  const div = document.createElement('div');
+  div.classList.add('flex');
+  div.appendChild(contador);
+  div.appendChild(p);
+  this.inner.appendChild(div);
+  contador.innerText += `${this.setTimerContador}`
+  p.innerText += `${this.criaSegundos(this.contador * 1000)}`
   this.setTimerContador++;
+
+  if(this.setTimerContador === 8) this.inner.classList.remove('justCenter');
 }
 
 Cronometro.prototype.keypress = function () {

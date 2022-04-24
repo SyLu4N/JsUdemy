@@ -157,8 +157,15 @@ body{
   text-decoration: underline;
 }
 
+.justCenter{
+  justify-content: center;
+}
+
 .setTimer{
-  list-style-position: inside;
+  overflow-x: auto;
+  display: flex;
+  font-size: 18px;
+  margin-top: 10px;
   color: white;
   text-align: center;
 }
@@ -168,14 +175,28 @@ body{
 }
 
 .flex{
+  flex-direction: column;
   display: flex;
   justify-content: center;
+  margin-right: 20px;
 }
 
 ol{
   list-style: none;
 }
 
-li{
-  margin-right: 20px;
+.setTimer::-webkit-scrollbar {
+  height: 10px;
+}
+
+.setTimer::-webkit-scrollbar-track {
+  background: var(--corbackground);        /* color of the tracking area */
+  border-radius: 4px;
+
+}
+
+.setTimer::-webkit-scrollbar-thumb {
+  background-color: var(--corpadrao);    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+  border: 2px solid var(--corbackground);
 }
