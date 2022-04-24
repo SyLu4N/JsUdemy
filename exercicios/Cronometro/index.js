@@ -4,27 +4,25 @@ function Cronometro() {
   this.contador = 0;
   this.clickStart = 0;
   this.inner = document.querySelector('.setTimer');
-  this.pause = document.querySelector('.pause');
   this.restart = document.querySelector('.restart');
   this.timer = document.querySelector('.timer');
   this.iniciar = document.querySelector('.start');
   this.btnNone = document.querySelectorAll('.btnNone')
-  this.pause.setAttribute('title', '"P" p/ pausar');
-  this.iniciar.setAttribute('title', '"Enter" p/ começar')
   this.restart.setAttribute('title', '"R" p/ resetar');
-}  
+  this.iniciar.setAttribute('title', '"Enter" p/ iniciar');
+} 
 
 Cronometro.prototype.start = function () {
   document.addEventListener('click', e =>{
+    this.abbr(this.iniciar);
     const el = e.target;
-    if(el.classList.contains('start')) this.startCronometro(); 
-    if(el.classList.contains('pause')) this.pauseCronometro();
+    if(el.classList.contains('start') || el.classList.contains('pause')) this.startCronometro(); 
     if(el.classList.contains('restart')) this.restartCronometro();
   });
 }
 
 Cronometro.prototype.startCronometro = function () {
-  if(this.startTimer) return;
+  if(this.startTimer) return this.pauseCronometro();
   this.startTimer = true;
   clearInterval(this.timerGo);
   clearInterval(this.pauseAnima);
@@ -33,6 +31,15 @@ Cronometro.prototype.startCronometro = function () {
   this.clickStart++;
   this.timer.style = 'color: white';
   for(buttons of this.btnNone) buttons.classList.remove('btnNone');
+  this.iniciar.setAttribute('class', 'pause btn');
+}
+
+Cronometro.prototype.abbr =  (btn) => {
+    if(btn.classList.value.indexOf('start')) { 
+      btn.setAttribute('title', '"Enter" p/ iniciar');
+    } else {
+      btn.setAttribute('title', '"P" p/ pausar');
+    }
 }
 
 Cronometro.prototype.iniciaCorreto = function () {
@@ -59,15 +66,17 @@ Cronometro.prototype.criaSegundos = function (segundos) {
 }
 
 Cronometro.prototype.pauseCronometro = function () {
+  if(!this.startTimer) return;
   clearInterval(this.timerGo);
   this.timer.style = 'color: rgb(192, 0, 0)';
   this.piscaTimer();
   this.startTimer = false;
+  this.iniciar.setAttribute('class', 'start btn');
 }
 
 Cronometro.prototype.piscaTimer = function () {
   this.pauseAnima = setInterval(() => {
-    this.timer.style = 'color: black';
+    this.timer.style = 'color: #272727';
   }, 500);
 
   this.pauseAnima2 = setInterval(() => {

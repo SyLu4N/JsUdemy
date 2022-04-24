@@ -15,14 +15,14 @@
 }
 
 :root{
-  --corbackground: #c3d2f0;
-  --corpadrao: #0D6A86;
+  --corbackground: #33313d;
+  --corpadrao: #272727;
   --corletter: white;
   --fontpadrao: 'Patrick Hand', cursive;
 }
 
 body{
-  background-color: #33313d;
+  background-color: var(--corbackground);
 }
 
 .title{
@@ -123,24 +123,9 @@ body{
   background-color: #2e2e2e;
 }
 
-.pause{
-  animation-duration: 1.5s;
-  animation-name: rolarPause;
-}
-
 .restart{
   animation-duration: 1.5s;
   animation-name: rolarRestart;
-}
-
-@keyframes rolarPause{
-  from {
-    margin-left: 30%;
-  }
-
-  to {
-    margin-left: 10px;
-  }
 }
 
 @keyframes rolarRestart{
@@ -165,7 +150,7 @@ body{
 .byL{
   color: rgba(255, 255, 255, 0.664);
   text-decoration: none;
-}
+} 
 
 .byL:hover{
   text-decoration: underline;
