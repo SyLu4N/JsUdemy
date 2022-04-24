@@ -67,6 +67,7 @@ body{
   width: 540px;
 }
 
+
 @media(max-width: 700px){
   .timer{
     font-size: 4em;
@@ -164,4 +165,17 @@ body{
 
 .setTimer::first-letter{
   font-size: 30px;
+}
+
+.flex{
+  display: flex;
+  justify-content: center;
+}
+
+ol{
+  list-style: none;
+}
+
+li{
+  margin-right: 20px;
 }

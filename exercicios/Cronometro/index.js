@@ -2,6 +2,7 @@ function Cronometro() {
   this.start();
   this.keypress();
   this.contador = 0;
+  this.setTimerContador = 1;
   this.clickStart = 0;
   this.inner = document.querySelector('.setTimer');
   this.restart = document.querySelector('.restart');
@@ -99,7 +100,8 @@ Cronometro.prototype.restartCronometro = function () {
 Cronometro.prototype.setTimer = function () {
   const p = document.createElement('li');
   this.inner.appendChild(p);
-  p.innerText += `${this.criaSegundos(this.contador * 1000)}`
+  p.innerText += `${this.setTimerContador} ${this.criaSegundos(this.contador * 1000)}`
+  this.setTimerContador++;
 }
 
 Cronometro.prototype.keypress = function () {
