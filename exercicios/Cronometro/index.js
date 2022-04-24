@@ -97,6 +97,7 @@ Cronometro.prototype.restartCronometro = function () {
   this.startTimer = false;
   this.setTimerContador = 1;
   this.inner.classList.add('justCenter');
+  this.iniciar.setAttribute('class', 'start btn');
 }
 
 Cronometro.prototype.setTimer = function () {
