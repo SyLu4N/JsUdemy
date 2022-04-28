@@ -41,16 +41,16 @@
  <h2></h2>
 
  <h3>📚 Cronômetro</h3> 
- <h6 align="center"><a href="https://sylu4n.github.io/JsUdemy/exercicios/Cronometro/index.html"><img src="./imgReadme/Cronometro.gif" alt="Funcionamento do cronômetro"></a></h7><br>
- Ferramentas usadas: Date / setInterval / functions / keyFrames
+ <h6 align="center"><a href="https://sylu4n.github.io/JsUdemy/exercicios/Cronometro/index.html"><img src="./imgReadme/Cronometro.gif" alt="Funcionamento do cronômetro"></a><br>
+ Ferramentas usadas: Date / setInterval / functions / keyFrames</h6>
  <h2></h2>
 
 <h3>📚 IMC</h3> 
  <h6 align="center">
    <a href="https://sylu4n.github.io/JsUdemy/exercicios/IMC/index.html">
    <img src="./imgReadme/IMC.gif" alt="Funcionamento do IMC"></a><br>
- </h6>
- Ferramentas usadas: functions / keyFrames
+ 
+ Ferramentas usadas: functions / keyFrames</h6>
  <h2></h2>
 
 <h3>📚 Calculadora</h3> 
