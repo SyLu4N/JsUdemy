@@ -1,3 +1,8 @@
+export interface CustomeOrder {
+  getName(): string;
+  getIDN(): string;
+}
+
 export interface IndividualCustomerProtocol {
   firstName: string;
   lastName: string;
