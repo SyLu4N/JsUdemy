@@ -54,9 +54,11 @@
  <h2></h2>
 
 <h3>📚 Calculadora</h3> 
- <a href="https://sylu4n.github.io/JsUdemy/exercicios/Calculadora/index.html">
- <img src="./imgReadme/Calculadora.gif" alt="Funcionamento do IMC"></a>
- Ferramentas usadas: functions
+ <h6 align="center">
+   <a href="https://sylu4n.github.io/JsUdemy/exercicios/Calculadora/index.html">
+   <img src="./imgReadme/Calculadora.gif" alt="Funcionamento do IMC"></a><br>
+   Ferramentas usadas: functions
+ </h6>
  <h2></h2>
 
 <h3>📚 Lista</h3> 

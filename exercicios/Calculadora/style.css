@@ -1,16 +1,17 @@
 @charset "UTF-8";
-@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@100&display=swap');
 @font-face {
-  font-family: calcu ;
-  src: url(Calculator.ttf);
+  font-family: calcu;
+  src: url(digital-7.ttf);
 }
 
 :root{
-  --corbackground: #c3d2f0;
-  --corpadrao: #0D6A86;
+  --corbackground: #33313d;
+  --corpadrao: #272727;
   --corletter: white;
-  --fontpadrao: 'Patrick Hand', cursive;
+  --fontpadrao: 'Smooch Sans', sans-serif;
 }
+
 
 *{
   padding: 0;
@@ -24,23 +25,32 @@ body{
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  background-color: var(--corbackground);
   }
 
 .title{
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: white;
-  font-size: 3em;
+  font-size: 6em;
   margin-bottom: 10px;
   text-align: center;
-  font-weight: 100;
+  font-weight: bold;
   text-shadow: 1px 1px black;
   font-variant: small-caps;
+  font-family: var(--fontpadrao);
+  height: 60px;
+  padding-bottom: 20px;
 }
 
 .container{
-  background-image: linear-gradient(to bottom, #064457, var(--corpadrao), #33a6c9) ;
+  background-color: var(--corpadrao);
   padding: 30px;
   border-radius: 5px;
   width: 400px;
+  position: relative;
+  border: 1px solid silver;
 }
 
 .display{
@@ -70,20 +80,17 @@ body{
   width: 100%;
   outline: none;
   border: none;
-  background-color: #3131318a;
+  background-color: var(--corbackground);
   font-size: 1.3em;
   border-radius: 700px;
   font-family: sans-serif;
   color: white;
   cursor: pointer;
-}
-
-.btnNumber:hover{
-color: black;
+  transition-duration: 200ms;
 }
 
 .btn:hover{
-  background-color: #63aff7;
+  background-color: #464052;
 }
 
 .btnEq{
@@ -109,20 +116,19 @@ color: black;
 }
 
 .btnGray:hover{
-  background-color: #19414d;
-  color: white;
+  background-color: #38383a;
 }
 
 .by{
   position: absolute;
-  color: white;
-  bottom: -8%;
-  font-size: 13px;
-  right: -5%;
+  color: rgba(255, 255, 255, 0.664);
+  bottom: -5%;
+  font-size: 14px;
+  right: 8%;
 }
 
 .by a{
-  color: white;
+  color: rgba(255, 255, 255, 0.664);
   font-style: italic;
   text-decoration: none;
 }
