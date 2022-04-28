@@ -1,4 +1,4 @@
-const error = "Conta Inválida!";
+const error = "Conta Invalida!";
 
 function criaCalculadora() {
   return{

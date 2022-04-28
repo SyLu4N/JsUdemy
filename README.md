@@ -41,20 +41,24 @@
  <h2></h2>
 
  <h3>📚 Cronômetro</h3> 
- <a href="https://sylu4n.github.io/JsUdemy/exercicios/Cronometro/index.html"><img src="./imgReadme/Cronometro.png" alt="Funcionamento do cronômetro"></a>
- Ferramentas usadas: Date / setInterval / functions / keyFrames
+ <h6 align="center"><a href="https://sylu4n.github.io/JsUdemy/exercicios/Cronometro/index.html"><img src="./imgReadme/Cronometro.gif" alt="Funcionamento do cronômetro"></a><br>
+ Ferramentas usadas: Date / setInterval / functions / keyFrames</h6>
  <h2></h2>
 
 <h3>📚 IMC</h3> 
- <a href="https://sylu4n.github.io/JsUdemy/exercicios/IMC/index.html">
- <img src="./imgReadme/IMC.gif" alt="Funcionamento do IMC"></a>
- Ferramentas usadas: functions / keyFrames
+ <h6 align="center">
+   <a href="https://sylu4n.github.io/JsUdemy/exercicios/IMC/index.html">
+   <img src="./imgReadme/IMC.gif" alt="Funcionamento do IMC"></a><br>
+ 
+ Ferramentas usadas: functions / keyFrames</h6>
  <h2></h2>
 
 <h3>📚 Calculadora</h3> 
- <a href="https://sylu4n.github.io/JsUdemy/exercicios/Calculadora/index.html">
- <img src="./imgReadme/Calculadora.gif" alt="Funcionamento do IMC"></a>
- Ferramentas usadas: functions
+ <h6 align="center">
+   <a href="https://sylu4n.github.io/JsUdemy/exercicios/Calculadora/index.html">
+   <img src="./imgReadme/Calculadora.gif" alt="Funcionamento do IMC"></a><br>
+   Ferramentas usadas: functions
+ </h6>
  <h2></h2>
 
 <h3>📚 Lista</h3> 
@@ -79,5 +83,5 @@
   <img src="./imgReadme/SchoolGif.gif" alt="Funcionamento da MySchool"></a>
 </h6> 
 <br>
- Ferramentas usadas: React / React-Redux / React-Router-Dom / React-Icons / Axios / History / Styled / Webpack / JSON / LocalStorage / Node.js / BABEL / MySQL / mongoose / Validator / Class / Function /entre outros...
+ Ferramentas usadas: React / React-Redux / React-Router-Dom / React-Icons / Axios / History / Styled / Webpack / JSON / LocalStorage / Node.js / BABEL / MySQL / mongoose / Validator /entre outros...
 
