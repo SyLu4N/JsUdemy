@@ -87,7 +87,15 @@ IMC.prototype.calculo = function (altura, peso) {
   const imc = peso / altura**2
   this.resultado = this.form.querySelector('.resultado');
   this.resultado.innerHTML = '';
-  this.setResultado(this.toFixed(Number(imc, 0)), imc);
+  try {
+    this.setResultado(this.toFixed(Number(imc, 0)), imc);
+  } catch (error) {
+    this.resultado.innerHTML = '';
+    const p = document.createElement('p');
+    p.classList.add('aa');
+    p.innerHTML += `Algo deu errado! Confira os dados colocados.`;
+    this.resultado.appendChild(p);
+  }
 };
 
 IMC.prototype.setResultado = function (resultadoIMC, imcPuro) {
@@ -100,6 +108,7 @@ IMC.prototype.setResultado = function (resultadoIMC, imcPuro) {
   this.resultado.appendChild(imc);
   this.resultado.appendChild(p);
   imc.innerText += `${resultadoIMC}`;
+  console.log(resultadoIMC);
   
   if(resultadoIMC < 10){
     imc.setAttribute('class', 'none');
