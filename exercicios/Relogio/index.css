@@ -1,26 +1,28 @@
 @charset "UTF-8";
-@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@100&display=swap');
 
 *{
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 :root{
-  --corbackground: #c3d2f0;
-  --corpadrao: #0D6A86;
+  --corbackground: #33313D;
+  --corpadrao: #272727;
   --corletter: white;
-  --fontpadrao: 'Patrick Hand', cursive;
+  --fontpadrao: 'Smooch Sans', sans-serif;
+}
+
+body{
+  background-color: var(--corbackground);
 }
 
 .containerC{
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 20px;
   height: 100vh;
   font-family: var(--fontpadrao);
+  font-weight: bold;
   flex-direction: column;
 }
 
@@ -28,15 +30,21 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
   text-align: center;
 }
 
 .content{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 658px;
+  height: 288px;
+  border: 1px solid silver;
   background-color: var(--corpadrao);
   padding: 10px;
-  border-radius: 5px;
-  background-image: linear-gradient(to bottom, #064457, var(--corpadrao), #2187a7) ;
+  border-radius: 4px;
+  margin-top: 70px;
 }
 
 .data{
@@ -45,38 +53,55 @@
   text-align: center;
   width: 100%;
   cursor: default;
+  margin-bottom: 20px;
 }
 
 .point{
   font-size: 4em;
-  padding-top: 6px;
+  padding-top: 12px;
   color: var(--corletter);
   cursor: default;
 }
 
 .container .back{
-  font-size: 5em;
+  font-size: 7em;
   padding: 0 8px;
   border-radius: 20px;
   margin: 0px 20px 0 20px;
   color: var(--corletter);
   cursor: default;
   transition-duration:200ms;
-  width: 80px;
+  margin-top: 10px;
+}
+
+.back{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 96px;
 }
 
 .back:hover{
-  color: var(--corpadrao);
+  border: 1px solid silver;
   background-color: var(--corbackground);
 }
 
 .by{
+  position: absolute;
+  bottom: -11%;
+  right: 3%;
   text-align: center;
-  font-style: italic;
-  font-size: 20px;
+  font-size: 13px;
   text-decoration: none;
-  color: var(--corletter);
+  color: rgba(255, 255, 255, 0.664);
   margin: 10px auto;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal;
+}
+
+a {
+  color: rgba(255, 255, 255, 0.664);
+  text-decoration: none;
 }
 
 .by a:hover{

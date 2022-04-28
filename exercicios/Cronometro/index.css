@@ -140,8 +140,8 @@ body{
 .by{
   position: absolute;
   color: rgba(255, 255, 255, 0.664);
-  bottom: -8%;
   font-size: 13px;
+  bottom: -8%;
   right: 3%;
   font-style: italic;
 }
