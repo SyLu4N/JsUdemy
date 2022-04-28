@@ -1,69 +1,113 @@
 @charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
 
 :root{
-  --corbackground: #c3d2f0;
-  --corpadrao: #0D6A86;
+  --corbackground: #33313d;
+  --corpadrao: #272727;
   --corletter: white;
-  --fontpadrao: 'Patrick Hand', cursive;
+  --fontpadrao: 'Smooch Sans', sans-serif;
 }
 
 *{
-  outline: 0;
   box-sizing: border-box;
-}
-
-.title{
-  font-family: 'Sansita Swashed', cursive;
-  font-size: 40px;
-  text-shadow: 2px 2px black;
-  font-style: normal;
-  font-variant: small-caps;
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  border: none;
 }
 
 body{
   display: flex;
   justify-content: center;
-  align-items: center;
   margin: 0;
   padding: 0;
   color: white;
-  height: 100vh;
   font-family: var(--fontpadrao);
+  font-weight: bold;
   font-size: 20px;
+  background-color: var(--corbackground);
+}
+
+.title{
+  padding: 20px 0;
+  font-size: 2em;
+  text-shadow: 2px 2px black;
+  font-style: normal;
+}
+
+.info{
+  color: #efefef;
+  position: absolute;
+  top: 20px;
+  right: 0;
+  border: 2px solid #efefef;
+  border-radius: 80px;
+  width: 38px;
+  text-align: center;
+  cursor: pointer;
+  height: 42px;
+  animation: infom 2.5s alternate-reverse;
+  animation-delay: 5s;
+  font-family: 'Patrick Hand', cursive;
+  font-weight: normal;
+}
+
+.info:hover{
+  cursor: pointer;
+  color: white;
+  border: 2px solid white;
+}
+
+.flex{
+  margin-top: 45px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: var(--corbackground);
+  position: absolute;
+  z-index: 1;
+  right: -45%;
+  top: 20px;
+  width: 320px;
+  font-size: 20px;
+  line-height: 25px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.imc{
+  float: left;
+  font-size: 50px;
+  margin: 0 20px 0 0;
+  font-style: italic;
+  transform: rotate(1deg);
+  cursor: default;
+}
+
+.shadow{
+  font-family: 'Patrick Hand', cursive;  
+  font-weight: normal;
+  margin-top: 10px;
+  font-size: 22px;
 }
 
 .container{
-  width: 550px;
-  background-image: linear-gradient(to bottom, #064457, var(--corpadrao), #33a6c9) ;
+  margin-top: 70px;
+  border: 1px solid silver;
+  background-color: var(--corpadrao);
+  width: 480px;
   padding: 30px;
   padding-top: 2px;
   padding-bottom: 10px;
   font-size: 1.3em;
   line-height: 1.5em;
-  margin-bottom: 30px;
   border-radius: 5px;
   position: relative;
 }
 
 .content{
   position: relative;
-}
-
-.flex{
-  margin-top: 56px;
-  display: flex;
-  justify-content: space-between;
-  border-radius: 5px;
-  padding: 5px;
-  background-color: #2a91b1;
-  position: absolute;
-  z-index: 1;
-  right: -40%;
-  top: 20px;
-  width: 370px;
-  font-size: 20px;
-  line-height: 25px;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.753);
 }
 
 form input, form label{
@@ -78,16 +122,18 @@ form input{
 }
 
 form input:focus{
-  border: 1px solid var(--corpadrao);
+  box-shadow: 0px 0px 6px #aaa;
 }
 
 .bottom{
+  border: none;
+  border-radius: 3px;
   margin-bottom: 10px;
 }
 
 .btn{
+  border: none;
   margin-top: 20px;
-  border: 2px solid #2894B5;
   height: 60px;
   background-color: white;
   cursor: pointer;
@@ -97,13 +143,14 @@ form input:focus{
   transition-duration: 300ms;
   font-family: var(--fontpadrao);
   font-size: 30px;
+  font-weight: bold;
 }
 
 .btn:hover{
   border: none;
-  background-color: #2894B5;
+  background-color: rgb(65, 65, 65);
   color: white;
-  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.712);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.712);
 }
 
 .star{
@@ -139,19 +186,6 @@ form input:focus{
   font-size: 18px;
 }
 
-.imc{
-  float: left;
-  font-size: 50px;
-  margin: 0 20px 0 0;
-  font-style: italic;
-  transform: rotate(1deg);
-  cursor: default;
-}
-
-.imc p {
-  width: 500px;
-}
-
 .none{
   display: none;
 }
@@ -175,26 +209,6 @@ form input:focus{
 
 .alingCenter{
   text-align: center;
-}
-
-.info{
-  color: #efefef;
-  position: absolute;
-  top: 0;
-  right: 0;
-  border: 2px solid #efefef;
-  border-radius: 80px;
-  width: 38px;
-  text-align: center;
-  cursor: pointer;
-  height: 42px;
-  animation: infom 2.5s alternate-reverse;
-  animation-delay: 5s;
-}
-
-.info:hover{
-  color: white;
-  border: 2px solid white;
 }
 
 .open{
@@ -242,21 +256,23 @@ form input:focus{
   }
 }
 
-.shadow{
-  text-shadow: 1px 1px black;
-}
-
 .by{
-  text-align: right;
+  position: absolute;
   margin: 0;
   padding: 0;
-  font-size: 14px;
+  font-size: 13px;
+  bottom: -10%;
+  right: 3%;
+  font-family: sans-serif;
+  font-weight: normal;
+  color: rgba(255, 255, 255, 0.664);
 }
 
 .by a{
   color: white;
   font-style: italic;
   text-decoration: none;
+  color: rgba(255, 255, 255, 0.664);;
 }
 
 .by a:hover{

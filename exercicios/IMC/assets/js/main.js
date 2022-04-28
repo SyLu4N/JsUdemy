@@ -11,11 +11,16 @@ IMC.prototype.click = function () {
   let contador = 0;
   this.info = document.querySelector('.info');
   this.info.setAttribute('title', 'Tabela IMC');
-
+  
   document.addEventListener('click', e =>{
     this.tImc = document.querySelector('.flex');
     const el = e.target;
-    if(el.classList.contains('info')){
+    if(
+    el.classList.contains('info') || 
+    el.classList.contains('shadow') || 
+    el.classList.contains('noClose')
+    ){
+      if(el.classList.contains('shadow') || el.classList.contains('noClose')) return;
       if(contador < 1){
         this.tImc.classList.add('open');
         this.info.classList.add('girar');
@@ -25,16 +30,20 @@ IMC.prototype.click = function () {
         this.tImc.classList.add('none');
         this.info.classList.remove('girar');
         contador --;
+      }else if(el.classList.contains('close')){
+        this.tImc.classList.add('none');
+        this.info.classList.remove('girar');
+        contador --;
+      }else{
+        this.tImc.classList.add('none');
+        this.info.classList.remove('girar');
+        contador --;
       }
-    }else if(el.classList.contains('close')){
-      this.tImc.classList.add('none');
-      this.info.classList.remove('girar');
-      contador --;
-    }else{
-      this.tImc.classList.add('none');
-      this.info.classList.remove('girar');
-      contador --;
-    }
+   }else{
+    this.tImc.classList.add('none');
+    this.info.classList.remove('girar');
+    contador --;
+  }
   });
 }
 
@@ -63,6 +72,11 @@ IMC.prototype.newError = function (campo, msg) {
   this.error = false;
 };
 
+IMC.prototype.toFixed = function (num, fixed) {
+  const re = new RegExp('^-?\\d+(?:\.\\d{0,' + (fixed || -1) + '})?');
+  return num.toString().match(re)[0];
+}
+
 IMC.prototype.calculo = function (altura, peso) {
   
   if(altura.indexOf(',' !== -1) || peso.indexOf(',' !== -1) ){
@@ -73,7 +87,7 @@ IMC.prototype.calculo = function (altura, peso) {
   const imc = peso / altura**2
   this.resultado = this.form.querySelector('.resultado');
   this.resultado.innerHTML = '';
-  this.setResultado(imc.toFixed(0), imc);
+  this.setResultado(this.toFixed(Number(imc, 0)), imc);
 };
 
 IMC.prototype.setResultado = function (resultadoIMC, imcPuro) {
