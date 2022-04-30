@@ -5,6 +5,68 @@
   box-sizing: border-box;
 }
 
+:root {
+  --working: #ef5d50;
+  --start: #41e1ba;
+}
+
 body{
   font-family: sans-serif;
+  background-color: var(--start);
+  transition: background-color 300ms ease-in-out;
+  line-height: 1.5;
+}
+
+.container{
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.working {
+  background: var(--working);
+}
+
+.hidden{
+  display: none;
+}
+
+.pomodoro {
+  background-color: #fff;
+  margin: 50px 20px;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgb(0, 0, 0, .5);
+}
+
+.pomodoro h2{
+  font-size: 24px;
+  text-align: center;
+}
+
+.pomodoro .timer{
+  font-size: 6rem;
+  text-align: center;
+}
+
+.controls{
+  display: flex;
+}
+
+.pomodoro button {
+  border: none;
+  background-color: var(--start);
+  cursor: pointer;
+  padding: 10px 25px;
+  color: #000;
+  transition: background-color 300ms ease-in-out;
+  margin: 20px auto;
+}
+
+.working .pomodoro button {
+  background-color: var(--working);
+  color: #fff;
+}
+
+.pomodoro .details {
+  margin: 20px 0;
 }
