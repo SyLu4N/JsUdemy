@@ -38,7 +38,8 @@
  
  <h6 align="center">
    <a href="https://sylu4n.github.io/JsUdemy/exercicios/Relogio/index.html">
-   <img src="./imgReadme/Relogio.gif" alt="Funcionamento do relógio" /></a><br>
+    <img src="./imgReadme/Relogio.gif" alt="Funcionamento do relógio" />
+   </a><br>
    Ferramentas usadas: Date / setInterval / functions
  </h6>
  <h2></h2>
