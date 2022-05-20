@@ -101,7 +101,7 @@ Ferramentas usadas: functions / JSON / LocalStorage
 <h3>✅Certificate</h2>
 
 <h6 align="center">
-  <a href="https://www.linkedin.com/posts/luan-sim%C3%B5es-617492236_com-base-nos-estudos-em-react-desenvolvi-activity-6918023647324479488-r-PV?utm_source=linkedin_share&utm_medium=member_desktop_web">
+  <a href="https://sylu4n.github.io/JsUdemy/imgReadme/Certificado.jpg">
     <img src="./imgReadme/Certificado.jpg" alt="Certificado Udemy" />
   </a>
 </h6>
